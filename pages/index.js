@@ -4,184 +4,115 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Hi, it's Darren!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="container">
+        <h1 className="title">HELLO</h1>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <div className="circle">
+          <img className="computer" src="/images/computer.png" alt="An open laptop"/>
+          <img className="phone" src="/images/phone.png" alt="An old brick cell phone from the 80's"/>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with ZEIT Now.
-            </p>
-          </a>
         </div>
+        <p className="info-text">
+          My name is Darren and I’m a web developer.
+          <br />
+          <br />
+          I have been helping people build websites for over ten years, from
+          designing and wireframing to getting code on servers so users can see
+          their stuff. I recently expanded my skills with React, Redux, Node.js,
+          MongoDB, and other fun things.
+          <br />
+          <br />
+          Send me an email if you’d like to work together.
+          <br />
+          <br />
+          Check out my latest project for Whidbey Herbal.
+        </p>
+        <span className="aboutLink">
+          about
+          <span className="hyphen1"> -</span>
+          <span className="hyphen2">-</span>
+          <span className="greaterSign">></span>
+        </span>
       </main>
-
-      <footer>
-        <a
-          href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
+          display: block;
+          position: relative;
+          margin: 0 auto;
+          overflow: hidden;
+          height: 100vh;
+          color: white;
         }
 
         .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
+          font-size: 1em;
+          font-weight: 300;
+          margin: 10% 0 0 10%;
         }
 
-        .title,
-        .description {
-          text-align: center;
+        .circle {
+          position: relative;
+          display: block;
+          height: 360px;
+          width: 360px;
+          margin: 10% auto 0 auto;
+          border-radius: 50%;
+          background-color: #c5ff8a;
         }
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
+        .computer {
+          display: block;
+          position: absolute;
+          left: -10%;
+          top: 20%;
+          width: 65%;
+          animation: rotateCW 100s infinite
+        }
+        
+        .phone {
+          display: block;
+          position: absolute;
+          right: -25%;
+          top: 12%;
+          width: 80%;
+          animation: rotateCCW 120s infinite
         }
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        .info-text {
+          font-size: 1em;
+          line-height: 1.125em;
+          font-weight: 300;
+          margin: 30px auto 0 auto;
+          width: 85%;
         }
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
+        .aboutLink {
+          position: absolute;
+          display: inline-block;
+          right: 30px;
+          bottom: 10px;
+          font-size: 0.9em;
+          font-style: italic;
+          color: #8affff;
         }
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
+        @keyframes rotateCW {
+          0% {transform: translateY(0px) rotate(0deg)}
+          15% {transform: rotate(-5deg)}
+          50% {transform: translateY(60px) rotate(45deg)}
+          100% {transform: translateY(0px) rotate(0deg)}
         }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
+        
+        @keyframes rotateCCW {
+          0% {transform: translateY(0px) rotate(0deg)}
+          50% {transform: translateY(-120px) rotate(-45deg)}
+          80% {transform: translateY(60px) rotate(5deg)}
+          100% {transform: translateY(0px) rotate(0deg)}
         }
       `}</style>
 
@@ -190,6 +121,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
+          background-color: black;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
@@ -200,5 +132,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
