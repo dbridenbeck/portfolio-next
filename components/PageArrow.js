@@ -2,13 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const arrowVariants = {
   moveUp: { opacity: 0, y: "100px", x: "0px" },
-  center: { opacity: 1, y: "0", x: "0px", rotate: 360 },
+  center: { opacity: 1, y: "0", x: "0px", rotate: 1080 },
   moveRight: { opacity: 0, y: "0px", x: "100px" },
 };
 
-const PageArrow = ({ handleTogglePage, onHelloPage }) => (
+const PageArrow = ({ onHelloPage }) => (
   <>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {onHelloPage && (
         <>
           <span className="arrow">
@@ -16,7 +16,7 @@ const PageArrow = ({ handleTogglePage, onHelloPage }) => (
               initial="moveUp"
               animate="center"
               exit="moveRight"
-              transition={{ duration: 2 }}
+              transition={{ duration: 1.25 }}
               variants={arrowVariants}
             >
               -->
@@ -25,14 +25,14 @@ const PageArrow = ({ handleTogglePage, onHelloPage }) => (
         </>
       )}
     </AnimatePresence>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {!onHelloPage && (
         <span className="arrow">
           <motion.div
             initial="moveUp"
             animate="center"
             exit="moveRight"
-            transition={{ duration: 2 }}
+            transition={{ duration: 1.25 }}
             variants={arrowVariants}
           >
             <span className="arrow"></span>-->
@@ -50,7 +50,7 @@ const PageArrow = ({ handleTogglePage, onHelloPage }) => (
         width: 25px;
         font-size: 0.9em;
         font-style: italic;
-        color: #8affff;
+        color: ${onHelloPage ? "#8affff" : "#c5ff8a"};
         cursor: pointer;
       }
     `}</style>

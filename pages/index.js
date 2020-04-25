@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
 import TitleText from '../components/TitleText';
+import Circle from '../components/Circle';
 
 export default function Home() {
 
@@ -40,13 +41,15 @@ export default function Home() {
       },
     ],
     linkText: ["about", "hello"],
+    pageClickedOnce: false,
   });
 
   const togglePage = () => {
     updateText({
       ...text, 
       onHelloPage: !text.onHelloPage,
-      indexToSelect: text.onHelloPage ? 1 : 0
+      indexToSelect: text.onHelloPage ? 1 : 0,
+      pageClickedOnce: true,
     });
   };
 
@@ -57,29 +60,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container">
+      <main>
         <TitleText
           text={text.onHelloPage ? "HELLO" : "ABOUT"}
           onHelloPage={text.onHelloPage}
         />
 
-        <div className="circle">
-          <img
-            className="computer"
-            src="/images/computer.png"
-            alt="An open laptop"
-          />
-          <img
-            className="phone"
-            src="/images/phone.png"
-            alt="An old brick cell phone from the 8indexToSelect0's"
-          />
-        </div>
+        <Circle onHelloPage={text.onHelloPage} />
         <p
-          className="info-text"
+          className={`info-text ${
+            
+            text.onHelloPage && text.pageClickedOnce
+              ? `whiteFlare`
+              : !text.onHelloPage && text.pageClickedOnce
+              ? `whiteFlareAgain`
+              : null
+          }`}
           dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
         ></p>
-        <div className="link-container" onClick={() => togglePage()}>
+        <div
+          className="link-container"
+          onClick={() => togglePage()}
+        >
           <PageLink
             text={text.onHelloPage ? "about" : "hello"}
             onHelloPage={text.onHelloPage}
@@ -100,34 +102,6 @@ export default function Home() {
           color: white;
         }
 
-        .circle {
-          position: relative;
-          display: block;
-          height: 360px;
-          width: 360px;
-          margin: 15% auto 0 auto;
-          border-radius: 50%;
-          background-color: #c5ff8a;
-        }
-
-        .computer {
-          display: block;
-          position: absolute;
-          left: -10%;
-          top: 20%;
-          width: 65%;
-          animation: rotateCW 100s infinite;
-        }
-
-        .phone {
-          display: block;
-          position: absolute;
-          right: -25%;
-          top: 12%;
-          width: 80%;
-          animation: rotateCCW 120s infinite;
-        }
-
         .info-text {
           position: absolute;
           left: 0;
@@ -137,6 +111,7 @@ export default function Home() {
           line-height: 1.325em;
           font-weight: 300;
           width: 85%;
+          color: #d4d4e4;
         }
 
         .link-container {
@@ -147,8 +122,12 @@ export default function Home() {
           right: 0;
         }
 
-        .fade-out-in {
-          animation: fadeOutIn 1s;
+        .whiteFlare {
+          animation: flare-text-white 0.5s ease-in-out;
+        }
+        
+        .whiteFlareAgain {
+          animation: flare-text-white-again 0.5s ease-in-out;
         }
 
         @media screen and (min-width: 1270px) {
@@ -161,45 +140,27 @@ export default function Home() {
           }
         }
 
-        @keyframes fadeOutIn {
+        @keyframes flare-text-white {
           0% {
-            opacity: 1;
+            color: #d4d4e4;
           }
           50% {
-            opacity: 0;
+            color: white;
           }
           100% {
-            opacity: 1;
+            color: #d4d4e4;
           }
         }
-
-        @keyframes rotateCW {
+       
+        @keyframes flare-text-white-again {
           0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          15% {
-            transform: rotate(-5deg);
+            color: #d4d4e4;
           }
           50% {
-            transform: translateY(60px) rotate(45deg);
+            color: white;
           }
           100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-        }
-
-        @keyframes rotateCCW {
-          0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-120px) rotate(-45deg);
-          }
-          80% {
-            transform: translateY(60px) rotate(5deg);
-          }
-          100% {
-            transform: translateY(0px) rotate(0deg);
+            color: #d4d4e4;
           }
         }
       `}</style>

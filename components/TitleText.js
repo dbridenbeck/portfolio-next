@@ -8,26 +8,26 @@ const variants = {
 
 const TitleText = ({ text, onHelloPage }) => (
   <>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {onHelloPage && (
         <motion.div
-          className="title"
           initial="moveUp"
           animate="center"
           exit="moveRight"
+          transition={{ duration: 1 }}
           variants={variants}
         >
           <h1 className="title">{text}</h1>
         </motion.div>
       )}
     </AnimatePresence>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {!onHelloPage && (
         <motion.div
-          className="title" 
           initial="moveUp"
           animate="center"
           exit="moveRight"
+          transition={{ duration: 1 }}
           variants={variants}
         >
           <h1 className="title">{text}</h1>

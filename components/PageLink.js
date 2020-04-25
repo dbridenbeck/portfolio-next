@@ -6,9 +6,9 @@ const variants = {
   moveRight: { opacity: 0, y: "0px", x: "100px" },
 };
 
-const PageLink = ({ handleTogglePage, onHelloPage }) => (
+const PageLink = ({ onHelloPage }) => (
   <>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {onHelloPage && (
         <>
           <span className="pageLink">
@@ -17,7 +17,7 @@ const PageLink = ({ handleTogglePage, onHelloPage }) => (
               initial="moveUp"
               animate="center"
               exit="moveRight"
-              transition={{duration: 2}}
+              transition={{ duration: 1.5 }}
               variants={variants}
             >
               about
@@ -26,7 +26,7 @@ const PageLink = ({ handleTogglePage, onHelloPage }) => (
         </>
       )}
     </AnimatePresence>
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {!onHelloPage && (
         <span className="pageLink">
           <motion.div
@@ -34,7 +34,7 @@ const PageLink = ({ handleTogglePage, onHelloPage }) => (
             initial="moveUp"
             animate="center"
             exit="moveRight"
-            transition={{duration: 2}}
+            transition={{ duration: 1.5 }}
             variants={variants}
           >
             hello
@@ -51,7 +51,7 @@ const PageLink = ({ handleTogglePage, onHelloPage }) => (
         bottom: 90px;
         font-size: 0.9em;
         font-style: italic;
-        color: #8affff;
+        color: ${onHelloPage ? "#8affff" : "#c5ff8a"};
         cursor: pointer;
       }
 
