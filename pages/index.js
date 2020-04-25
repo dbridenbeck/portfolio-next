@@ -1,9 +1,14 @@
 import Head from 'next/head'
 import { useState } from 'react';
+import PageLink from '../components/PageLink';
+import PageArrow from '../components/PageArrow';
+import TitleText from '../components/TitleText';
 
 export default function Home() {
 
   const [text, updateText] = useState({
+    onHelloPage: true,
+    indexToSelect: 0,
     title: ["HELLO", "ABOUT"],
     infoText: [
       {
@@ -37,6 +42,14 @@ export default function Home() {
     linkText: ["about", "hello"],
   });
 
+  const togglePage = () => {
+    updateText({
+      ...text, 
+      onHelloPage: !text.onHelloPage,
+      indexToSelect: text.onHelloPage ? 1 : 0
+    });
+  };
+
   return (
     <div className="container">
       <Head>
@@ -45,7 +58,10 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <h1 className="title">{text.title[0]}</h1>
+        <TitleText
+          text={text.onHelloPage ? "HELLO" : "ABOUT"}
+          onHelloPage={text.onHelloPage}
+        />
 
         <div className="circle">
           <img
@@ -56,16 +72,23 @@ export default function Home() {
           <img
             className="phone"
             src="/images/phone.png"
-            alt="An old brick cell phone from the 80's"
+            alt="An old brick cell phone from the 8indexToSelect0's"
           />
         </div>
-        <p className="info-text" dangerouslySetInnerHTML={text.infoText[0]}></p>
-        <span className="pageLink">
-          <span className="linkText">{text.linkText[0]}</span>
-          <span className="hyphen1"> -</span>
-          <span className="hyphen2">-</span>
-          <span className="greaterSign">></span>
-        </span>
+        <p
+          className="info-text"
+          dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
+        ></p>
+        <div className="link-container" onClick={() => togglePage()}>
+          <PageLink
+            text={text.onHelloPage ? "about" : "hello"}
+            onHelloPage={text.onHelloPage}
+          />
+          <PageArrow
+            text={text.onHelloPage ? "about" : "hello"}
+            onHelloPage={text.onHelloPage}
+          />
+        </div>
       </main>
 
       <style jsx>{`
@@ -73,15 +96,8 @@ export default function Home() {
           display: block;
           position: relative;
           margin: 0 auto;
-          overflow: hidden;
           height: 100vh;
           color: white;
-        }
-
-        .title {
-          font-size: 1em;
-          font-weight: 300;
-          margin: 5% 0 0 10%;
         }
 
         .circle {
@@ -89,7 +105,7 @@ export default function Home() {
           display: block;
           height: 360px;
           width: 360px;
-          margin: 5% auto 0 auto;
+          margin: 15% auto 0 auto;
           border-radius: 50%;
           background-color: #c5ff8a;
         }
@@ -113,21 +129,26 @@ export default function Home() {
         }
 
         .info-text {
-          font-size: 0.9em;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 20px auto 0 auto;
+          font-size: 0.9rem;
           line-height: 1.325em;
           font-weight: 300;
-          margin: 20px auto 0 auto;
           width: 85%;
         }
 
-        .pageLink {
+        .link-container {
           position: absolute;
-          display: inline-block;
-          right: 30px;
-          bottom: 10px;
-          font-size: 0.9em;
-          font-style: italic;
-          color: #8affff;
+          display: block;
+          border: 1px solid red;
+          bottom: 0px;
+          right: 0;
+        }
+
+        .fade-out-in {
+          animation: fadeOutIn 1s;
         }
 
         @media screen and (min-width: 1270px) {
@@ -137,6 +158,18 @@ export default function Home() {
 
           .title {
             margin: 5%;
+          }
+        }
+
+        @keyframes fadeOutIn {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
           }
         }
 
@@ -180,6 +213,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          overflow: hidden;
         }
         a {
           color: #8affff;
