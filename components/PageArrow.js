@@ -50,7 +50,7 @@ const PageArrow = ({ onHelloPage }) => (
         width: 25px;
         font-size: 0.9em;
         font-style: italic;
-        color: ${onHelloPage ? "#8affff" : "#c5ff8a"};
+        color: #c5ff8a;
         cursor: pointer;
       }
     `}</style>

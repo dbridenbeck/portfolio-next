@@ -51,7 +51,7 @@ const PageLink = ({ onHelloPage }) => (
         bottom: 90px;
         font-size: 0.9em;
         font-style: italic;
-        color: ${onHelloPage ? "#8affff" : "#c5ff8a"};
+        color: #8affff;
         cursor: pointer;
       }
 

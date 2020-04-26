@@ -4,6 +4,8 @@ import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
 import TitleText from '../components/TitleText';
 import Circle from '../components/Circle';
+import LeftImage from '../components/LeftImage';
+import RightImage from '../components/RightImage';
 
 export default function Home() {
 
@@ -66,10 +68,11 @@ export default function Home() {
           onHelloPage={text.onHelloPage}
         />
 
+        <LeftImage onHelloPage={text.onHelloPage} />
+        <RightImage onHelloPage={text.onHelloPage} />
         <Circle onHelloPage={text.onHelloPage} />
         <p
           className={`info-text ${
-            
             text.onHelloPage && text.pageClickedOnce
               ? `whiteFlare`
               : !text.onHelloPage && text.pageClickedOnce
@@ -78,10 +81,7 @@ export default function Home() {
           }`}
           dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
         ></p>
-        <div
-          className="link-container"
-          onClick={() => togglePage()}
-        >
+        <div className="link-container" onClick={() => togglePage()}>
           <PageLink
             text={text.onHelloPage ? "about" : "hello"}
             onHelloPage={text.onHelloPage}
@@ -125,9 +125,67 @@ export default function Home() {
         .whiteFlare {
           animation: flare-text-white 0.5s ease-in-out;
         }
-        
+
         .whiteFlareAgain {
           animation: flare-text-white-again 0.5s ease-in-out;
+        }
+
+        .computer {
+          display: block;
+          position: absolute;
+          left: -2%;
+          top: 10%;
+          width: 55%;
+          animation: rotateCW 100s infinite;
+          z-index: 2;
+        }
+
+        .phone {
+          display: block;
+          position: absolute;
+          right: -17%;
+          top: 7.5%;
+          width: 70%;
+          animation: rotateCCW 120s infinite;
+          z-index: 2;
+        }
+
+        .green {
+          background-color: #c5ff8a;
+        }
+
+        .blue {
+          background-color: #8affff;
+        }
+
+        @keyframes rotateCW {
+          0% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          15% {
+            transform: rotate(-5deg);
+          }
+          50% {
+            transform: translateY(60px) rotate(45deg);
+          }
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+        }
+
+        @keyframes rotateCCW {
+          0% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-120px) rotate(-45deg);
+          }
+          80% {
+            transform: translateY(60px) rotate(5deg);
+          }
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
         }
 
         @media screen and (min-width: 1270px) {
@@ -151,7 +209,7 @@ export default function Home() {
             color: #d4d4e4;
           }
         }
-       
+
         @keyframes flare-text-white-again {
           0% {
             color: #d4d4e4;
