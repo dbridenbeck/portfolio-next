@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
 
 // control styles fro motion.div's
@@ -12,12 +12,20 @@ const { className, styles } = css.resolve`
 `;
 
 const leftImageVariant = {
-  center: { x: "0px"},
-  flyOut: {
-    x: "-350px",
+  center: {
+    x: "0px",
     transition: {
       type: "spring",
-      stiffness: 50,
+      stiffness: 35,
+      mass: 0.2,
+      damping: 3.5,
+    },
+  },
+  flyOut: {
+    x: "-75%",
+    transition: {
+      type: "spring",
+      stiffness: 35,
     },
   },
 };
@@ -32,7 +40,7 @@ const LeftImage = ({ onHelloPage }) => (
       variants={leftImageVariant}
     >
       <img
-        className="computer"
+        className={`computer ${onHelloPage ? null : "blueFilter"}`}
         src="/images/computer.png"
         alt="An open laptop"
       />
@@ -47,7 +55,7 @@ const LeftImage = ({ onHelloPage }) => (
       variants={leftImageVariant}
     >
       <img
-        className="pinball"
+        className={`pinball ${onHelloPage ? "greenFilter" : null}`}
         src="/images/pinball.png"
         alt="An pinball table"
       />
@@ -60,6 +68,7 @@ const LeftImage = ({ onHelloPage }) => (
         margin: 25% 0 0 0;
         width: 55%;
         animation: rotateComputer 50s infinite linear;
+        transition: filter 0.5s;
       }
 
       .pinball {
@@ -68,6 +77,17 @@ const LeftImage = ({ onHelloPage }) => (
         margin: 25% 0 0 0;
         width: 55%;
         animation: rotatePinball 40s infinite linear;
+        transition: filter 0.5s;
+      }
+
+      .blueFilter {
+        filter: invert(93%) sepia(91%) saturate(6659%) hue-rotate(158deg)
+          brightness(105%) contrast(105%);
+      }
+
+      .greenFilter {
+        filter: invert(88%) sepia(17%) saturate(972%) hue-rotate(39deg)
+          brightness(102%) contrast(106%);
       }
 
       @keyframes rotateComputer {

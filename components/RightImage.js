@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
 
 // control styles fro motion.div's
@@ -12,51 +12,54 @@ const { className, styles } = css.resolve`
 `;
 
 const rightImageVariant = {
-  flyIn: { x: "350px" },
-  center: { x: "0px" },
-  flyOut: {
-    x: "350px",
+  center: {
+    x: "0",
     transition: {
       type: "spring",
-      stiffness: 50,
+      stiffness: 35,
+      mass: 0.2,
+      damping: 3.5,
+    },
+  },
+  flyOut: {
+    x: "75%",
+    transition: {
+      type: "spring",
+      stiffness: 35,
     },
   },
 };
 
 const RightImage = ({ onHelloPage }) => (
   <>
-    <AnimatePresence initial={false}>
-      {onHelloPage && (
-        <motion.div
-          className={className}
-          initial="flyIn"
-          animate="center"
-          exit="flyOut"
-          variants={rightImageVariant}
-        >
-          <img className="phone" src="/images/phone.png" alt="An 80's style mobile phone" />
-          {styles}
-        </motion.div>
-      )}
-    </AnimatePresence>
-    <AnimatePresence initial={false}>
-      {!onHelloPage && (
-        <motion.div
-          className={className}
-          initial="flyIn"
-          animate="center"
-          exit="flyOut"
-          variants={rightImageVariant}
-        >
-          <img
-            className="rollerskate"
-            src="/images/rollerskate.png"
-            alt="An quad roller skate"
-          />
-          {styles}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <motion.div
+      className={className}
+      initial="flyIn"
+      animate={onHelloPage ? "center" : "flyOut"}
+      exit="flyOut"
+      variants={rightImageVariant}
+    >
+      <img
+        className={`phone ${onHelloPage ? "red" : "blue"}`}
+        src="/images/phone.png"
+        alt="An 80's style mobile phone"
+      />
+      {styles}
+    </motion.div>
+    <motion.div
+      className={className}
+      initial={false}
+      animate={!onHelloPage ? "center" : "flyOut"}
+      exit="flyOut"
+      variants={rightImageVariant}
+    >
+      <img
+        className="rollerskate"
+        src="/images/rollerskate.png"
+        alt="An quad roller skate"
+      />
+      {styles}
+    </motion.div>
     <style jsx>{`
       .phone {
         display: block;
@@ -65,6 +68,7 @@ const RightImage = ({ onHelloPage }) => (
         width: 70%;
         height: auto;
         animation: rotatePhone 50s infinite linear;
+        transition: border 1s;
       }
 
       .rollerskate {
@@ -73,6 +77,16 @@ const RightImage = ({ onHelloPage }) => (
         margin: 25% 0px 0px 50%;
         width: 55%;
         animation: rotateRollerskate 40s infinite linear;
+      }
+
+      .blueFilter {
+        filter: invert(93%) sepia(91%) saturate(6659%) hue-rotate(158deg)
+          brightness(105%) contrast(105%);
+      }
+
+      .greenFilter {
+        filter: invert(88%) sepia(17%) saturate(972%) hue-rotate(39deg)
+          brightness(102%) contrast(106%);
       }
 
       @keyframes rotatePhone {
