@@ -118,7 +118,7 @@ export default function Home() {
           position: absolute;
           display: block;
           border: 1px solid red;
-          bottom: 0px;
+          bottom: 2.5%;
           right: 0;
         }
 

@@ -11,7 +11,7 @@ const PageLink = ({ onHelloPage }) => (
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <>
-          <span className="pageLink">
+          <span className="pageLink blue">
             <motion.div
               className="linkText"
               initial="moveUp"
@@ -28,7 +28,7 @@ const PageLink = ({ onHelloPage }) => (
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
-        <span className="pageLink">
+        <span className="pageLink green">
           <motion.div
             className="linkText"
             initial="moveUp"
@@ -51,7 +51,6 @@ const PageLink = ({ onHelloPage }) => (
         bottom: 90px;
         font-size: 0.9em;
         font-style: italic;
-        color: #8affff;
         cursor: pointer;
       }
 
@@ -59,6 +58,14 @@ const PageLink = ({ onHelloPage }) => (
         position: absolute;
         display: inline;
         z-index: 99;
+      }
+
+      .green {
+        color: #c5ff8a;
+      }
+
+      .blue {
+        color: #8affff;
       }
     `}</style>
   </>
