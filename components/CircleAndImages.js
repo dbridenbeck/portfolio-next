@@ -11,13 +11,27 @@ const CircleAndImages = ({ onHelloPage }) => (
       <Circle onHelloPage={onHelloPage} />
     </div>
     <style jsx>{`
-    .circleAndImages-container {
-      display: block;
-      position: relative;
-      width: 87%;
-      height: 49%;
-      margin: 0 auto;
-    }
+      .circleAndImages-container {
+        display: block;
+        position: relative;
+        width: 360px;
+        height: 360px;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 1270px) {
+        .circleAndImages-container {
+          width: 400px;
+          height: 400px;
+        }
+      }
+      
+      @media screen and (min-width: 1800px) {
+        .circleAndImages-container {
+          width: 600px;
+          height: 600px;
+        }
+      }
     `}</style>
   </>
 );

@@ -1,4 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { css } from "styled-jsx/css";
+
+// control styles fro motion.div's
+const { className, styles } = css.resolve`
+  div {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 5;
+  }
+`;
 
 const rightImageVariant = {
   flyIn: { x: "350px" },
@@ -13,22 +24,25 @@ const rightImageVariant = {
 };
 
 const RightImage = ({ onHelloPage }) => (
-  <div className="right-image-container">
+  <>
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <motion.div
+          className={className}
           initial="flyIn"
           animate="center"
           exit="flyOut"
           variants={rightImageVariant}
         >
           <img className="phone" src="/images/phone.png" alt="An open laptop" />
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
         <motion.div
+          className={className}
           initial="flyIn"
           animate="center"
           exit="flyOut"
@@ -39,20 +53,15 @@ const RightImage = ({ onHelloPage }) => (
             src="/images/rollerskate.png"
             alt="An open laptop"
           />
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
     <style jsx>{`
-      .right-image-container {
-        display: block;
-        position: relative;
-        z-index: 5;
-      }
-
       .phone {
         display: block;
         position: absolute;
-        margin: 80px 0px 0px 200px;
+        margin: 25% 0px 0px 50%;
         width: 70%;
         height: auto;
         animation: rotatePhone 50s infinite linear;
@@ -61,7 +70,7 @@ const RightImage = ({ onHelloPage }) => (
       .rollerskate {
         display: block;
         position: absolute;
-        margin: 80px 0px 0px 200px;
+        margin: 25% 0px 0px 50%;
         width: 55%;
         animation: rotateRollerskate 40s infinite linear;
       }
@@ -95,20 +104,8 @@ const RightImage = ({ onHelloPage }) => (
           transform: translateY(0px) rotate(0deg);
         }
       }
-
-      @media screen and (min-width: 1270px) {
-        .phone {
-          margin: 60px 0px 0px 300px;
-          width: 45%;
-        }
-
-        .rollerskate {
-          margin: 60px 0px 0px 300px;
-          width: 40%;
-        }
-      }
     `}</style>
-  </div>
+  </>
 );
 
 export default RightImage;
