@@ -12,7 +12,6 @@ const { className, styles } = css.resolve`
 `;
 
 const leftImageVariant = {
-  flyIn: { x: "-350px" },
   center: { x: "0px"},
   flyOut: {
     x: "-350px",
@@ -25,42 +24,35 @@ const leftImageVariant = {
 
 const LeftImage = ({ onHelloPage }) => (
   <>
-    <AnimatePresence initial={false}>
-      {onHelloPage && (
-        <motion.div
-          className={className}
-          initial="flyIn"
-          animate="center"
-          exit="flyOut"
-          variants={leftImageVariant}
-        >
-          <img
-            className="computer"
-            src="/images/computer.png"
-            alt="An open laptop"
-          />
-          {styles}
-        </motion.div>
-      )}
-    </AnimatePresence>
-    <AnimatePresence initial={false}>
-      {!onHelloPage && (
-        <motion.div
-          className={className}
-          initial="flyIn"
-          animate="center"
-          exit="flyOut"
-          variants={leftImageVariant}
-        >
-          <img
-            className="pinball"
-            src="/images/pinball.png"
-            alt="An pinball table"
-          />
-          {styles}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <motion.div
+      className={className}
+      initial="flyIn"
+      animate={onHelloPage ? "center" : "flyOut"}
+      exit="flyOut"
+      variants={leftImageVariant}
+    >
+      <img
+        className="computer"
+        src="/images/computer.png"
+        alt="An open laptop"
+      />
+      {styles}
+    </motion.div>
+
+    <motion.div
+      className={className}
+      initial={false}
+      animate={!onHelloPage ? "center" : "flyOut"}
+      exit="flyOut"
+      variants={leftImageVariant}
+    >
+      <img
+        className="pinball"
+        src="/images/pinball.png"
+        alt="An pinball table"
+      />
+      {styles}
+    </motion.div>
     <style jsx>{`
       .computer {
         display: block;
