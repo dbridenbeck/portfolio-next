@@ -98,6 +98,18 @@ const LeftImage = ({ onHelloPage }) => (
           transform: translateY(0px) rotate(0deg);
         }
       }
+
+      @media screen and (min-width: 1270px) {
+        .computer {
+          margin: 50px 0 0 100px;
+          width: 40%;
+        }
+
+        .pinball {
+          margin: 80px 0 0 100px;
+          width: 40%;
+        }
+      }
     `}</style>
   </div>
 );

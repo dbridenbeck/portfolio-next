@@ -95,6 +95,18 @@ const RightImage = ({ onHelloPage }) => (
           transform: translateY(0px) rotate(0deg);
         }
       }
+
+      @media screen and (min-width: 1270px) {
+        .phone {
+          margin: 60px 0px 0px 300px;
+          width: 45%;
+        }
+
+        .rollerskate {
+          margin: 60px 0px 0px 300px;
+          width: 40%;
+        }
+      }
     `}</style>
   </div>
 );

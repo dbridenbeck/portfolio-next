@@ -3,9 +3,8 @@ import { useState } from 'react';
 import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
 import TitleText from '../components/TitleText';
-import Circle from '../components/Circle';
-import LeftImage from '../components/LeftImage';
-import RightImage from '../components/RightImage';
+
+import CircleAndImages from '../components/CircleAndImages';
 
 export default function Home() {
 
@@ -62,15 +61,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
         <TitleText
           text={text.onHelloPage ? "HELLO" : "ABOUT"}
           onHelloPage={text.onHelloPage}
         />
-
-        <LeftImage onHelloPage={text.onHelloPage} />
-        <RightImage onHelloPage={text.onHelloPage} />
-        <Circle onHelloPage={text.onHelloPage} />
+        <CircleAndImages onHelloPage={text.onHelloPage} />
         <p
           className={`info-text ${
             text.onHelloPage && text.pageClickedOnce
@@ -91,9 +86,8 @@ export default function Home() {
             onHelloPage={text.onHelloPage}
           />
         </div>
-      </main>
-
       <style jsx>{`
+        
         .container {
           display: block;
           position: relative;
@@ -128,64 +122,6 @@ export default function Home() {
 
         .whiteFlareAgain {
           animation: flare-text-white-again 0.5s ease-in-out;
-        }
-
-        .computer {
-          display: block;
-          position: absolute;
-          left: -2%;
-          top: 10%;
-          width: 55%;
-          animation: rotateCW 100s infinite;
-          z-index: 2;
-        }
-
-        .phone {
-          display: block;
-          position: absolute;
-          right: -17%;
-          top: 7.5%;
-          width: 70%;
-          animation: rotateCCW 120s infinite;
-          z-index: 2;
-        }
-
-        .green {
-          background-color: #c5ff8a;
-        }
-
-        .blue {
-          background-color: #8affff;
-        }
-
-        @keyframes rotateCW {
-          0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          15% {
-            transform: rotate(-5deg);
-          }
-          50% {
-            transform: translateY(60px) rotate(45deg);
-          }
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-        }
-
-        @keyframes rotateCCW {
-          0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-120px) rotate(-45deg);
-          }
-          80% {
-            transform: translateY(60px) rotate(5deg);
-          }
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
         }
 
         @media screen and (min-width: 1270px) {
