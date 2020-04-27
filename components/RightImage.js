@@ -34,7 +34,7 @@ const RightImage = ({ onHelloPage }) => (
           exit="flyOut"
           variants={rightImageVariant}
         >
-          <img className="phone" src="/images/phone.png" alt="An open laptop" />
+          <img className="phone" src="/images/phone.png" alt="An 80's style mobile phone" />
           {styles}
         </motion.div>
       )}
@@ -51,7 +51,7 @@ const RightImage = ({ onHelloPage }) => (
           <img
             className="rollerskate"
             src="/images/rollerskate.png"
-            alt="An open laptop"
+            alt="An quad roller skate"
           />
           {styles}
         </motion.div>

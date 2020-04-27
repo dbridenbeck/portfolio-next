@@ -18,23 +18,27 @@ const circleVariants = {
   about: { scale: [null, .95, 1.05, .975, 1.025, .985, 1] },
 };
 
-const Circle = ({ onHelloPage }) => {
-
+const Circle = ({ onHelloPage, pageClickedOnce }) => {
   return (
     <>
+    {/* animate ternary ensures that circle doesn't animate on init load */}
       <motion.div
         className={className}
-        animate={onHelloPage ? "hello" : "about"}
-        exit="large"
+        initial={false}
+        animate={
+          onHelloPage && pageClickedOnce
+            ? "hello"
+            : !onHelloPage && pageClickedOnce
+            ? "about"
+            : null
+        }
         transition={{ ease: "easeInOut", timing: [0, 0.6, 0.8, 0.8, 0.9, 1] }}
         variants={circleVariants}
       >
-            <div className={`circle ${onHelloPage ? "green" : "blue"}`}></div>
-        {/* {styles} allows styling of motion.div */}
+        <div className={`circle ${onHelloPage ? "green" : "blue"}`}></div>
         {styles}
       </motion.div>
       <style jsx>{`
-       
         .circle {
           position: relative;
           display: block;
@@ -55,7 +59,7 @@ const Circle = ({ onHelloPage }) => {
         }
       `}</style>
     </>
-  )
+  );
 };
 
 export default Circle;

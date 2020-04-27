@@ -8,6 +8,7 @@ import CircleAndImages from '../components/CircleAndImages';
 
 export default function Home() {
 
+  // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [text, updateText] = useState({
     onHelloPage: true,
     indexToSelect: 0,
@@ -45,6 +46,7 @@ export default function Home() {
     pageClickedOnce: false,
   });
 
+  // control which content to show from text's state pageClickedOnce prevents animations from firing on initial load
   const togglePage = () => {
     updateText({
       ...text, 
@@ -65,7 +67,7 @@ export default function Home() {
         text={text.onHelloPage ? "HELLO" : "ABOUT"}
         onHelloPage={text.onHelloPage}
       />
-      <CircleAndImages onHelloPage={text.onHelloPage} />
+      <CircleAndImages onHelloPage={text.onHelloPage} pageClickedOnce={text.pageClickedOnce} />
       <p
         className={`info-text ${
           text.onHelloPage && text.pageClickedOnce

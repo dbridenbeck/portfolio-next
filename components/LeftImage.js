@@ -24,7 +24,7 @@ const leftImageVariant = {
 };
 
 const LeftImage = ({ onHelloPage }) => (
-  <div className="left-image-container">
+  <>
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <motion.div
@@ -55,7 +55,7 @@ const LeftImage = ({ onHelloPage }) => (
           <img
             className="pinball"
             src="/images/pinball.png"
-            alt="An open laptop"
+            alt="An pinball table"
           />
           {styles}
         </motion.div>
@@ -108,7 +108,7 @@ const LeftImage = ({ onHelloPage }) => (
         }
       }
     `}</style>
-  </div>
+  </>
 );
 
 export default LeftImage;

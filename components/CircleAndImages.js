@@ -3,12 +3,12 @@ import Circle from "../components/Circle";
 import LeftImage from "../components/LeftImage";
 import RightImage from "../components/RightImage";
 
-const CircleAndImages = ({ onHelloPage }) => (
+const CircleAndImages = ({ onHelloPage, pageClickedOnce }) => (
   <>
     <div className="circleAndImages-container">
       <LeftImage onHelloPage={onHelloPage} />
       <RightImage onHelloPage={onHelloPage} />
-      <Circle onHelloPage={onHelloPage} />
+      <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />
     </div>
     <style jsx>{`
       .circleAndImages-container {
