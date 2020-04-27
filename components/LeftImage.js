@@ -1,4 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { css } from "styled-jsx/css";
+
+// control styles fro motion.div's
+const { className, styles } = css.resolve`
+  div {
+    display: block;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+  }
+`;
 
 const leftImageVariant = {
   flyIn: { x: "-350px" },
@@ -17,6 +28,7 @@ const LeftImage = ({ onHelloPage }) => (
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <motion.div
+          className={className}
           initial="flyIn"
           animate="center"
           exit="flyOut"
@@ -27,12 +39,14 @@ const LeftImage = ({ onHelloPage }) => (
             src="/images/computer.png"
             alt="An open laptop"
           />
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
         <motion.div
+          className={className}
           initial="flyIn"
           animate="center"
           exit="flyOut"
@@ -43,20 +57,15 @@ const LeftImage = ({ onHelloPage }) => (
             src="/images/pinball.png"
             alt="An open laptop"
           />
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
     <style jsx>{`
-      .left-image-container {
-        display: block;
-        position: relative;
-        z-index: 5;
-      }
-
       .computer {
         display: block;
         position: absolute;
-        margin: 80px 0 0 0;
+        margin: 25% 0 0 0;
         width: 55%;
         animation: rotateComputer 50s infinite linear;
       }
@@ -64,7 +73,7 @@ const LeftImage = ({ onHelloPage }) => (
       .pinball {
         display: block;
         position: absolute;
-        margin: 80px 0 0 0;
+        margin: 25% 0 0 0;
         width: 55%;
         animation: rotatePinball 40s infinite linear;
       }
@@ -96,18 +105,6 @@ const LeftImage = ({ onHelloPage }) => (
         }
         100% {
           transform: translateY(0px) rotate(0deg);
-        }
-      }
-
-      @media screen and (min-width: 1270px) {
-        .computer {
-          margin: 50px 0 0 100px;
-          width: 40%;
-        }
-
-        .pinball {
-          margin: 80px 0 0 100px;
-          width: 40%;
         }
       }
     `}</style>
