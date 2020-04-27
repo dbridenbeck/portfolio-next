@@ -61,38 +61,38 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <TitleText
-          text={text.onHelloPage ? "HELLO" : "ABOUT"}
+      <TitleText
+        text={text.onHelloPage ? "HELLO" : "ABOUT"}
+        onHelloPage={text.onHelloPage}
+      />
+      <CircleAndImages onHelloPage={text.onHelloPage} />
+      <p
+        className={`info-text ${
+          text.onHelloPage && text.pageClickedOnce
+            ? `whiteFlare`
+            : !text.onHelloPage && text.pageClickedOnce
+            ? `whiteFlareAgain`
+            : null
+        }`}
+        dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
+      ></p>
+      <div className="link-container" onClick={() => togglePage()}>
+        <PageLink
+          text={text.onHelloPage ? "about" : "hello"}
           onHelloPage={text.onHelloPage}
         />
-        <CircleAndImages onHelloPage={text.onHelloPage} />
-        <p
-          className={`info-text ${
-            text.onHelloPage && text.pageClickedOnce
-              ? `whiteFlare`
-              : !text.onHelloPage && text.pageClickedOnce
-              ? `whiteFlareAgain`
-              : null
-          }`}
-          dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
-        ></p>
-        <div className="link-container" onClick={() => togglePage()}>
-          <PageLink
-            text={text.onHelloPage ? "about" : "hello"}
-            onHelloPage={text.onHelloPage}
-          />
-          <PageArrow
-            text={text.onHelloPage ? "about" : "hello"}
-            onHelloPage={text.onHelloPage}
-          />
-        </div>
+        <PageArrow
+          text={text.onHelloPage ? "about" : "hello"}
+          onHelloPage={text.onHelloPage}
+        />
+      </div>
       <style jsx>{`
-        
         .container {
           display: block;
           position: relative;
           margin: 0 auto;
           height: 100vh;
+          max-width: 650px;
           color: white;
         }
 
@@ -111,9 +111,9 @@ export default function Home() {
         .link-container {
           position: absolute;
           display: block;
-          border: 1px solid red;
-          bottom: 2.5%;
+          bottom: 0;
           right: 0;
+          font-size: .8em;
         }
 
         .whiteFlare {
@@ -131,6 +131,12 @@ export default function Home() {
 
           .title {
             margin: 5%;
+          }
+        }
+        
+        @media screen and (min-width: 1800px) {
+          .link-container {
+            bottom: 20px;
           }
         }
 

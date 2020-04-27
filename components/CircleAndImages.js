@@ -21,8 +21,8 @@ const CircleAndImages = ({ onHelloPage }) => (
 
       @media screen and (min-width: 1270px) {
         .circleAndImages-container {
-          width: 400px;
-          height: 400px;
+          width: 360px;
+          height: 360px;
         }
       }
       
