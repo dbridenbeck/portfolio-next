@@ -1,13 +1,11 @@
-import { motion, AnimatePresence } from "framer-motion";
 import Circle from "../components/Circle";
-import LeftImage from "../components/LeftImage";
-import RightImage from "../components/RightImage";
+import Images from "../components/Images";
 
 const CircleAndImages = ({ onHelloPage, pageClickedOnce }) => (
   <>
     <div className="circleAndImages-container">
-      <LeftImage onHelloPage={onHelloPage} />
-      <RightImage onHelloPage={onHelloPage} />
+      <Images leftOriented={true} onHelloPage={onHelloPage} />
+      <Images leftOriented={false} onHelloPage={onHelloPage} />
       <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />
     </div>
     <style jsx>{`

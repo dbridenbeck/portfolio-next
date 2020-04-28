@@ -11,7 +11,7 @@ const PageArrow = ({ onHelloPage }) => (
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <>
-          <span className="arrow blue">
+          <span className="arrow red">
             <motion.div
               initial="moveUp"
               animate="center"
@@ -27,7 +27,7 @@ const PageArrow = ({ onHelloPage }) => (
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
-        <span className="arrow green">
+        <span className="arrow blue">
           <motion.div
             initial="moveUp"
             animate="center"
@@ -51,14 +51,6 @@ const PageArrow = ({ onHelloPage }) => (
         font-size: 0.9em;
         font-style: italic;
         cursor: pointer;
-      }
-      
-      .green {
-        color: #c5ff8a;
-      }
-
-      .blue {
-        color: #8affff;
       }
     `}</style>
   </>

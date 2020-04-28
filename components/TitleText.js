@@ -1,4 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { css } from "styled-jsx/css";
+import Head from 'next/head';
+
+// control styles for motion.div's
+const { className, styles } = css.resolve`
+  div {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+`;
 
 const variants = {
   moveUp: { opacity: 0, y: "0px", x: "-100px" },
@@ -8,29 +20,39 @@ const variants = {
 
 const TitleText = ({ text, onHelloPage }) => (
   <>
+    <Head>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
+        rel="stylesheet"
+      />
+    </Head>
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <motion.div
+          className={className}
           initial="moveUp"
           animate="center"
           exit="moveRight"
           transition={{ duration: 1 }}
           variants={variants}
         >
-          <h1 className="title">{text}</h1>
+          <h1 className="title blue">{text}</h1>
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
         <motion.div
+          className={className}
           initial="moveUp"
           animate="center"
           exit="moveRight"
           transition={{ duration: 1 }}
           variants={variants}
         >
-          <h1 className="title">{text}</h1>
+          <h1 className="title red">{text}</h1>
+          {styles}
         </motion.div>
       )}
     </AnimatePresence>
@@ -38,9 +60,16 @@ const TitleText = ({ text, onHelloPage }) => (
     <style jsx>{`
       .title {
         position: absolute;
-        font-size: 1em;
-        font-weight: 300;
-        margin: -5% 0 0 10%;
+        font-family: "Crimson Text", serif;
+        font-size: 4em;
+        font-weight: 200;
+        margin: -8% 0 0 5%;
+      }
+
+      @media screen and (min-width: 1270px) {
+        .title {
+          font-size: 6em;
+        }
       }
     `}</style>
   </>
