@@ -1,16 +1,16 @@
 const PhoneImage = ({ onHelloPage }) => (
   <>
     <img
-      className={`phone ${onHelloPage ? null : "redFilter"}`}
-      src="/images/rollerskate.png"
+      className={`phone ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      src="/images/phone.png"
       alt="An 80's style mobile phone"
     />
     <style jsx>{`
       .phone {
         display: block;
         position: absolute;
-        margin: 25% 0px 0px 50%;
-        width: 70%;
+        margin: 25% 0px 0px 60%;
+        width: 35%;
         height: auto;
         animation: rotatePhone 90s infinite linear;
         animation-delay: 300ms;

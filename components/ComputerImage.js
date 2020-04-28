@@ -1,8 +1,8 @@
 const ComputerImage = ({ onHelloPage }) => (
   <>
     <img
-      className={`computer ${onHelloPage ? null : "redFilter"}`}
-      src="/images/pinball.png"
+      className={`computer ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      src="/images/computer.png"
       alt="An open laptop"
     />
     <style jsx>{`
