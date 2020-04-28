@@ -9,7 +9,7 @@ const PinballImage = ({ onHelloPage }) => (
       .pinball {
         display: block;
         position: absolute;
-        margin: 25% 0 0 -5%;
+        margin: 25% 0 0 5%;
         width: 40%;
         animation: rotatePinball 80s infinite linear;
         animation-delay: 100ms;

@@ -48,7 +48,6 @@ const PageLink = ({ onHelloPage }) => (
         position: absolute;
         display: block;
         right: 60px;
-        bottom: 90px;
         font-size: 0.9em;
         font-style: italic;
         cursor: pointer;

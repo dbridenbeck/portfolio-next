@@ -121,7 +121,7 @@ export default function Home() {
         .link-container {
           position: absolute;
           display: block;
-          bottom: -10px;
+          bottom: 12.5%;
           right: 0;
           font-size: 0.85em;
         }
@@ -134,19 +134,15 @@ export default function Home() {
           animation: flare-text-white-again 0.5s ease-in-out;
         }
 
-        @media screen and (min-width: 1270px) {
-          .container {
-            max-width: 650px;
-          }
-
-          .title {
-            margin: 5%;
+        @media screen and (min-width: 600px) {
+          .link-container {
+            margin-top: 35%;
           }
         }
 
-        @media screen and (min-width: 1800px) {
-          .link-container {
-            bottom: 20px;
+        @media screen and (min-width: 1270px) {
+          .title {
+            margin: 5%;
           }
         }
 
