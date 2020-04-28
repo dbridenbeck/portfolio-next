@@ -61,13 +61,20 @@ export default function Home() {
       <Head>
         <title>Hi, it's Darren!</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <TitleText
         text={text.onHelloPage ? "HELLO" : "ABOUT"}
         onHelloPage={text.onHelloPage}
       />
-      <CircleAndImages onHelloPage={text.onHelloPage} pageClickedOnce={text.pageClickedOnce} />
+      <CircleAndImages
+        onHelloPage={text.onHelloPage}
+        pageClickedOnce={text.pageClickedOnce}
+      />
       <p
         className={`info-text ${
           text.onHelloPage && text.pageClickedOnce
@@ -103,9 +110,10 @@ export default function Home() {
           left: 0;
           right: 0;
           margin: 20px auto 0 auto;
-          font-size: 0.9rem;
-          line-height: 1.325em;
-          font-weight: 300;
+          font-family: "Muli", sans-serif;
+          font-size: 0.925em;
+          font-weight: 400;
+          line-height: 1.5em;
           width: 85%;
           color: #d4d4e4;
         }
@@ -113,9 +121,9 @@ export default function Home() {
         .link-container {
           position: absolute;
           display: block;
-          bottom: 0;
+          bottom: -10px;
           right: 0;
-          font-size: .8em;
+          font-size: 0.85em;
         }
 
         .whiteFlare {
@@ -135,7 +143,7 @@ export default function Home() {
             margin: 5%;
           }
         }
-        
+
         @media screen and (min-width: 1800px) {
           .link-container {
             bottom: 20px;
@@ -185,6 +193,24 @@ export default function Home() {
 
         * {
           box-sizing: border-box;
+        }
+
+        .blue {
+          color: #3bc9d1;
+        }
+
+        .red {
+          color: #d13b40;
+        }
+
+        .blueFilter {
+          filter: invert(70%) sepia(34%) saturate(803%) hue-rotate(134deg)
+            brightness(95%) contrast(83%);
+        }
+
+        .redFilter {
+          filter: invert(15%) sepia(100%) saturate(2397%) hue-rotate(343deg)
+            brightness(99%) contrast(80%);
         }
       `}</style>
     </div>

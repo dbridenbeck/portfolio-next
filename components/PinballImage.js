@@ -1,7 +1,7 @@
 const PinballImage = ({ onHelloPage }) => (
   <>
     <img
-      className={`pinball ${onHelloPage ? "greenFilter" : null}`}
+      className={`pinball ${onHelloPage ? "blueFilter" : null}`}
       src="/images/pinball.png"
       alt="An pinball table"
     />
@@ -9,20 +9,12 @@ const PinballImage = ({ onHelloPage }) => (
       .pinball {
         display: block;
         position: absolute;
-        margin: 25% 0 0 0;
+        margin: 25% 0 0 -5%;
         width: 55%;
-        animation: rotatePinball 40s infinite linear;
+        animation: rotatePinball 80s infinite linear;
+        animation-delay: 100ms;
         transition: filter 0.5s;
-      }
-
-      .blueFilter {
-        filter: invert(93%) sepia(91%) saturate(6659%) hue-rotate(158deg)
-          brightness(105%) contrast(105%);
-      }
-
-      .greenFilter {
-        filter: invert(88%) sepia(17%) saturate(972%) hue-rotate(39deg)
-          brightness(102%) contrast(106%);
+        -webkit-transform: rotateZ(360deg);
       }
 
       @keyframes rotatePinball {
@@ -30,10 +22,7 @@ const PinballImage = ({ onHelloPage }) => (
           transform: translateY(0px) rotate(0deg);
         }
         35% {
-          transform: translateY(-80px) rotate(40deg);
-        }
-        65% {
-          transform: translateY(60px) rotate(-10deg);
+          transform: translateY(-90px) rotate(40deg);
         }
         100% {
           transform: translateY(0px) rotate(0deg);
