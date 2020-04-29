@@ -8,7 +8,8 @@ const { className, styles } = css.resolve`
     display: block;
     position: relative;
     z-index: 1;
-    width: 100%;
+    padding: 0;
+    margin: 0;
   }
 `;
 
@@ -63,7 +64,9 @@ const TitleText = ({ text, onHelloPage }) => (
         font-family: "Crimson Text", serif;
         font-size: 4em;
         font-weight: 200;
-        margin: -8% 0 0 5%;
+        margin: -2.5% 0 0 5%;
+        padding: 0;
+        line-height: 1em;
       }
 
       @media screen and (min-width: 1270px) {
