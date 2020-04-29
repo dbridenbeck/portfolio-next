@@ -14,17 +14,24 @@ const CircleAndImages = ({ onHelloPage, pageClickedOnce }) => (
         position: relative;
         width: 360px;
         height: 360px;
-        margin: 2.5% auto 0 auto;
+        margin: 0 auto;
       }
 
       @media screen and (min-width: 1270px) {
         .circleAndImages-container {
-          width: 400px;
-          height: 400px;
+          width: 360px;
+          height: 360px;
+        }
+      }
+      
+      @media screen and (min-width: 1400px) {
+        .circleAndImages-container {
+          width: 600px;
+          height: 600px;
         }
       }
 
-      @media screen and (min-width: 1400px) {
+      @media screen and (min-width: 1800px) {
         .circleAndImages-container {
           width: 600px;
           height: 600px;

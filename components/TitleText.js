@@ -64,7 +64,7 @@ const TitleText = ({ text, onHelloPage }) => (
         font-family: "Crimson Text", serif;
         font-size: 4em;
         font-weight: 200;
-        margin: -2.5% 0 0 5%;
+        margin: -5% 0 0 5%;
         padding: 0;
         line-height: 1em;
       }
