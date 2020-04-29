@@ -46,7 +46,6 @@ const PageArrow = ({ onHelloPage }) => (
         position: absolute;
         display: block;
         right: 30px;
-        bottom: 90px;
         width: 25px;
         font-size: 0.9em;
         font-style: italic;

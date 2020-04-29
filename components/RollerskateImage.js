@@ -1,7 +1,7 @@
 const RollerskateImage = ({ onHelloPage }) => (
   <>
     <img
-      className={`rollerskate ${onHelloPage ? "blueFilter" : null}`}
+      className={`rollerskate ${onHelloPage ? "blueFilter" : "redFilter"}`}
       src="/images/rollerskate.png"
       alt="A quad roller skate"
     />
@@ -10,7 +10,7 @@ const RollerskateImage = ({ onHelloPage }) => (
         display: block;
         position: absolute;
         margin: 25% 0px 0px 50%;
-        width: 55%;
+        width: 45%;
         animation: rotateRollerskate 80s infinite linear;
         animation-delay: 400ms;
         transition: filter 0.5s;

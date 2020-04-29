@@ -1,7 +1,7 @@
 const PinballImage = ({ onHelloPage }) => (
   <>
     <img
-      className={`pinball ${onHelloPage ? "blueFilter" : null}`}
+      className={`pinball ${onHelloPage ? "blueFilter" : "redFilter"}`}
       src="/images/pinball.png"
       alt="An pinball table"
     />
@@ -9,8 +9,8 @@ const PinballImage = ({ onHelloPage }) => (
       .pinball {
         display: block;
         position: absolute;
-        margin: 25% 0 0 -5%;
-        width: 55%;
+        margin: 25% 0 0 5%;
+        width: 40%;
         animation: rotatePinball 80s infinite linear;
         animation-delay: 100ms;
         transition: filter 0.5s;
