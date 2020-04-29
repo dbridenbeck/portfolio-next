@@ -144,6 +144,7 @@ export default function Home() {
           }
           .info-text {
             width: 80%;
+            margin: 0 auto;
           }
         }
 
