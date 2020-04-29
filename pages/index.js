@@ -78,7 +78,6 @@ export default function Home() {
           <link rel="preload" as="image" href="/images/pinball.png" />
           <link rel="preload" as="image" href="/images/phone.png" />
           <link rel="preload" as="image" href="/images/rollerskate.png" />
-
         </Head>
 
         <TitleText
@@ -129,7 +128,7 @@ export default function Home() {
           right: 0;
           margin: -10px auto 0 auto;
           font-family: "Muli", sans-serif;
-          font-size: 0.875em;
+          font-size: 0.75em;
           font-weight: 400;
           line-height: 1.5em;
           width: 95%;
@@ -167,6 +166,7 @@ export default function Home() {
           .info-text {
             width: 80%;
             margin: 0 auto;
+            font-size: 0.875em;
           }
         }
 
