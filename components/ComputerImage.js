@@ -1,10 +1,20 @@
 const ComputerImage = ({ onHelloPage }) => (
   <>
-    <img
-      className={`computer ${onHelloPage ? "blueFilter" : "redFilter"}`}
-      src="/images/computer.png"
-      alt="An open laptop"
-    />
+    <picture>
+      <source
+        srcSet={require("../public/images/computer.png?webp")}
+        type="image/webp"
+      />
+      <source
+        srcSet={require("../public/images/computer.png")}
+        type="image/png"
+      />
+      <img
+        className={`computer ${onHelloPage ? "blueFilter" : "redFilter"}`}
+        srcSet={require("../public/images/computer.png")}
+        alt="An open laptop"
+      />
+    </picture>
     <style jsx>{`
       .computer {
         display: block;

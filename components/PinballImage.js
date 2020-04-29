@@ -1,10 +1,20 @@
 const PinballImage = ({ onHelloPage }) => (
   <>
-    <img
-      className={`pinball ${onHelloPage ? "blueFilter" : "redFilter"}`}
-      src="/images/pinball.png"
-      alt="An pinball table"
-    />
+    <picture>
+      <source
+        srcSet={require("../public/images/pinball.png?webp")}
+        type="image/webp"
+      />
+      <source
+        srcSet={require("../public/images/pinball.png")}
+        type="image/png"
+      />
+      <img
+        className={`pinball ${onHelloPage ? "blueFilter" : "redFilter"}`}
+        srcSet={require("../public/images/pinball.png")}
+        alt="A pinball table"
+      />
+    </picture>
     <style jsx>{`
       .pinball {
         display: block;
