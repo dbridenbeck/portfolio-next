@@ -1,10 +1,22 @@
+import React from 'react';
+
 const RollerskateImage = ({ onHelloPage }) => (
   <>
-    <img
-      className={`rollerskate ${onHelloPage ? "blueFilter" : "redFilter"}`}
-      src="/images/rollerskate.png"
-      alt="A quad roller skate"
-    />
+    <picture>
+      <source
+        srcSet={require("../public/images/rollerskate.png?webp")}
+        type="image/webp"
+      />
+      <source
+        srcSet={require("../public/images/rollerskate.png")}
+        type="image/jpeg"
+      />
+      <img
+        className={`rollerskate ${onHelloPage ? "blueFilter" : "redFilter"}`}
+        src={require("../public/images/rollerskate.png")}
+        alt="A quad rollerskate"
+      />
+    </picture>
     <style jsx>{`
       .rollerskate {
         display: block;
