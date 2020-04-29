@@ -21,8 +21,8 @@ export default function Home() {
           designing and wireframing to getting code on servers so users can see
           their stuff. I recently expanded my skills with React, Redux, Node.js,
           MongoDB, and other fun things.</p>
-          <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
-          you’d like to work together.
+          <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
+          you’d like to work together. </p>
           <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
         `,
       },
@@ -67,7 +67,7 @@ export default function Home() {
           onHelloPage={text.onHelloPage}
           pageClickedOnce={text.pageClickedOnce}
         />
-        <p
+        <div
           className={`info-text ${
             text.onHelloPage && text.pageClickedOnce
               ? `whiteFlare`
@@ -76,7 +76,7 @@ export default function Home() {
               : null
           }`}
           dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
-        ></p>
+        ></div>
         {/* push is used to create a sticky footer for link-container to sit on */}
         <div className="push" />
       </div>
@@ -105,7 +105,7 @@ export default function Home() {
           position: absolute;
           left: 0;
           right: 0;
-          margin: 0% auto;
+          margin: -10px auto 0 auto;
           font-family: "Muli", sans-serif;
           font-size: 0.875em;
           font-weight: 400;
