@@ -104,7 +104,7 @@ export default function Home() {
           display: block;
           position: relative;
           margin: 0 auto -30px auto;
-          padding: 2em 0 0 0;
+          padding: 1em 0 0 0;
           height: 100%;
           max-width: 650px;
           color: white;
@@ -145,6 +145,12 @@ export default function Home() {
 
         .whiteFlareAgain {
           animation: flare-text-white-again 0.5s ease-in-out;
+        }
+
+        @media screen and (min-width: 1270px) {
+          .container {
+            padding: 2em 0 0 0;
+          }
         }
 
         @keyframes flare-text-white {
