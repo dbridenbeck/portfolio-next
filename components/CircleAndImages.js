@@ -14,6 +14,8 @@ const CircleAndImages = ({ onHelloPage, pageClickedOnce }) => (
         position: relative;
         width: 360px;
         height: 360px;
+        max-width: 50vh;
+        max-height: 50vh;
         margin: 0 auto;
       }
 
@@ -23,7 +25,7 @@ const CircleAndImages = ({ onHelloPage, pageClickedOnce }) => (
           height: 400px;
         }
       }
-      
+
       @media screen and (min-width: 1400px) {
         .circleAndImages-container {
           width: 600px;
