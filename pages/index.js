@@ -57,34 +57,38 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
-      <Head>
-        <title>Hi, it's Darren!</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <>
+      <div className="container">
+        <Head>
+          <title>Hi, it's Darren!</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
 
-      <TitleText
-        text={text.onHelloPage ? "HELLO" : "ABOUT"}
-        onHelloPage={text.onHelloPage}
-      />
-      <CircleAndImages
-        onHelloPage={text.onHelloPage}
-        pageClickedOnce={text.pageClickedOnce}
-      />
-      <p
-        className={`info-text ${
-          text.onHelloPage && text.pageClickedOnce
-            ? `whiteFlare`
-            : !text.onHelloPage && text.pageClickedOnce
-            ? `whiteFlareAgain`
-            : null
-        }`}
-        dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
-      ></p>
+        <TitleText
+          text={text.onHelloPage ? "HELLO" : "ABOUT"}
+          onHelloPage={text.onHelloPage}
+        />
+        <CircleAndImages
+          onHelloPage={text.onHelloPage}
+          pageClickedOnce={text.pageClickedOnce}
+        />
+        <p
+          className={`info-text ${
+            text.onHelloPage && text.pageClickedOnce
+              ? `whiteFlare`
+              : !text.onHelloPage && text.pageClickedOnce
+              ? `whiteFlareAgain`
+              : null
+          }`}
+          dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
+        ></p>
+        {/* push is used to create a sticky footer for link-container to sit on */}
+        <div className="push" />
+      </div>
       <div className="link-container" onClick={() => togglePage()}>
         <PageLink
           text={text.onHelloPage ? "about" : "hello"}
@@ -99,8 +103,9 @@ export default function Home() {
         .container {
           display: block;
           position: relative;
-          margin: 0 auto;
-          height: 100vh;
+          margin: 0 auto -30px auto;
+          padding: 2em 0 0 0;
+          height: 100%;
           max-width: 650px;
           color: white;
         }
@@ -109,9 +114,9 @@ export default function Home() {
           position: absolute;
           left: 0;
           right: 0;
-          margin: 20px auto 0 auto;
+          margin: 2.5% auto 0 auto;
           font-family: "Muli", sans-serif;
-          font-size: 0.925em;
+          font-size: 0.875em;
           font-weight: 400;
           line-height: 1.5em;
           width: 85%;
@@ -119,11 +124,19 @@ export default function Home() {
         }
 
         .link-container {
-          position: absolute;
+          position: relative;
           display: block;
-          bottom: 12.5%;
+          bottom: 0px;
+          margin: 0 auto;
+          left: 0;
           right: 0;
+          max-width: 650px;
+          height: 30px;
           font-size: 0.85em;
+        }
+
+        .push {
+          height: 30px;
         }
 
         .whiteFlare {
@@ -132,18 +145,6 @@ export default function Home() {
 
         .whiteFlareAgain {
           animation: flare-text-white-again 0.5s ease-in-out;
-        }
-
-        @media screen and (min-width: 600px) {
-          .link-container {
-            margin-top: 35%;
-          }
-        }
-
-        @media screen and (min-width: 1270px) {
-          .title {
-            margin: 5%;
-          }
         }
 
         @keyframes flare-text-white {
@@ -172,6 +173,7 @@ export default function Home() {
       `}</style>
 
       <style jsx global>{`
+        #__next,
         html,
         body {
           padding: 0;
@@ -181,6 +183,7 @@ export default function Home() {
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
           overflow: hidden;
+          height: 100%;
         }
         a {
           color: #8affff;
@@ -209,6 +212,6 @@ export default function Home() {
             brightness(99%) contrast(80%);
         }
       `}</style>
-    </div>
+    </>
   );
 }

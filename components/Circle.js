@@ -8,7 +8,7 @@ const { className, styles } = css.resolve`
     display: block;
     height: 100%;
     width: 100%;
-    margin: 15% auto 0 auto;
+    margin: 0 auto;
   }
 `;
 
