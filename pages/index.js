@@ -74,6 +74,11 @@ export default function Home() {
             href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
             rel="stylesheet"
           />
+          <link rel="preload" as="image" href="/images/computer.png" />
+          <link rel="preload" as="image" href="/images/pinball.png" />
+          <link rel="preload" as="image" href="/images/phone.png" />
+          <link rel="preload" as="image" href="/images/rollerskate.png" />
+
         </Head>
 
         <TitleText
