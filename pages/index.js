@@ -16,29 +16,20 @@ export default function Home() {
     infoText: [
       {
         __html: `
-          My name is Darren and I’m a web developer.
-          <br />
-          <br />
-          I have been helping people build websites for over ten years, from
+          <p>My name is Darren and I’m a web developer.</p>
+          <p>I have been helping people build websites for over ten years, from
           designing and wireframing to getting code on servers so users can see
           their stuff. I recently expanded my skills with React, Redux, Node.js,
-          MongoDB, and other fun things.
-          <br />
-          <br />
+          MongoDB, and other fun things.</p>
           <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
           you’d like to work together.
-          <br />
-          <br />
-          Check out my latest project for
-          <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.
+          <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
         `,
       },
       {
         __html: `
-          Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer.
-          <br />
-          <br />
-          When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating, 
+          <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
+          <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
         `,
       },
     ],
@@ -114,12 +105,12 @@ export default function Home() {
           position: absolute;
           left: 0;
           right: 0;
-          margin: 2.5% auto 0 auto;
+          margin: 0% auto;
           font-family: "Muli", sans-serif;
           font-size: 0.875em;
           font-weight: 400;
           line-height: 1.5em;
-          width: 85%;
+          width: 95%;
           color: #d4d4e4;
         }
 
@@ -150,6 +141,9 @@ export default function Home() {
         @media screen and (min-width: 1270px) {
           .container {
             padding: 2em 0 0 0;
+          }
+          .info-text {
+            width: 80%;
           }
         }
 
