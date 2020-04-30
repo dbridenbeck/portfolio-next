@@ -2,10 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react';
 import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
-import TitleText from '../components/TitleText';
 import TitleCircleImages from '../components/TitleCircleImages';
-
-import CircleAndImages from '../components/CircleAndImages';
 
 export default function Home() {
 
@@ -74,10 +71,6 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
           rel="stylesheet"
         />
-        <link rel="preload" as="image" href="/images/computer.png" />
-        <link rel="preload" as="image" href="/images/pinball.png" />
-        <link rel="preload" as="image" href="/images/phone.png" />
-        <link rel="preload" as="image" href="/images/rollerskate.png" />
       </Head>
       <div className="container">
         <TitleCircleImages 
