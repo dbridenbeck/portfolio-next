@@ -19,7 +19,7 @@ const variants = {
   moveRight: { opacity: 0, y: "-100px", x: "0px" },
 };
 
-const TitleText = ({ text, onHelloPage }) => (
+const TitleText = ({ titleText, onHelloPage }) => (
   <>
     <Head>
       <link
@@ -37,7 +37,7 @@ const TitleText = ({ text, onHelloPage }) => (
           transition={{ duration: 1 }}
           variants={variants}
         >
-          <h1 className="title blue">{text}</h1>
+          <h1 className="title blue">{titleText}</h1>
           {styles}
         </motion.div>
       )}
@@ -52,7 +52,7 @@ const TitleText = ({ text, onHelloPage }) => (
           transition={{ duration: 1 }}
           variants={variants}
         >
-          <h1 className="title red">{text}</h1>
+          <h1 className="title red">{titleText}</h1>
           {styles}
         </motion.div>
       )}

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
 import TitleText from '../components/TitleText';
+import TitleCircleImages from '../components/TitleCircleImages';
 
 import CircleAndImages from '../components/CircleAndImages';
 
@@ -49,43 +50,39 @@ export default function Home() {
 
   return (
     <>
-      <div className="container">
-        <Head>
-          <title>I'm Darren!</title>
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/images/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/images/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/images/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/site.webmanifest" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
-            rel="stylesheet"
-          />
-          <link rel="preload" as="image" href="/images/computer.png" />
-          <link rel="preload" as="image" href="/images/pinball.png" />
-          <link rel="preload" as="image" href="/images/phone.png" />
-          <link rel="preload" as="image" href="/images/rollerskate.png" />
-        </Head>
-
-        <TitleText
-          text={text.onHelloPage ? "HELLO" : "ABOUT"}
-          onHelloPage={text.onHelloPage}
+      <Head>
+        <title>I'm Darren!</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/apple-touch-icon.png"
         />
-        <CircleAndImages
-          onHelloPage={text.onHelloPage}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preload" as="image" href="/images/computer.png" />
+        <link rel="preload" as="image" href="/images/pinball.png" />
+        <link rel="preload" as="image" href="/images/phone.png" />
+        <link rel="preload" as="image" href="/images/rollerskate.png" />
+      </Head>
+      <div className="container">
+        <TitleCircleImages 
+          titleText={text.title[text.indexToSelect]} 
+          onHelloPage={text.onHelloPage} 
           pageClickedOnce={text.pageClickedOnce}
         />
         <div
@@ -113,7 +110,9 @@ export default function Home() {
       </div>
       <style jsx>{`
         .container {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           position: relative;
           margin: 0 auto -30px auto;
           padding: 1em 0 0 0;
@@ -123,10 +122,10 @@ export default function Home() {
         }
 
         .info-text {
-          position: absolute;
+          position: relative;
           left: 0;
           right: 0;
-          margin: -10px auto 0 auto;
+          margin: 10px auto 0 auto;
           font-family: "Muli", sans-serif;
           font-size: 0.75em;
           font-weight: 400;
