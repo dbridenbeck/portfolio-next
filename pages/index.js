@@ -88,16 +88,15 @@ export default function Home() {
           }`}
           dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
         ></div>
-        {/* push is used to create a sticky footer for link-container to sit on */}
         <div className="push" />
       </div>
       <div className="link-container" onClick={() => togglePage()}>
         <PageLink
-          text={text.onHelloPage ? "about" : "hello"}
+          text={text.title[text.indexToSelect].toLowerCase()}
           onHelloPage={text.onHelloPage}
         />
         <PageArrow
-          text={text.onHelloPage ? "about" : "hello"}
+          text={text.title[text.indexToSelect].toLowerCase()}
           onHelloPage={text.onHelloPage}
         />
       </div>
