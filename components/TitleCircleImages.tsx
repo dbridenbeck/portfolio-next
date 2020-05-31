@@ -1,7 +1,15 @@
 import TitleText from "./TitleText";
 import CircleAndImages from "./CircleAndImages";
 
-export default function TitleCircleImages({titleText, onHelloPage, pageClickedOnce}) {
+interface TitleCircleProps {
+  titleText: string;
+  onHelloPage: boolean;
+  pageClickedOnce: boolean;
+}
+
+export default function TitleCircleImages(props: TitleCircleProps) {
+  const { titleText, onHelloPage, pageClickedOnce } = props;
+  
   return (
     <>
       <TitleText
