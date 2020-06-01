@@ -4,11 +4,15 @@ import PageLinkAnimation from "../animations/PageLinkAnimation";
 
 const PageLink: React.FC<PageLinkModel> = ({ onHelloPage }) => (
   <>
+    {/* 
+      onHelloPage & !onHelloPage used to add/remove from DOM
+      which triggers AnimatePresence to fire animation
+    */}
     <AnimatePresence initial={false}>
       {onHelloPage && (
-          <span className="pageLink blue">
-            <PageLinkAnimation>about</PageLinkAnimation>
-          </span>
+        <span className="pageLink blue">
+          <PageLinkAnimation>about</PageLinkAnimation>
+        </span>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>

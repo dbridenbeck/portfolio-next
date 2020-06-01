@@ -16,7 +16,10 @@ const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
           rel="stylesheet"
         />
       </Head>
-      {/* Animate "HELLO" as it enters/leaves the DOM */}
+      {/* 
+        check for onHelloPage & !onHelloPage used to add/remove from DOM
+        which triggers AnimatePresence to fire animation
+      */}
       <AnimatePresence initial={false}>
         {onHelloPage && (
           <TitleAnimation>
@@ -24,7 +27,6 @@ const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
           </TitleAnimation>
         )}
       </AnimatePresence>
-      {/* Animate "ABOUT" as it enters/leaves the DOM  */}
       <AnimatePresence initial={false}>
         {!onHelloPage && (
           <TitleAnimation>
