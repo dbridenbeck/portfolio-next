@@ -6,9 +6,10 @@ interface CircleAndImagesProps {
   pageClickedOnce: boolean;
 }
 
-const CircleAndImages = (props: CircleAndImagesProps) => {
-  const { onHelloPage, pageClickedOnce } = props;
-
+const CircleAndImages: React.FC<CircleAndImagesProps> = ({
+  onHelloPage,
+  pageClickedOnce,
+}) => {
   return (
     <>
       <div className="circleAndImages-container">
@@ -47,6 +48,6 @@ const CircleAndImages = (props: CircleAndImagesProps) => {
       `}</style>
     </>
   );
-}
+};
 
 export default CircleAndImages;

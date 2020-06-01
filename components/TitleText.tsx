@@ -24,9 +24,7 @@ const variants = {
   moveRight: { opacity: 0, y: "-100px", x: "0px" },
 };
 
-const TitleText = (props: TitleTextProps) => {
-  const { onHelloPage, titleText} = props;
-
+const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
   return (
     <>
       <Head>
@@ -84,7 +82,7 @@ const TitleText = (props: TitleTextProps) => {
         }
       `}</style>
     </>
-  )
+  );
 };
 
 export default TitleText;
