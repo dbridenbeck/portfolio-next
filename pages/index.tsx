@@ -73,11 +73,13 @@ export default function Home() {
         />
       </Head>
       <div className="container">
+        {/* show Title, Circle, and Images */}
         <TitleCircleImages 
           titleText={text.title[text.indexToSelect]} 
           onHelloPage={text.onHelloPage} 
           pageClickedOnce={text.pageClickedOnce}
         />
+        {/* Show info text for hello/about, add 'whiteFlare' or 'whiteFlareAgain' when toggled from hello/about */}
         <div
           className={`info-text ${
             text.onHelloPage && text.pageClickedOnce
@@ -88,8 +90,10 @@ export default function Home() {
           }`}
           dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
         ></div>
+        {/* .push is a hack to get link-container to sit on bottom of page */}
         <div className="push" />
       </div>
+      {/* about/home link with '-->' */}
       <div className="link-container" onClick={() => togglePage()}>
         <PageLink
           onHelloPage={text.onHelloPage}
