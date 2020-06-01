@@ -7,19 +7,20 @@ interface TitleCircleProps {
   pageClickedOnce: boolean;
 }
 
-export default function TitleCircleImages(props: TitleCircleProps) {
-  const { titleText, onHelloPage, pageClickedOnce } = props;
-  
+const TitleCircleImages: React.FC<TitleCircleProps> = ({
+  titleText,
+  onHelloPage,
+  pageClickedOnce,
+}) => {
   return (
     <>
-      <TitleText
-        titleText={titleText}
-        onHelloPage={onHelloPage}
-      />
+      <TitleText titleText={titleText} onHelloPage={onHelloPage} />
       <CircleAndImages
         onHelloPage={onHelloPage}
         pageClickedOnce={pageClickedOnce}
       />
     </>
   );
-}
+};
+
+export default TitleCircleImages;

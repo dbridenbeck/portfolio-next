@@ -20,7 +20,7 @@ const PageArrow: React.FC<PageLinkModel> = ({ onHelloPage }) => (
               transition={{ duration: 1.25 }}
               variants={arrowVariants}
             >
-              -->
+              {"-->"}
             </motion.div>
           </span>
         </>
@@ -36,7 +36,8 @@ const PageArrow: React.FC<PageLinkModel> = ({ onHelloPage }) => (
             transition={{ duration: 1.25 }}
             variants={arrowVariants}
           >
-            <span className="arrow"></span>-->
+            <span className="arrow"></span>
+            {"-->"}
           </motion.div>
         </span>
       )}
