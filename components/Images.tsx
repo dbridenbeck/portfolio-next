@@ -1,8 +1,8 @@
-import PhoneImage from './PhoneImage';
-import ComputerImage from './ComputerImage';
-import PinballImage from './PinballImage';
-import RollerskateImage from './RollerskateImage';
-import ImageAnimation from '../animations/ImageAnimation';
+import PhoneImage from "./PhoneImage";
+import ComputerImage from "./ComputerImage";
+import PinballImage from "./PinballImage";
+import RollerskateImage from "./RollerskateImage";
+import ImageAnimation from "../animations/ImageAnimation";
 
 interface ImagesProps {
   leftOriented: boolean;
@@ -22,7 +22,7 @@ const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
 
   return (
     <>
-    {/* handle images for HELLO */}
+      {/* handle images for HELLO */}
       <ImageAnimation
         imageConfig={helloImageConfig}
         leftOriented={leftOriented}
@@ -34,7 +34,7 @@ const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
         )}
       </ImageAnimation>
 
-    {/* handle images for ABOUT */}
+      {/* handle images for ABOUT */}
       <ImageAnimation
         imageConfig={aboutImageConfig}
         leftOriented={leftOriented}
@@ -47,6 +47,6 @@ const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
       </ImageAnimation>
     </>
   );
-}
+};
 
 export default Images;

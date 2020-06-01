@@ -1,47 +1,19 @@
-import { motion } from "framer-motion";
-import { css } from "styled-jsx/css";
+import CircleAnimation from "../animations/CircleAnimation";
 
 interface CircleProps {
   onHelloPage: boolean;
   pageClickedOnce: boolean;
 }
 
-// enable styling for motion.div
-const { className, styles } = css.resolve`
-  div {
-    position: relative;
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-  }
-`;
-
-const circleVariants = {
-  hello: { scale: [null, .95, 1.05, .975, 1.025, .985, 1] },
-  about: { scale: [null, .95, 1.05, .975, 1.025, .985, 1] },
-};
-
 const Circle: React.FC<CircleProps> = ({ onHelloPage, pageClickedOnce }) => {
   return (
     <>
-      {/* animate ternary ensures that circle doesn't animate on init load */}
-      <motion.div
-        className={className}
-        initial={false}
-        animate={
-          onHelloPage && pageClickedOnce
-            ? "hello"
-            : !onHelloPage && pageClickedOnce
-            ? "about"
-            : null
-        }
-        transition={{ ease: "easeInOut", timing: [0, 0.6, 0.8, 0.8, 0.9, 1] }}
-        variants={circleVariants}
+      <CircleAnimation
+        onHelloPage={onHelloPage}
+        pageClickedOnce={pageClickedOnce}
       >
         <div className={`circle ${onHelloPage ? "red" : "blue"}`}></div>
-        {styles}
-      </motion.div>
+      </CircleAnimation>
       <style jsx>{`
         .circle {
           position: relative;

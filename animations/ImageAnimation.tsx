@@ -42,7 +42,7 @@ const ImageAnimation = ({ children, imageConfig, leftOriented }) => {
       {children}
       {styles}
     </motion.div>
-  )
-}
+  );
+};
 
 export default ImageAnimation;

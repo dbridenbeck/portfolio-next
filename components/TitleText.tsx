@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import TitleAnimation from '../animations/TitleAnimation';
+import TitleAnimation from "../animations/TitleAnimation";
 
 interface TitleTextProps {
   titleText: string;
