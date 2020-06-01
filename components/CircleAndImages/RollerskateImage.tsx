@@ -1,19 +1,19 @@
-import ImageModel from '../models/images';
+import ImageModel from '../../models/images';
 
 const RollerskateImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source
-        srcSet={require("../public/images/rollerskate.png?webp")}
+        srcSet={require("../../public/images/rollerskate.png?webp")}
         type="image/webp"
       />
       <source
-        srcSet={require("../public/images/rollerskate.png")}
+        srcSet={require("../../public/images/rollerskate.png")}
         type="image/jpeg"
       />
       <img
         className={`rollerskate ${onHelloPage ? "blueFilter" : "redFilter"}`}
-        src={require("../public/images/rollerskate.png")}
+        src={require("../../public/images/rollerskate.png")}
         alt="A quad rollerskate"
       />
     </picture>

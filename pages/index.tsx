@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import { useState } from 'react';
-import PageLink from '../components/PageLink';
-import PageArrow from '../components/PageArrow';
-import TitleCircleImages from '../components/TitleCircleImages';
-import AppStateModel from '../models/appState';
+import Head from "next/head";
+import { useState } from "react";
+import PageLink from "../components/PageLink";
+import PageArrow from "../components/PageArrow";
+import TitleText from "../components/TitleText";
+import CircleAndImages from "../components/CircleAndImages";
+import AppStateModel from "../models/appState";
 
 export default function Home() {
-
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
-  const [text, updateText] = useState<AppStateModel>({
+  const [appState, updateAppState] = useState<AppStateModel>({
     onHelloPage: true,
     indexToSelect: 0,
     title: ["HELLO", "ABOUT"],
@@ -37,10 +37,10 @@ export default function Home() {
 
   // control which content to show from text's state pageClickedOnce prevents animations from firing on initial load
   const togglePage = (): void => {
-    updateText({
-      ...text, 
-      onHelloPage: !text.onHelloPage,
-      indexToSelect: text.onHelloPage ? 1 : 0,
+    updateAppState({
+      ...appState,
+      onHelloPage: !appState.onHelloPage,
+      indexToSelect: appState.onHelloPage ? 1 : 0,
       pageClickedOnce: true,
     });
   };
@@ -73,34 +73,33 @@ export default function Home() {
         />
       </Head>
       <div className="container">
-        {/* show Title, Circle, and Images */}
-        <TitleCircleImages 
-          titleText={text.title[text.indexToSelect]} 
-          onHelloPage={text.onHelloPage} 
-          pageClickedOnce={text.pageClickedOnce}
+        <TitleText
+          titleText={appState.title[appState.indexToSelect]}
+          onHelloPage={appState.onHelloPage}
         />
-        {/* Show info text for hello/about, add 'whiteFlare' or 'whiteFlareAgain' when toggled from hello/about */}
+        <CircleAndImages
+          onHelloPage={appState.onHelloPage}
+          pageClickedOnce={appState.pageClickedOnce}
+        />
+        {/* Show info text for hello/about, 
+        add 'whiteFlare' or 'whiteFlareAgain' class when toggled from hello/about */}
         <div
           className={`info-text ${
-            text.onHelloPage && text.pageClickedOnce
+            appState.onHelloPage && appState.pageClickedOnce
               ? `whiteFlare`
-              : !text.onHelloPage && text.pageClickedOnce
+              : !appState.onHelloPage && appState.pageClickedOnce
               ? `whiteFlareAgain`
               : null
           }`}
-          dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
+          dangerouslySetInnerHTML={appState.infoText[appState.indexToSelect]}
         ></div>
         {/* .push is a hack to get link-container to sit on bottom of page */}
         <div className="push" />
       </div>
       {/* about/home link with '-->' */}
       <div className="link-container" onClick={() => togglePage()}>
-        <PageLink
-          onHelloPage={text.onHelloPage}
-        />
-        <PageArrow
-          onHelloPage={text.onHelloPage}
-        />
+        <PageLink onHelloPage={appState.onHelloPage} />
+        <PageArrow onHelloPage={appState.onHelloPage} />
       </div>
       <style jsx>{`
         .container {

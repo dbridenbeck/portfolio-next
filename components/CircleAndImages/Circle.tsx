@@ -1,4 +1,4 @@
-import CircleAnimation from "../animations/CircleAnimation";
+import CircleAnimation from "../../animations/CircleAnimation";
 
 interface CircleProps {
   onHelloPage: boolean;

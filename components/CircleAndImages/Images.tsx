@@ -2,7 +2,7 @@ import PhoneImage from "./PhoneImage";
 import ComputerImage from "./ComputerImage";
 import PinballImage from "./PinballImage";
 import RollerskateImage from "./RollerskateImage";
-import ImageAnimation from "../animations/ImageAnimation";
+import ImageAnimation from "../../animations/ImageAnimation";
 
 interface ImagesProps {
   leftOriented: boolean;
