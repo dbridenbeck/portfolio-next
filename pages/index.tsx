@@ -3,11 +3,12 @@ import { useState } from 'react';
 import PageLink from '../components/PageLink';
 import PageArrow from '../components/PageArrow';
 import TitleCircleImages from '../components/TitleCircleImages';
+import AppStateModel from '../models/appState';
 
 export default function Home() {
 
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
-  const [text, updateText] = useState({
+  const [text, updateText] = useState<AppStateModel>({
     onHelloPage: true,
     indexToSelect: 0,
     title: ["HELLO", "ABOUT"],
@@ -92,11 +93,9 @@ export default function Home() {
       </div>
       <div className="link-container" onClick={() => togglePage()}>
         <PageLink
-          text={text.title[text.indexToSelect].toLowerCase()}
           onHelloPage={text.onHelloPage}
         />
         <PageArrow
-          text={text.title[text.indexToSelect].toLowerCase()}
           onHelloPage={text.onHelloPage}
         />
       </div>
