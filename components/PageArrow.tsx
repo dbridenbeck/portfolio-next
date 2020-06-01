@@ -1,26 +1,26 @@
 import { motion, AnimatePresence } from "framer-motion";
+import PageLinkModel from "../models/pageLink";
 
-const variants = {
+const arrowVariants = {
   moveUp: { opacity: 0, y: "100px", x: "0px" },
-  center: { opacity: 1, y: "0", x: "0px", rotate: 360 },
+  center: { opacity: 1, y: "0", x: "0px", rotate: 1080 },
   moveRight: { opacity: 0, y: "0px", x: "100px" },
 };
 
-const PageLink = ({ onHelloPage }) => (
+const PageArrow: React.FC<PageLinkModel> = ({ onHelloPage }) => (
   <>
     <AnimatePresence initial={false}>
       {onHelloPage && (
         <>
-          <span className="pageLink blue">
+          <span className="arrow red">
             <motion.div
-              className="linkText"
               initial="moveUp"
               animate="center"
               exit="moveRight"
-              transition={{ duration: 1.5 }}
-              variants={variants}
+              transition={{ duration: 1.25 }}
+              variants={arrowVariants}
             >
-              about
+              -->
             </motion.div>
           </span>
         </>
@@ -28,38 +28,32 @@ const PageLink = ({ onHelloPage }) => (
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
-        <span className="pageLink red">
+        <span className="arrow blue">
           <motion.div
-            className="linkText"
             initial="moveUp"
             animate="center"
             exit="moveRight"
-            transition={{ duration: 1.5 }}
-            variants={variants}
+            transition={{ duration: 1.25 }}
+            variants={arrowVariants}
           >
-            hello
+            <span className="arrow"></span>-->
           </motion.div>
         </span>
       )}
     </AnimatePresence>
 
     <style jsx>{`
-      .pageLink {
+      .arrow {
         position: absolute;
         display: block;
-        right: 60px;
+        right: 30px;
+        width: 25px;
         font-size: 0.9em;
         font-style: italic;
         cursor: pointer;
-      }
-
-      .linkText {
-        position: absolute;
-        display: inline;
-        z-index: 99;
       }
     `}</style>
   </>
 );
 
-export default PageLink;
+export default PageArrow;
