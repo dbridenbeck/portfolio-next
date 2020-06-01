@@ -5,6 +5,11 @@ import ComputerImage from './ComputerImage';
 import PinballImage from './PinballImage';
 import RollerskateImage from './RollerskateImage';
 
+interface ImagesProps {
+  leftOriented: boolean;
+  onHelloPage: boolean;
+}
+
 // control styles for motion.div's
 const { className, styles } = css.resolve`
   div {
@@ -34,7 +39,7 @@ const imageVariants = {
   }),
 };
 
-const Images = ({ leftOriented, onHelloPage }) => {
+const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
   return (
     <>
       <motion.div
