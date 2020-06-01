@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
 
+interface CircleProps {
+  onHelloPage: boolean;
+  pageClickedOnce: boolean;
+}
+
 // enable styling for motion.div
 const { className, styles } = css.resolve`
   div {
@@ -17,7 +22,7 @@ const circleVariants = {
   about: { scale: [null, .95, 1.05, .975, 1.025, .985, 1] },
 };
 
-const Circle = ({ onHelloPage, pageClickedOnce }) => {
+const Circle: React.FC<CircleProps> = ({ onHelloPage, pageClickedOnce }) => {
   return (
     <>
       {/* animate ternary ensures that circle doesn't animate on init load */}
