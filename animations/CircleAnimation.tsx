@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
 import { ReactElement } from "react";
 
+interface CircleAnimationProps {
+  children: ReactElement;
+  onHelloPage: boolean;
+  pageClickedOnce: boolean;
+}
+
 // enable styling for motion.div
 const { className, styles } = css.resolve`
   div {
@@ -18,13 +24,11 @@ const circleVariants = {
   about: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
 };
 
-interface CircleAnimationProps {
-  children: ReactElement;
-  onHelloPage: boolean;
-  pageClickedOnce: boolean;
-}
-
-const CircleAnimation = ({ children, onHelloPage, pageClickedOnce }) => (
+const CircleAnimation: React.FC<CircleAnimationProps> = ({
+  children,
+  onHelloPage,
+  pageClickedOnce,
+}) => (
   /* animate ternary ensures that circle doesn't animate on init load */
   <motion.div
     className={className}

@@ -1,5 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
+import { ReactElement } from "react";
+
+interface TitleAnimationProps {
+  children: ReactElement;
+}
 
 // control styles for motion.div's
 const { className, styles } = css.resolve`

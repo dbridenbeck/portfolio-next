@@ -1,5 +1,15 @@
 import { motion } from "framer-motion";
 import { css } from "styled-jsx/css";
+import { ReactElement } from "react";
+
+interface ImageAnimationProps {
+  children: ReactElement;
+  imageConfig: {
+    initial: string | boolean;
+    animate: string;
+  };
+  leftOriented: boolean;
+}
 
 // control styles for motion.div's
 const { className, styles } = css.resolve`
@@ -30,7 +40,7 @@ const imageVariants = {
   }),
 };
 
-const ImageAnimation = ({ children, imageConfig, leftOriented }) => {
+const ImageAnimation: React.FC<ImageAnimationProps> = ({ children, imageConfig, leftOriented }) => {
   return (
     <motion.div
       className={className}
