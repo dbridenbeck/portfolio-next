@@ -1,7 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { css } from "styled-jsx/css";
+import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import TitleAnimation from './TitleAnimation';
+import TitleAnimation from '../animations/TitleAnimation';
 
 interface TitleTextProps {
   titleText: string;

@@ -1,77 +1,50 @@
-import { motion } from "framer-motion";
-import { css } from "styled-jsx/css";
 import PhoneImage from './PhoneImage';
 import ComputerImage from './ComputerImage';
 import PinballImage from './PinballImage';
 import RollerskateImage from './RollerskateImage';
+import ImageAnimation from '../animations/ImageAnimation';
 
 interface ImagesProps {
   leftOriented: boolean;
   onHelloPage: boolean;
 }
 
-// control styles for motion.div's
-const { className, styles } = css.resolve`
-  div {
-    display: block;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-  }
-`;
-
-const imageVariants = {
-  center: {
-    x: "0px",
-    transition: {
-      type: "spring",
-      stiffness: 35,
-      mass: 0.2,
-      damping: 3.5,
-    },
-  },
-  flyOut: (leftOriented) => ({
-    x: leftOriented ? "-75%" : "75%",
-    transition: {
-      type: "spring",
-      stiffness: 35,
-    }
-  }),
-};
-
 const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
+  const helloImageConfig = {
+    initial: "flyIn",
+    animate: onHelloPage ? "center" : "flyOut",
+  };
+
+  const aboutImageConfig = {
+    initial: false,
+    animate: !onHelloPage ? "center" : "flyOut",
+  };
+
   return (
     <>
-      <motion.div
-        className={className}
-        initial="flyIn"
-        animate={onHelloPage ? "center" : "flyOut"}
-        custom={leftOriented}
-        variants={imageVariants}
+    {/* handle images for HELLO */}
+      <ImageAnimation
+        imageConfig={helloImageConfig}
+        leftOriented={leftOriented}
       >
         {leftOriented ? (
           <ComputerImage onHelloPage={onHelloPage} />
         ) : (
           <PhoneImage onHelloPage={onHelloPage} />
         )}
-        {styles}
-      </motion.div>
+      </ImageAnimation>
 
-      <motion.div
-        className={className}
-        initial={false}
-        animate={!onHelloPage ? "center" : "flyOut"}
-        custom={leftOriented}
-        variants={imageVariants}
+    {/* handle images for ABOUT */}
+      <ImageAnimation
+        imageConfig={aboutImageConfig}
+        leftOriented={leftOriented}
       >
         {leftOriented ? (
           <PinballImage onHelloPage={onHelloPage} />
         ) : (
           <RollerskateImage onHelloPage={onHelloPage} />
         )}
-
-        {styles}
-      </motion.div>
+      </ImageAnimation>
     </>
   );
 }
