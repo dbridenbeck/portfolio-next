@@ -1,4 +1,6 @@
-const ComputerImage = ({ onHelloPage }) => (
+import ImageModel from '../models/images.tsx';
+
+const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source
