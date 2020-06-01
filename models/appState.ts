@@ -3,6 +3,5 @@ export default interface AppStateModel {
   indexToSelect: number;
   title: [string, string];
   infoText: [{__html: string}, {__html: string}];
-  linkText: [string, string];
   pageClickedOnce: boolean;
 }

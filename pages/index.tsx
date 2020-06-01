@@ -32,12 +32,11 @@ export default function Home() {
         `,
       },
     ],
-    linkText: ["about", "hello"],
     pageClickedOnce: false,
   });
 
   // control which content to show from text's state pageClickedOnce prevents animations from firing on initial load
-  const togglePage = () => {
+  const togglePage = (): void => {
     updateText({
       ...text, 
       onHelloPage: !text.onHelloPage,
