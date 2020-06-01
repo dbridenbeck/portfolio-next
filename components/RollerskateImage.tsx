@@ -1,6 +1,6 @@
-import React from 'react';
+import ImageModel from '../models/images';
 
-const RollerskateImage = ({ onHelloPage }) => (
+const RollerskateImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source

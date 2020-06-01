@@ -1,4 +1,6 @@
-const PhoneImage = ({ onHelloPage }) => (
+import ImageModel from "../models/images";
+
+const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source

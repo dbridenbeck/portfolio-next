@@ -1,4 +1,6 @@
-const PinballImage = ({ onHelloPage }) => (
+import ImageModel from "../models/images";
+
+const PinballImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source
