@@ -1,5 +1,5 @@
 import Circle from "./Circle";
-import Images from "./Images";
+import ImagePairs from "./ImagePairs";
 
 interface CircleAndImagesProps {
   onHelloPage: boolean;
@@ -13,8 +13,8 @@ const CircleAndImages: React.FC<CircleAndImagesProps> = ({
   return (
     <>
       <div className="circleAndImages-container">
-        <Images leftOriented={true} onHelloPage={onHelloPage} />
-        <Images leftOriented={false} onHelloPage={onHelloPage} />
+        <ImagePairs leftOriented={true} onHelloPage={onHelloPage} />
+        <ImagePairs leftOriented={false} onHelloPage={onHelloPage} />
         <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />
       </div>
       <style jsx>{`
