@@ -3,6 +3,7 @@ import { useState } from "react";
 import TitleText from "../components/TitleText";
 import CircleAndImages from "../components/CircleAndImages";
 import PageLinkContainer from "../components/PageLinkContainer";
+import InfoText from "../components/InfoText";
 import AppStateModel from "../models/appState";
 
 export default function Home() {
@@ -81,19 +82,13 @@ export default function Home() {
           onHelloPage={appState.onHelloPage}
           pageClickedOnce={appState.pageClickedOnce}
         />
-        {/* Show appState.infoText for hello/about, 
-        add 'whiteFlare' or 'whiteFlareAgain' class when toggled from hello/about */}
-        <div
-          className={`info-text ${
-            appState.onHelloPage && appState.pageClickedOnce
-              ? `whiteFlare`
-              : !appState.onHelloPage && appState.pageClickedOnce
-              ? `whiteFlareAgain`
-              : null
-          }`}
-          dangerouslySetInnerHTML={appState.infoText[appState.indexToSelect]}
-        ></div>
-        {/* .push is to get link-container to sit on bottom of page */}
+        <InfoText 
+          onHelloPage={appState.onHelloPage}
+          pageClickedOnce={appState.pageClickedOnce}
+          infoText={appState.infoText}
+          indexToSelect={appState.indexToSelect}
+        />
+        {/* .push is to get PageLinkContainer to sit on bottom of page */}
         <div className="push" />
       </div>
       {/* about/home link with '-->' */}
@@ -114,63 +109,13 @@ export default function Home() {
           color: white;
         }
 
-        .info-text {
-          position: relative;
-          left: 0;
-          right: 0;
-          margin: 10px auto 0 auto;
-          font-family: "Muli", sans-serif;
-          font-size: 0.75em;
-          font-weight: 400;
-          line-height: 1.5em;
-          width: 95%;
-          color: #d4d4e4;
-        }
-
         .push {
           height: 30px;
-        }
-
-        .whiteFlare {
-          animation: flare-text-white 0.5s ease-in-out;
-        }
-
-        .whiteFlareAgain {
-          animation: flare-text-white-again 0.5s ease-in-out;
         }
 
         @media screen and (min-width: 1270px) {
           .container {
             padding: 2em 0 0 0;
-          }
-          .info-text {
-            width: 80%;
-            margin: 0 auto;
-            font-size: 0.875em;
-          }
-        }
-
-        @keyframes flare-text-white {
-          0% {
-            color: #d4d4e4;
-          }
-          50% {
-            color: white;
-          }
-          100% {
-            color: #d4d4e4;
-          }
-        }
-
-        @keyframes flare-text-white-again {
-          0% {
-            color: #d4d4e4;
-          }
-          50% {
-            color: white;
-          }
-          100% {
-            color: #d4d4e4;
           }
         }
       `}</style>
