@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
-import PageLink from "../components/PageLink";
-import PageArrow from "../components/PageArrow";
 import TitleText from "../components/TitleText";
 import CircleAndImages from "../components/CircleAndImages";
+import PageLinkContainer from "../components/PageLinkContainer";
 import AppStateModel from "../models/appState";
 
 export default function Home() {
@@ -35,7 +34,8 @@ export default function Home() {
     pageClickedOnce: false,
   });
 
-  // control which content to show from text's state pageClickedOnce prevents animations from firing on initial load
+  // control which content to show from text's state pageClickedOnce prevents 
+  // animations from firing on initial load
   const togglePage = (): void => {
     updateAppState({
       ...appState,
@@ -81,7 +81,7 @@ export default function Home() {
           onHelloPage={appState.onHelloPage}
           pageClickedOnce={appState.pageClickedOnce}
         />
-        {/* Show info text for hello/about, 
+        {/* Show appState.infoText for hello/about, 
         add 'whiteFlare' or 'whiteFlareAgain' class when toggled from hello/about */}
         <div
           className={`info-text ${
@@ -93,14 +93,14 @@ export default function Home() {
           }`}
           dangerouslySetInnerHTML={appState.infoText[appState.indexToSelect]}
         ></div>
-        {/* .push is a hack to get link-container to sit on bottom of page */}
+        {/* .push is to get link-container to sit on bottom of page */}
         <div className="push" />
       </div>
       {/* about/home link with '-->' */}
-      <div className="link-container" onClick={() => togglePage()}>
-        <PageLink onHelloPage={appState.onHelloPage} />
-        <PageArrow onHelloPage={appState.onHelloPage} />
-      </div>
+      <PageLinkContainer
+        onHelloPage={appState.onHelloPage}
+        handleTogglePane = {togglePage}
+      />
       <style jsx>{`
         .container {
           display: flex;
@@ -125,18 +125,6 @@ export default function Home() {
           line-height: 1.5em;
           width: 95%;
           color: #d4d4e4;
-        }
-
-        .link-container {
-          position: relative;
-          display: block;
-          bottom: 0px;
-          margin: 0 auto;
-          left: 0;
-          right: 0;
-          max-width: 650px;
-          height: 30px;
-          font-size: 0.85em;
         }
 
         .push {
