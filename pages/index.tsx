@@ -1,13 +1,14 @@
-import Head from 'next/head'
-import { useState } from 'react';
-import PageLink from '../components/PageLink';
-import PageArrow from '../components/PageArrow';
-import TitleCircleImages from '../components/TitleCircleImages';
+import Head from "next/head";
+import { useState } from "react";
+import TitleText from "../components/TitleText";
+import CircleAndImages from "../components/CircleAndImages";
+import PageLinkContainer from "../components/PageLinkContainer";
+import InfoText from "../components/InfoText";
+import AppStateModel from "../models/appState";
 
 export default function Home() {
-
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
-  const [text, updateText] = useState({
+  const [appState, updateAppState] = useState<AppStateModel>({
     onHelloPage: true,
     indexToSelect: 0,
     title: ["HELLO", "ABOUT"],
@@ -31,16 +32,16 @@ export default function Home() {
         `,
       },
     ],
-    linkText: ["about", "hello"],
     pageClickedOnce: false,
   });
 
-  // control which content to show from text's state pageClickedOnce prevents animations from firing on initial load
-  const togglePage = () => {
-    updateText({
-      ...text, 
-      onHelloPage: !text.onHelloPage,
-      indexToSelect: text.onHelloPage ? 1 : 0,
+  // control which content to show from text's state pageClickedOnce prevents 
+  // animations from firing on initial load
+  const togglePage = (): void => {
+    updateAppState({
+      ...appState,
+      onHelloPage: !appState.onHelloPage,
+      indexToSelect: appState.onHelloPage ? 1 : 0,
       pageClickedOnce: true,
     });
   };
@@ -73,33 +74,28 @@ export default function Home() {
         />
       </Head>
       <div className="container">
-        <TitleCircleImages 
-          titleText={text.title[text.indexToSelect]} 
-          onHelloPage={text.onHelloPage} 
-          pageClickedOnce={text.pageClickedOnce}
+        <TitleText
+          titleText={appState.title[appState.indexToSelect]}
+          onHelloPage={appState.onHelloPage}
         />
-        <div
-          className={`info-text ${
-            text.onHelloPage && text.pageClickedOnce
-              ? `whiteFlare`
-              : !text.onHelloPage && text.pageClickedOnce
-              ? `whiteFlareAgain`
-              : null
-          }`}
-          dangerouslySetInnerHTML={text.infoText[text.indexToSelect]}
-        ></div>
+        <CircleAndImages
+          onHelloPage={appState.onHelloPage}
+          pageClickedOnce={appState.pageClickedOnce}
+        />
+        <InfoText 
+          onHelloPage={appState.onHelloPage}
+          pageClickedOnce={appState.pageClickedOnce}
+          infoText={appState.infoText}
+          indexToSelect={appState.indexToSelect}
+        />
+        {/* .push is to get PageLinkContainer to sit on bottom of page */}
         <div className="push" />
       </div>
-      <div className="link-container" onClick={() => togglePage()}>
-        <PageLink
-          text={text.title[text.indexToSelect].toLowerCase()}
-          onHelloPage={text.onHelloPage}
-        />
-        <PageArrow
-          text={text.title[text.indexToSelect].toLowerCase()}
-          onHelloPage={text.onHelloPage}
-        />
-      </div>
+      {/* about/home link with '-->' */}
+      <PageLinkContainer
+        onHelloPage={appState.onHelloPage}
+        handleTogglePane = {togglePage}
+      />
       <style jsx>{`
         .container {
           display: flex;
@@ -113,75 +109,13 @@ export default function Home() {
           color: white;
         }
 
-        .info-text {
-          position: relative;
-          left: 0;
-          right: 0;
-          margin: 10px auto 0 auto;
-          font-family: "Muli", sans-serif;
-          font-size: 0.75em;
-          font-weight: 400;
-          line-height: 1.5em;
-          width: 95%;
-          color: #d4d4e4;
-        }
-
-        .link-container {
-          position: relative;
-          display: block;
-          bottom: 0px;
-          margin: 0 auto;
-          left: 0;
-          right: 0;
-          max-width: 650px;
-          height: 30px;
-          font-size: 0.85em;
-        }
-
         .push {
           height: 30px;
-        }
-
-        .whiteFlare {
-          animation: flare-text-white 0.5s ease-in-out;
-        }
-
-        .whiteFlareAgain {
-          animation: flare-text-white-again 0.5s ease-in-out;
         }
 
         @media screen and (min-width: 1270px) {
           .container {
             padding: 2em 0 0 0;
-          }
-          .info-text {
-            width: 80%;
-            margin: 0 auto;
-            font-size: 0.875em;
-          }
-        }
-
-        @keyframes flare-text-white {
-          0% {
-            color: #d4d4e4;
-          }
-          50% {
-            color: white;
-          }
-          100% {
-            color: #d4d4e4;
-          }
-        }
-
-        @keyframes flare-text-white-again {
-          0% {
-            color: #d4d4e4;
-          }
-          50% {
-            color: white;
-          }
-          100% {
-            color: #d4d4e4;
           }
         }
       `}</style>

@@ -1,17 +1,19 @@
-const PhoneImage = ({ onHelloPage }) => (
+import ImageModel from "../../models/images";
+
+const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source
-        srcSet={require("../public/images/phone.png?webp")}
+        srcSet={require("../../public/images/phone.png?webp")}
         type="image/webp"
       />
       <source
-        srcSet={require("../public/images/phone.png")}
+        srcSet={require("../../public/images/phone.png")}
         type="image/png"
       />
       <img
         className={`phone ${onHelloPage ? "blueFilter" : "redFilter"}`}
-        srcSet={require("../public/images/phone.png")}
+        srcSet={require("../../public/images/phone.png")}
         alt="An 80's style mobile phone"
       />
     </picture>

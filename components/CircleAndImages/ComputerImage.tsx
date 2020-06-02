@@ -1,17 +1,19 @@
-const ComputerImage = ({ onHelloPage }) => (
+import ImageModel from '../../models/images';
+
+const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) => (
   <>
     <picture>
       <source
-        srcSet={require("../public/images/computer.png?webp")}
+        srcSet={require("../../public/images/computer.png?webp")}
         type="image/webp"
       />
       <source
-        srcSet={require("../public/images/computer.png")}
+        srcSet={require("../../public/images/computer.png")}
         type="image/png"
       />
       <img
         className={`computer ${onHelloPage ? "blueFilter" : "redFilter"}`}
-        srcSet={require("../public/images/computer.png")}
+        srcSet={require("../../public/images/computer.png")}
         alt="An open laptop"
       />
     </picture>

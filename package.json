@@ -15,5 +15,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.3"
   }
 }
