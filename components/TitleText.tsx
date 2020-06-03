@@ -1,6 +1,21 @@
+import styled from 'styled-components';
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import TitleAnimation from "../animations/TitleAnimation";
+
+const Title = styled.h1`
+  position: absolute;
+  margin: -5% 0 0 2.5%;
+  padding: 0;
+  font-family: "Crimson Text", serif;
+  font-size: 4em;
+  font-weight: 200;
+  line-height: 1em;
+  color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")}; 
+  @media (min-width: 1270px) {
+    font-size: 6em;
+  }
+`;
 
 interface TitleTextProps {
   titleText: string;
@@ -23,35 +38,17 @@ const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
       <AnimatePresence initial={false}>
         {onHelloPage && (
           <TitleAnimation>
-            <h1 className="title blue">{titleText}</h1>
+            <Title color={"blue"}>{titleText}</Title>
           </TitleAnimation>
         )}
       </AnimatePresence>
       <AnimatePresence initial={false}>
         {!onHelloPage && (
           <TitleAnimation>
-            <h1 className="title red">{titleText}</h1>
+            <Title color={"red"}>{titleText}</Title>
           </TitleAnimation>
         )}
       </AnimatePresence>
-
-      <style jsx>{`
-        .title {
-          position: absolute;
-          font-family: "Crimson Text", serif;
-          font-size: 4em;
-          font-weight: 200;
-          margin: -5% 0 0 2.5%;
-          padding: 0;
-          line-height: 1em;
-        }
-
-        @media screen and (min-width: 1270px) {
-          .title {
-            font-size: 6em;
-          }
-        }
-      `}</style>
     </>
   );
 };
