@@ -8,7 +8,7 @@ const StyledCircle = styled.div`
   width: 100%;
   margin: 0 auto;
   border-radius: 50%;
-  transition: background-color 0.3s;
+  transition: ${(pageClickedOnce) => pageClickedOnce ? "background-color 0.3s" : "" };
   background-color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};
 `;
 
@@ -22,7 +22,10 @@ const Circle: React.FC<CircleProps> = ({ onHelloPage, pageClickedOnce }) =>
     onHelloPage={onHelloPage}
     pageClickedOnce={pageClickedOnce}
   >
-    <StyledCircle color={onHelloPage ? "red" : "blue"}></StyledCircle>
+    <StyledCircle 
+      color={onHelloPage ? "red" : "blue"} 
+      pageClickedOnce={pageClickedOnce}
+    />
   </CircleAnimation>
 
 export default Circle;
