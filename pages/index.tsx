@@ -83,8 +83,6 @@ export default function Home() {
           pageClickedOnce={appState.pageClickedOnce}
         />
         <InfoText 
-          onHelloPage={appState.onHelloPage}
-          pageClickedOnce={appState.pageClickedOnce}
           infoText={appState.infoText}
           indexToSelect={appState.indexToSelect}
         />

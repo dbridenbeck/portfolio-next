@@ -1,6 +1,17 @@
+import styled from 'styled-components';
 import { AnimatePresence } from "framer-motion";
 import PageLinkModel from "../../models/pageLink";
 import PageLinkAnimation from "../../animations/PageLinkAnimation";
+
+const PageLinkSpan = styled.span`
+  position: absolute;
+  display: block;
+  right: 60px;
+  font-size: 0.9em;
+  font-style: italic;
+  cursor: pointer;
+  color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};
+`;
 
 const PageLink: React.FC<PageLinkModel> = ({ onHelloPage }) => (
   <>
@@ -10,35 +21,18 @@ const PageLink: React.FC<PageLinkModel> = ({ onHelloPage }) => (
     */}
     <AnimatePresence initial={false}>
       {onHelloPage && (
-        <span className="pageLink blue">
+        <PageLinkSpan color="blue">
           <PageLinkAnimation>about</PageLinkAnimation>
-        </span>
+        </PageLinkSpan>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
-        <span className="pageLink red">
+        <PageLinkSpan color="red">
           <PageLinkAnimation>hello</PageLinkAnimation>
-        </span>
+        </PageLinkSpan>
       )}
     </AnimatePresence>
-
-    <style jsx>{`
-      .pageLink {
-        position: absolute;
-        display: block;
-        right: 60px;
-        font-size: 0.9em;
-        font-style: italic;
-        cursor: pointer;
-      }
-
-      .linkText {
-        position: absolute;
-        display: inline;
-        z-index: 99;
-      }
-    `}</style>
   </>
 );
 
