@@ -2,7 +2,8 @@ import Head from "next/head";
 import styled from "styled-components";
 import { useState } from "react";
 import TitleText from "../components/TitleText";
-import CircleAndImages from "../components/CircleAndImages";
+import CircleContainer from "../components/CircleContainer";
+import ImagePairs from "../components/ImageComponents/ImagePairs";
 import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
@@ -12,8 +13,7 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-grow: 2;
-  max-height: calc(100vh - 60px);
+  flex-grow: 1;
   align-self: center;
 `;
 
@@ -90,10 +90,13 @@ export default function Home() {
             titleText={appState.title[appState.indexToSelect]}
             onHelloPage={appState.onHelloPage}
           />
-          <CircleAndImages
+          <CircleContainer
             onHelloPage={appState.onHelloPage}
             pageClickedOnce={appState.pageClickedOnce}
-          />
+          >
+            <ImagePairs leftOriented={true} onHelloPage={appState.onHelloPage} />
+            <ImagePairs leftOriented={false} onHelloPage={appState.onHelloPage} />
+          </CircleContainer>
           <InfoText
             infoText={appState.infoText}
             indexToSelect={appState.indexToSelect}

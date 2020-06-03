@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Circle from "./Circle";
-import ImagePairs from "./ImagePairs";
+import { ReactElement } from "react";
 
-const CircleAndImagesContainer = styled.div`
+const CircleContainerDiv = styled.div`
   display: block;
   position: relative;
   width: 360px;
@@ -26,20 +26,21 @@ const CircleAndImagesContainer = styled.div`
   }
 `;
 
-interface CircleAndImagesProps {
+interface CircleContainerProps {
   onHelloPage: boolean;
   pageClickedOnce: boolean;
+  children: ReactElement[];
 }
 
-const CircleAndImages: React.FC<CircleAndImagesProps> = ({
+const CircleContainer: React.FC<CircleContainerProps> = ({
   onHelloPage,
   pageClickedOnce,
+  children
 }) => (
-  <CircleAndImagesContainer>
-    <ImagePairs leftOriented={true} onHelloPage={onHelloPage} />
-    <ImagePairs leftOriented={false} onHelloPage={onHelloPage} />
+  <CircleContainerDiv>
+    {children}
     <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />
-  </CircleAndImagesContainer>
+  </CircleContainerDiv>
 );
 
-export default CircleAndImages;
+export default CircleContainer;
