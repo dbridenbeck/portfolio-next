@@ -4,6 +4,7 @@ import TitleText from "../components/TitleText";
 import CircleAndImages from "../components/CircleAndImages";
 import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
+import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
 
 export default function Home() {
@@ -73,7 +74,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="container">
+      <Layout>
         <TitleText
           titleText={appState.title[appState.indexToSelect]}
           onHelloPage={appState.onHelloPage}
@@ -88,35 +89,12 @@ export default function Home() {
         />
         {/* .push is to get PageLinkContainer to sit on bottom of page */}
         <div className="push" />
-      </div>
+      </Layout>
       {/* about/home link with '-->' */}
       <PageLinkContainer
         onHelloPage={appState.onHelloPage}
         handleTogglePane = {togglePage}
       />
-      <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          position: relative;
-          margin: 0 auto -30px auto;
-          padding: 1em 0 0 0;
-          height: 100%;
-          max-width: 650px;
-          color: white;
-        }
-
-        .push {
-          height: 30px;
-        }
-
-        @media screen and (min-width: 1270px) {
-          .container {
-            padding: 2em 0 0 0;
-          }
-        }
-      `}</style>
 
       <style jsx global>{`
         #__next,
@@ -138,24 +116,6 @@ export default function Home() {
 
         * {
           box-sizing: border-box;
-        }
-
-        .blue {
-          color: #3bc9d1;
-        }
-
-        .red {
-          color: #d13b40;
-        }
-
-        .blueFilter {
-          filter: invert(70%) sepia(34%) saturate(803%) hue-rotate(134deg)
-            brightness(95%) contrast(83%);
-        }
-
-        .redFilter {
-          filter: invert(15%) sepia(100%) saturate(2397%) hue-rotate(343deg)
-            brightness(99%) contrast(80%);
         }
       `}</style>
     </>

@@ -25,7 +25,6 @@ const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
 }) =>
   <LinkContainer 
     onClick={() => handleTogglePane()}
-    className="link-container"
   >
     <PageLink onHelloPage={onHelloPage} />
     <PageArrow onHelloPage={onHelloPage} />

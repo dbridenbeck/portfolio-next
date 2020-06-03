@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import triggerFilter from "../../animations/TriggerFilter";
 import ImageModel from "../../models/images";
 
 const rotate = keyframes`
@@ -21,6 +22,7 @@ const StyledComputerImage = styled.img`
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
   transition: filter 0.5s;
+  filter: ${({onHelloPage}) => triggerFilter(onHelloPage)};
 `;
 
 const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) =>
@@ -34,7 +36,7 @@ const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledComputerImage
-      className={`computer ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      onHelloPage={onHelloPage}
       srcSet={require("../../public/images/computer.png")}
       alt="An open laptop"
     />

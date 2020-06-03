@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import triggerFilter from '../../animations/TriggerFilter';
 import ImageModel from '../../models/images';
 
 const rotate = keyframes`
@@ -21,6 +22,7 @@ const StyledRollerskateImage = styled.img`
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
   transition: filter 0.5s;
+  filter: ${({ onHelloPage }) => triggerFilter(onHelloPage)};
 `;
 
 const RollerskateImage: React.FC<ImageModel> = ({ onHelloPage }) =>
@@ -34,7 +36,7 @@ const RollerskateImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/jpeg"
     />
     <StyledRollerskateImage
-      className={`rollerskate ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      onHelloPage={onHelloPage}
       src={require("../../public/images/rollerskate.png")}
       alt="A quad rollerskate"
     />
