@@ -3,11 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import PageLinkModel from "../../models/pageLink";
 import ArrowAnimation from '../../animations/ArrowAnimation';
 
-const ArrowWrapper = styled.span`
+const ArrowSpan = styled.span`
   position: absolute;
   display: block;
   right: 30px;
-  width: 25px;
   font-size: 0.9em;
   font-style: italic;
   cursor: pointer;
@@ -22,16 +21,16 @@ const PageArrow: React.FC<PageLinkModel> = ({ onHelloPage }) => (
   */}
     <AnimatePresence initial={false}>
       {onHelloPage && (
-        <ArrowWrapper color={"red"}>
+        <ArrowSpan color={"red"}>
           <ArrowAnimation>{"-->"}</ArrowAnimation>
-        </ArrowWrapper>
+        </ArrowSpan>
       )}
     </AnimatePresence>
     <AnimatePresence initial={false}>
       {!onHelloPage && (
-        <ArrowWrapper color={"blue"}>
+        <ArrowSpan color={"blue"}>
           <ArrowAnimation>{"-->"}</ArrowAnimation>
-        </ArrowWrapper>
+        </ArrowSpan>
       )}
     </AnimatePresence>
   </>

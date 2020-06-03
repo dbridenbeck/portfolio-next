@@ -4,7 +4,6 @@ import { ReactElement } from 'react';
 const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   margin: 0 auto -30px auto;
   padding: 1em 0 0 0;

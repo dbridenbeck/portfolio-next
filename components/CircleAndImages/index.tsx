@@ -35,7 +35,7 @@ const CircleAndImages: React.FC<CircleAndImagesProps> = ({
   onHelloPage,
   pageClickedOnce,
 }) => (
-  <CircleAndImagesContainer className="circleAndImages-container">
+  <CircleAndImagesContainer>
     <ImagePairs leftOriented={true} onHelloPage={onHelloPage} />
     <ImagePairs leftOriented={false} onHelloPage={onHelloPage} />
     <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />

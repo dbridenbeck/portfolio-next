@@ -5,12 +5,8 @@ import PageArrow from "./PageArrow";
 const LinkContainer = styled.div`
   position: relative;
   display: block;
-  bottom: 0px;
   margin: 0 auto;
-  left: 0;
-  right: 0;
-  max-width: 650px;
-  height: 30px;
+  width: 100%;
   font-size: 0.85em;
 `;
 
@@ -25,9 +21,9 @@ const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
 }) =>
   <LinkContainer 
     onClick={() => handleTogglePane()}
-  >
+  > 
     <PageLink onHelloPage={onHelloPage} />
-    <PageArrow onHelloPage={onHelloPage} />
+    <PageArrow onHelloPage={onHelloPage} /> 
   </LinkContainer>
 
 export default PageLinkContainer;

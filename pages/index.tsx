@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styled from "styled-components";
 import { useState } from "react";
 import TitleText from "../components/TitleText";
 import CircleAndImages from "../components/CircleAndImages";
@@ -6,6 +7,15 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
+
+const MainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  max-height: calc(100vh - 60px);
+  align-self: center;
+`;
 
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
@@ -75,27 +85,25 @@ export default function Home() {
         />
       </Head>
       <Layout>
-        <TitleText
-          titleText={appState.title[appState.indexToSelect]}
+        <MainContent>
+          <TitleText
+            titleText={appState.title[appState.indexToSelect]}
+            onHelloPage={appState.onHelloPage}
+          />
+          <CircleAndImages
+            onHelloPage={appState.onHelloPage}
+            pageClickedOnce={appState.pageClickedOnce}
+          />
+          <InfoText
+            infoText={appState.infoText}
+            indexToSelect={appState.indexToSelect}
+          />
+        </MainContent>
+        <PageLinkContainer
           onHelloPage={appState.onHelloPage}
+          handleTogglePane={togglePage}
         />
-        <CircleAndImages
-          onHelloPage={appState.onHelloPage}
-          pageClickedOnce={appState.pageClickedOnce}
-        />
-        <InfoText 
-          infoText={appState.infoText}
-          indexToSelect={appState.indexToSelect}
-        />
-        {/* .push is to get PageLinkContainer to sit on bottom of page */}
-        <div className="push" />
       </Layout>
-      {/* about/home link with '-->' */}
-      <PageLinkContainer
-        onHelloPage={appState.onHelloPage}
-        handleTogglePane = {togglePage}
-      />
-
       <style jsx global>{`
         #__next,
         html,

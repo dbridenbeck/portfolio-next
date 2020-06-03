@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import PageLinkModel from "../../models/pageLink";
 import PageLinkAnimation from "../../animations/PageLinkAnimation";
 
-const PageLinkSpan = styled.span`
+const PageLinkSpan = styled.div`
   position: absolute;
   display: block;
   right: 60px;
