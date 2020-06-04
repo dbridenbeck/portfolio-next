@@ -2,6 +2,9 @@ export default interface AppStateModel {
   currentPage: string;
   indexToSelect: number;
   pages: [string, string, string];
-  infoText: [{__html: string}, {__html: string}];
+  infoText: {
+    HELLO: {__html: string},
+    ABOUT: {__html: string}
+  }
   pageClickedOnce: boolean;
 }

@@ -19,16 +19,14 @@ const InfoTextContainer = styled.div`
 `;
 
 interface InfoTextProps {
-  infoText: [{__html: string}, {__html: string}];
-  indexToSelect: number;
+  infoText: {__html: string};
 }
 
 const InfoText: React.FC<InfoTextProps> = ({
   infoText,
-  indexToSelect,
 }) => (
     <InfoTextContainer
-      dangerouslySetInnerHTML={infoText[indexToSelect]}
+      dangerouslySetInnerHTML={infoText}
     ></InfoTextContainer>
 );
 

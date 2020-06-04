@@ -23,8 +23,8 @@ export default function Home() {
     currentPage: "HELLO",
     indexToSelect: 0,
     pages: ["HELLO", "ABOUT", "PORTFOLIO"],
-    infoText: [
-      {
+    infoText: {
+      HELLO: {
         __html: `
           <p>My name is Darren and I’m a web developer.</p>
           <p>I have been helping people build websites for over ten years, from
@@ -34,15 +34,15 @@ export default function Home() {
           <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
           you’d like to work together. </p>
           <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
-        `,
+        `
       },
-      {
+      ABOUT: {
         __html: `
           <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
           <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
-        `,
-      },
-    ],
+        `
+      }
+    },
     pageClickedOnce: false,
   });
 
@@ -104,8 +104,7 @@ export default function Home() {
             projects div
           */}
           <InfoText
-            infoText={appState.infoText}
-            indexToSelect={appState.indexToSelect}
+            infoText={appState.infoText[appState.currentPage]}
           />
         </MainContent>
         <PageLinkContainer
