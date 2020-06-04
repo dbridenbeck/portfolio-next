@@ -23,10 +23,10 @@ const StyledPhoneImage = styled.img`
   animation: ${rotate} 90s infinite linear;
   animation-delay: 300ms;
   transition: filter 0.5s;
-  filter: ${({ onHelloPage }) => triggerFilter(onHelloPage)};
+  filter: ${({ currentPage }) => triggerFilter(currentPage)};
 `;
 
-const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) =>
+const PhoneImage: React.FC<ImageModel> = ({ currentPage }) =>
   <picture>
     <source
       srcSet={require("../../public/images/phone.png?webp")}
@@ -37,7 +37,7 @@ const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledPhoneImage
-      onHelloPage={onHelloPage}
+      currentPage={currentPage}
       srcSet={require("../../public/images/phone.png")}
       alt="An 80's style mobile phone"
     />

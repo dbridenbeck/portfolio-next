@@ -22,10 +22,10 @@ const StyledComputerImage = styled.img`
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
   transition: filter 0.5s;
-  filter: ${({onHelloPage}) => triggerFilter(onHelloPage)};
+  filter: ${({currentPage}) => triggerFilter(currentPage)};
 `;
 
-const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) =>
+const ComputerImage: React.FC<ImageModel> = ({ currentPage }) =>
   <picture>
     <source
       srcSet={require("../../public/images/computer.png?webp")}
@@ -36,7 +36,7 @@ const ComputerImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledComputerImage
-      onHelloPage={onHelloPage}
+      currentPage={currentPage}
       srcSet={require("../../public/images/computer.png")}
       alt="An open laptop"
     />

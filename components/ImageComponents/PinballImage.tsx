@@ -22,10 +22,10 @@ const StyledPinballImage = styled.img`
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
   transition: filter 0.5s;
-  filter: ${({ onHelloPage }) => triggerFilter(onHelloPage)};
+  filter: ${({ currentPage }) => triggerFilter(currentPage)};
 `;
 
-const PinballImage: React.FC<ImageModel> = ({ onHelloPage }) => 
+const PinballImage: React.FC<ImageModel> = ({ currentPage }) => 
   <picture>
     <source
       srcSet={require("../../public/images/pinball.png?webp")}
@@ -36,7 +36,7 @@ const PinballImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledPinballImage
-      onHelloPage={onHelloPage}
+      currentPage={currentPage}
       srcSet={require("../../public/images/pinball.png")}
       alt="A pinball table"
     />
