@@ -22,11 +22,12 @@ const StyledPhoneImage = styled.img`
   height: auto;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 300ms;
-  transition: filter 0.5s;
+  transition: ${({ pageClickedOnce }) =>
+    pageClickedOnce ? "filter 0.5s" : ""};
   filter: ${({ currentPage }) => triggerFilter(currentPage)};
 `;
 
-const PhoneImage: React.FC<ImageModel> = ({ currentPage }) =>
+const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce }) => (
   <picture>
     <source
       srcSet={require("../../public/images/phone.png?webp")}
@@ -38,9 +39,11 @@ const PhoneImage: React.FC<ImageModel> = ({ currentPage }) =>
     />
     <StyledPhoneImage
       currentPage={currentPage}
+      pageClickedOnce={pageClickedOnce}
       srcSet={require("../../public/images/phone.png")}
       alt="An 80's style mobile phone"
     />
   </picture>
+);
 
 export default PhoneImage;

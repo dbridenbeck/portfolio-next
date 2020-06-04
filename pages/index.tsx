@@ -85,9 +85,7 @@ export default function Home() {
       </Head>
       <Layout>
         <MainContent>
-          <TitleText
-            currentPage={appState.currentPage}
-          />
+          <TitleText currentPage={appState.currentPage} />
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
@@ -96,16 +94,22 @@ export default function Home() {
               if current route is not porfolio show images, otherwise show
               component that renders projects that are selected
             */}
-            <ImagePairs leftOriented={true} currentPage={appState.currentPage} />
-            <ImagePairs leftOriented={false} currentPage={appState.currentPage} />
+            <ImagePairs
+              leftOriented={true}
+              currentPage={appState.currentPage}
+              pageClickedOnce={appState.pageClickedOnce}
+            />
+            <ImagePairs
+              leftOriented={false}
+              currentPage={appState.currentPage}
+              pageClickedOnce={appState.pageClickedOnce}
+            />
           </CircleContainer>
           {/* 
             if current route is not portfolio show InfoText otherwise show
             projects div
           */}
-          <InfoText
-            infoText={appState.infoText[appState.currentPage]}
-          />
+          <InfoText infoText={appState.infoText[appState.currentPage]} />
         </MainContent>
         <PageLinkContainer
           currentPage={appState.currentPage}
