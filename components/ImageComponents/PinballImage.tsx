@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import triggerFilter from "../../animations/TriggerFilter";
 import ImageModel from "../../models/images";
 
 const rotate = keyframes`
@@ -21,9 +22,10 @@ const StyledPinballImage = styled.img`
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
   transition: filter 0.5s;
+  filter: ${({ currentPage }) => triggerFilter(currentPage)};
 `;
 
-const PinballImage: React.FC<ImageModel> = ({ onHelloPage }) => 
+const PinballImage: React.FC<ImageModel> = ({ currentPage }) => 
   <picture>
     <source
       srcSet={require("../../public/images/pinball.png?webp")}
@@ -34,7 +36,7 @@ const PinballImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledPinballImage
-      className={`pinball ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      currentPage={currentPage}
       srcSet={require("../../public/images/pinball.png")}
       alt="A pinball table"
     />

@@ -1,19 +1,30 @@
 import Head from "next/head";
+import styled from "styled-components";
 import { useState } from "react";
 import TitleText from "../components/TitleText";
-import CircleAndImages from "../components/CircleAndImages";
+import CircleContainer from "../components/CircleContainer";
+import ImagePairs from "../components/ImageComponents/ImagePairs";
 import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
+import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
+
+const MainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  align-self: center;
+`;
 
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    onHelloPage: true,
+    currentPage: "HELLO",
     indexToSelect: 0,
-    title: ["HELLO", "ABOUT"],
-    infoText: [
-      {
+    pages: ["HELLO", "ABOUT", "PORTFOLIO"],
+    infoText: {
+      HELLO: {
         __html: `
           <p>My name is Darren and I’m a web developer.</p>
           <p>I have been helping people build websites for over ten years, from
@@ -23,25 +34,24 @@ export default function Home() {
           <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
           you’d like to work together. </p>
           <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
-        `,
+        `
       },
-      {
+      ABOUT: {
         __html: `
           <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
           <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
-        `,
-      },
-    ],
+        `
+      }
+    },
     pageClickedOnce: false,
   });
 
   // control which content to show from text's state pageClickedOnce prevents 
   // animations from firing on initial load
-  const togglePage = (): void => {
+  const changePage = (newPage): void => {
     updateAppState({
       ...appState,
-      onHelloPage: !appState.onHelloPage,
-      indexToSelect: appState.onHelloPage ? 1 : 0,
+      currentPage: newPage,
       pageClickedOnce: true,
     });
   };
@@ -73,51 +83,36 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="container">
-        <TitleText
-          titleText={appState.title[appState.indexToSelect]}
-          onHelloPage={appState.onHelloPage}
+      <Layout>
+        <MainContent>
+          <TitleText
+            currentPage={appState.currentPage}
+          />
+          <CircleContainer
+            currentPage={appState.currentPage}
+            pageClickedOnce={appState.pageClickedOnce}
+          >
+            {/* 
+              if current route is not porfolio show images, otherwise show
+              component that renders projects that are selected
+            */}
+            <ImagePairs leftOriented={true} currentPage={appState.currentPage} />
+            <ImagePairs leftOriented={false} currentPage={appState.currentPage} />
+          </CircleContainer>
+          {/* 
+            if current route is not portfolio show InfoText otherwise show
+            projects div
+          */}
+          <InfoText
+            infoText={appState.infoText[appState.currentPage]}
+          />
+        </MainContent>
+        <PageLinkContainer
+          currentPage={appState.currentPage}
+          pages={appState.pages}
+          changePage={changePage}
         />
-        <CircleAndImages
-          onHelloPage={appState.onHelloPage}
-          pageClickedOnce={appState.pageClickedOnce}
-        />
-        <InfoText 
-          infoText={appState.infoText}
-          indexToSelect={appState.indexToSelect}
-        />
-        {/* .push is to get PageLinkContainer to sit on bottom of page */}
-        <div className="push" />
-      </div>
-      {/* about/home link with '-->' */}
-      <PageLinkContainer
-        onHelloPage={appState.onHelloPage}
-        handleTogglePane = {togglePage}
-      />
-      <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          position: relative;
-          margin: 0 auto -30px auto;
-          padding: 1em 0 0 0;
-          height: 100%;
-          max-width: 650px;
-          color: white;
-        }
-
-        .push {
-          height: 30px;
-        }
-
-        @media screen and (min-width: 1270px) {
-          .container {
-            padding: 2em 0 0 0;
-          }
-        }
-      `}</style>
-
+      </Layout>
       <style jsx global>{`
         #__next,
         html,
@@ -138,24 +133,6 @@ export default function Home() {
 
         * {
           box-sizing: border-box;
-        }
-
-        .blue {
-          color: #3bc9d1;
-        }
-
-        .red {
-          color: #d13b40;
-        }
-
-        .blueFilter {
-          filter: invert(70%) sepia(34%) saturate(803%) hue-rotate(134deg)
-            brightness(95%) contrast(83%);
-        }
-
-        .redFilter {
-          filter: invert(15%) sepia(100%) saturate(2397%) hue-rotate(343deg)
-            brightness(99%) contrast(80%);
         }
       `}</style>
     </>

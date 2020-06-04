@@ -6,18 +6,18 @@ import ImageAnimation from "../../animations/ImageAnimation";
 
 interface ImagesProps {
   leftOriented: boolean;
-  onHelloPage: boolean;
+  currentPage: string;
 }
 
-const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
+const Images: React.FC<ImagesProps> = ({ leftOriented, currentPage }) => {
   const helloImageConfig = {
     initial: "flyIn",
-    animate: onHelloPage ? "center" : "flyOut",
+    animate: currentPage === "HELLO" ? "center" : "flyOut",
   };
 
   const aboutImageConfig = {
     initial: false,
-    animate: !onHelloPage ? "center" : "flyOut",
+    animate: currentPage === "ABOUT" ? "center" : "flyOut",
   };
 
   return (
@@ -28,9 +28,9 @@ const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
         leftOriented={leftOriented}
       >
         {leftOriented ? (
-          <ComputerImage onHelloPage={onHelloPage} />
+          <ComputerImage currentPage={currentPage} />
         ) : (
-          <PhoneImage onHelloPage={onHelloPage} />
+          <PhoneImage currentPage={currentPage} />
         )}
       </ImageAnimation>
 
@@ -40,9 +40,9 @@ const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {
         leftOriented={leftOriented}
       >
         {leftOriented ? (
-          <PinballImage onHelloPage={onHelloPage} />
+          <PinballImage currentPage={currentPage} />
         ) : (
-          <RollerskateImage onHelloPage={onHelloPage} />
+          <RollerskateImage currentPage={currentPage} />
         )}
       </ImageAnimation>
     </>

@@ -13,17 +13,17 @@ const StyledCircle = styled.div`
 `;
 
 interface CircleProps {
-  onHelloPage: boolean;
+  currentPage: string;
   pageClickedOnce: boolean;
 }
 
-const Circle: React.FC<CircleProps> = ({ onHelloPage, pageClickedOnce }) => 
+const Circle: React.FC<CircleProps> = ({ currentPage, pageClickedOnce }) => 
   <CircleAnimation
-    onHelloPage={onHelloPage}
+    currentPage={currentPage}
     pageClickedOnce={pageClickedOnce}
   >
     <StyledCircle 
-      color={onHelloPage ? "red" : "blue"} 
+      color={currentPage === "HELLO" ? "red" : "blue"} 
       pageClickedOnce={pageClickedOnce}
     />
   </CircleAnimation>

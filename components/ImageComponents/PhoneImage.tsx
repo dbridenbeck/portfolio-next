@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import ImageModel from "../../models/images";
+import triggerFilter from "../../animations/TriggerFilter";
 
 const rotate = keyframes`
   0% {
@@ -14,17 +15,18 @@ const rotate = keyframes`
 `;
 
 const StyledPhoneImage = styled.img`
-    display: block;
-    position: absolute;
-    margin: 25% 0px 0px 60%;
-    width: 35%;
-    height: auto;
-    animation: ${rotate} 90s infinite linear;
-    animation-delay: 300ms;
-    transition: filter 0.5s;
+  display: block;
+  position: absolute;
+  margin: 25% 0px 0px 60%;
+  width: 35%;
+  height: auto;
+  animation: ${rotate} 90s infinite linear;
+  animation-delay: 300ms;
+  transition: filter 0.5s;
+  filter: ${({ currentPage }) => triggerFilter(currentPage)};
 `;
 
-const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) =>
+const PhoneImage: React.FC<ImageModel> = ({ currentPage }) =>
   <picture>
     <source
       srcSet={require("../../public/images/phone.png?webp")}
@@ -35,7 +37,7 @@ const PhoneImage: React.FC<ImageModel> = ({ onHelloPage }) =>
       type="image/png"
     />
     <StyledPhoneImage
-      className={`phone ${onHelloPage ? "blueFilter" : "redFilter"}`}
+      currentPage={currentPage}
       srcSet={require("../../public/images/phone.png")}
       alt="An 80's style mobile phone"
     />
