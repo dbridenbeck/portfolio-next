@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 
 interface CircleAnimationProps {
   children: ReactElement;
-  onHelloPage: boolean;
+  currentPage: string;
   pageClickedOnce: boolean;
 }
 
@@ -26,7 +26,7 @@ const circleVariants = {
 
 const CircleAnimation: React.FC<CircleAnimationProps> = ({
   children,
-  onHelloPage,
+  currentPage,
   pageClickedOnce,
 }) => (
   /* animate ternary ensures that circle doesn't animate on init load */
@@ -34,9 +34,9 @@ const CircleAnimation: React.FC<CircleAnimationProps> = ({
     className={className}
     initial={false}
     animate={
-      onHelloPage && pageClickedOnce
+      currentPage === "HELLO" && pageClickedOnce
         ? "hello"
-        : !onHelloPage && pageClickedOnce
+        : currentPage === "ABOUT" && pageClickedOnce
         ? "about"
         : null
     }
