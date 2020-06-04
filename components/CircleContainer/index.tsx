@@ -27,19 +27,19 @@ const CircleContainerDiv = styled.div`
 `;
 
 interface CircleContainerProps {
-  onHelloPage: boolean;
+  currentPage: string;
   pageClickedOnce: boolean;
   children: ReactElement[];
 }
 
 const CircleContainer: React.FC<CircleContainerProps> = ({
-  onHelloPage,
+  currentPage,
   pageClickedOnce,
   children
 }) => (
   <CircleContainerDiv>
     {children}
-    <Circle onHelloPage={onHelloPage} pageClickedOnce={pageClickedOnce} />
+    <Circle currentPage={currentPage} pageClickedOnce={pageClickedOnce} />
   </CircleContainerDiv>
 );
 

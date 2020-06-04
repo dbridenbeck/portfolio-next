@@ -6,7 +6,7 @@ import ImageAnimation from "../../animations/ImageAnimation";
 
 interface ImagesProps {
   leftOriented: boolean;
-  onHelloPage: boolean;
+  currentPage: string;
 }
 
 const Images: React.FC<ImagesProps> = ({ leftOriented, onHelloPage }) => {

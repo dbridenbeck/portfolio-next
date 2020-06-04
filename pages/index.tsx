@@ -20,9 +20,9 @@ const MainContent = styled.div`
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    onHelloPage: true,
+    currentPage: "HELLO",
     indexToSelect: 0,
-    title: ["HELLO", "ABOUT"],
+    pages: ["HELLO", "ABOUT", "PORTFOLIO"],
     infoText: [
       {
         __html: `
@@ -48,11 +48,10 @@ export default function Home() {
 
   // control which content to show from text's state pageClickedOnce prevents 
   // animations from firing on initial load
-  const togglePage = (): void => {
+  const changePage = (newPage): void => {
     updateAppState({
       ...appState,
-      onHelloPage: !appState.onHelloPage,
-      indexToSelect: appState.onHelloPage ? 1 : 0,
+      currentPage: newPage,
       pageClickedOnce: true,
     });
   };
@@ -87,24 +86,32 @@ export default function Home() {
       <Layout>
         <MainContent>
           <TitleText
-            titleText={appState.title[appState.indexToSelect]}
-            onHelloPage={appState.onHelloPage}
+            currentPage={appState.currentPage}
           />
           <CircleContainer
-            onHelloPage={appState.onHelloPage}
+            currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
           >
-            <ImagePairs leftOriented={true} onHelloPage={appState.onHelloPage} />
-            <ImagePairs leftOriented={false} onHelloPage={appState.onHelloPage} />
+            {/* 
+              if current route is not porfolio show images, otherwise show
+              component that renders projects that are selected
+            */}
+            <ImagePairs leftOriented={true} currentPage={appState.currentPage} />
+            <ImagePairs leftOriented={false} currentPage={appState.currentPage} />
           </CircleContainer>
+          {/* 
+            if current route is not portfolio show InfoText otherwise show
+            projects div
+          */}
           <InfoText
             infoText={appState.infoText}
             indexToSelect={appState.indexToSelect}
           />
         </MainContent>
         <PageLinkContainer
-          onHelloPage={appState.onHelloPage}
-          handleTogglePane={togglePage}
+          currentPage={appState.currentPage}
+          pages={appState.pages}
+          changePage={changePage}
         />
       </Layout>
       <style jsx global>{`

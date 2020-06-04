@@ -1,3 +1,3 @@
 export default interface ImageModel {
-  onHelloPage: boolean;
+  currentPage: string;
 }

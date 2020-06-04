@@ -18,11 +18,10 @@ const Title = styled.h1`
 `;
 
 interface TitleTextProps {
-  titleText: string;
-  onHelloPage: boolean;
+  currentPage: string;
 }
 
-const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
+const TitleText: React.FC<TitleTextProps> = ({ currentPage }) => {
   return (
     <>
       <Head>
@@ -32,20 +31,20 @@ const TitleText: React.FC<TitleTextProps> = ({ onHelloPage, titleText }) => {
         />
       </Head>
       {/* 
-        check for onHelloPage & !onHelloPage used to add/remove from DOM
+        check for currentPage & !currentPage used to add/remove from DOM
         which triggers AnimatePresence to fire animation
       */}
       <AnimatePresence initial={false}>
-        {onHelloPage && (
+        {currentPage === "HELLO" && (
           <TitleAnimation>
-            <Title color={"blue"}>{titleText}</Title>
+            <Title color={"blue"}>{currentPage}</Title>
           </TitleAnimation>
         )}
       </AnimatePresence>
       <AnimatePresence initial={false}>
-        {!onHelloPage && (
+        {currentPage === "ABOUT" && (
           <TitleAnimation>
-            <Title color={"red"}>{titleText}</Title>
+            <Title color={"red"}>{currentPage}</Title>
           </TitleAnimation>
         )}
       </AnimatePresence>

@@ -1,7 +1,7 @@
 export default interface AppStateModel {
-  onHelloPage: boolean;
+  currentPage: string;
   indexToSelect: number;
-  title: [string, string];
+  pages: [string, string, string];
   infoText: [{__html: string}, {__html: string}];
   pageClickedOnce: boolean;
 }

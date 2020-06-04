@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import PageLink from "./PageLink";
-import PageArrow from "./PageArrow";
 
 const LinkContainer = styled.div`
   position: relative;
-  display: block;
+  display: flex;
+  flex-grow: 0;
+  justify-content: space-evenly;
+  align-content: center;
   margin: 0 auto;
   width: 100%;
   height: 60px;
@@ -12,19 +14,25 @@ const LinkContainer = styled.div`
 `;
 
 interface PageLinkContainerProps {
-  onHelloPage: boolean;
-  handleTogglePane: () => void;
+  currentPage: string;
+  pages: [string, string, string];
+  changePage: (text: string) => void;
 }
 
 const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
-  onHelloPage,
-  handleTogglePane,
-}) =>
-  <LinkContainer 
-    onClick={() => handleTogglePane()}
-  > 
-    <PageLink onHelloPage={onHelloPage} />
-    <PageArrow onHelloPage={onHelloPage} /> 
+  currentPage,
+  pages,
+  changePage,
+}) => (
+  <LinkContainer >
+    {pages.map(page => (
+      <PageLink 
+        text={page}
+        key={page}
+        handleChangePage={changePage}
+      />
+    ))}
   </LinkContainer>
+);
 
 export default PageLinkContainer;
