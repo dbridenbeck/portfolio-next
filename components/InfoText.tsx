@@ -34,6 +34,7 @@ const InfoText: React.FC<InfoTextProps> = ({
 }) => 
   currentPage !== "PORTFOLIO" ? (
     <InfoTextContainer
+      currentPage={currentPage}
       dangerouslySetInnerHTML={infoText}
     ></InfoTextContainer>
    ) : (

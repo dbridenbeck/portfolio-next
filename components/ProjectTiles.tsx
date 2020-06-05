@@ -1,20 +1,38 @@
 import styled from "styled-components";
 import { ProjectModel } from "../models/appState";
 
-const Project = styled.div`
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+`;
 
+const Project = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5%;
+  border: 1px solid #3bc9d1;
+`;
+
+const TitleTypeContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Title = styled.h3`
-
+  padding: 0;
+  margin: 0;
 `;
 
 const ProjectType = styled.h4`
-
+  padding: 0;
+  margin: 0;
 `;
 
 const ProjectInfoContainer = styled.div`
-
+  display: none;
 `;
 
 const Tech = styled.span`
@@ -32,11 +50,13 @@ interface ProjectTilesProps {
 const ProjectTiles: React.FC<ProjectTilesProps> = ({
   projects,
 }) => 
-  <>
+  <ProjectsContainer>
     {projects.map(project => (
       <Project key={project.url}>
-        <Title>{project.title}</Title>
-        <ProjectType></ProjectType>
+        <TitleTypeContainer>
+          <Title>{project.title}</Title>
+          <ProjectType>{project.type}</ProjectType>
+        </TitleTypeContainer>
         <ProjectInfoContainer>
           <Tech></Tech>
           <InfoP></InfoP>
@@ -44,6 +64,6 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
         </ProjectInfoContainer>
       </Project>
     ))}
-  </>
+  </ProjectsContainer>
   
 export default ProjectTiles;
