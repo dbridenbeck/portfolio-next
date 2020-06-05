@@ -1,6 +1,42 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { ProjectModel } from "../models/appState";
-import { ReactElement } from "react";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    height: 0%;
+  }
+  10% {
+    height: 100%;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    height: 0%;
+  }
+`;
+
+const fadeInAnimation = () => (
+  css`
+    animation: ${fadeIn} 1s ease-in-out forwards;
+  `
+);
+
+const fadeOutAnimation = () => (
+  css`
+    animation: ${fadeOut} 0.5s ease-in-out forwards;
+`
+);
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -12,16 +48,19 @@ const ProjectsContainer = styled.div`
 const Project = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: ${({ isProjectHovered }) => (isProjectHovered ? "2" : "0")};
-  justify-content: space-around;
-  padding: 2% 5%;
-  margin: 1% 0;
+  height: ${({ isProjectHovered }) => (isProjectHovered ? "100%" : "10%")};
+  justify-content: flex-start;
+  padding: 0.5em 5%;
+  margin: 0.5em 0;
   border: 1px solid #3bc9d1;
+  transition: height 0.75s ease-in-out;
 `;
 
 const TitleTypeContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 `;
 
 const Title = styled.h3`
@@ -35,12 +74,22 @@ const ProjectType = styled.h4`
 `;
 
 const ProjectInfoContainer = styled.div`
-  display: none;
+  ${({ isProjectHovered }) =>
+    isProjectHovered ? fadeInAnimation : fadeOutAnimation};
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 `;
 
-const Tech = styled.span``;
+const Tech = styled.span`
+  padding: 0;
+  margin: 0;
+`;
 
-const InfoP = styled.p``;
+const InfoP = styled.p`
+  padding: 0;
+  margin: 0;
+`;
 
 interface ProjectTilesProps {
   projects: ProjectModel[];
@@ -62,16 +111,16 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
         <Project
           key={project.url}
           onMouseEnter={updateProjectHoverIndex}
-          isProjectHovered={projectHoveredIndex === index}
+          isProjectHovered={isProjectHovered}
         >
           <TitleTypeContainer>
             <Title>{project.title}</Title>
             <ProjectType>{project.type}</ProjectType>
           </TitleTypeContainer>
-          <ProjectInfoContainer>
-            <Tech></Tech>
-            <InfoP></InfoP>
-            <InfoP></InfoP>
+          <ProjectInfoContainer isProjectHovered={isProjectHovered}>
+            <Tech>{project.tech}</Tech>
+            <InfoP>Goals: {project.goals}</InfoP>
+            <InfoP>Details: {project.projectDetail}</InfoP>
           </ProjectInfoContainer>
         </Project>
       );
