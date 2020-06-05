@@ -152,11 +152,12 @@ export default function Home() {
               pageClickedOnce={appState.pageClickedOnce}
             />
           </CircleContainer>
-          <InfoText 
-            infoText={appState.infoText[appState.currentPage]} 
+          <InfoText
+            infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}
             projects={appState.projects}
             updateProjectHoveredIndex={updateProjectHoveredIndex}
+            projectHoveredIndex={appState.projectHoveredIndex}
           />
         </MainContent>
         <PageLinkContainer

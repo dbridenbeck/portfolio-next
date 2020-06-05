@@ -25,6 +25,7 @@ interface InfoTextProps {
   infoText: {__html: string};
   projects: [ProjectModel, ProjectModel, ProjectModel];
   currentPage: string;
+  projectHoveredIndex: number;
   updateProjectHoveredIndex: (projectIndex: number) => void;
 }
 
@@ -33,6 +34,7 @@ const InfoText: React.FC<InfoTextProps> = ({
   projects,
   currentPage,
   updateProjectHoveredIndex,
+  projectHoveredIndex,
 }) =>
   currentPage !== "PORTFOLIO" ? (
     <InfoTextContainer
@@ -44,6 +46,7 @@ const InfoText: React.FC<InfoTextProps> = ({
       <ProjectTiles
         projects={projects}
         handleProjectHover={updateProjectHoveredIndex}
+        projectHoveredIndex={projectHoveredIndex}
       />
     </InfoTextContainer>
   );
