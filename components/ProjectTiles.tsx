@@ -4,7 +4,7 @@ import { ProjectModel } from "../models/appState";
 const fadeIn = keyframes`
   0% {
     opacity: 0;
-    height: 0%;
+    height: 0;
   }
   10% {
     height: 100%;
@@ -48,12 +48,12 @@ const ProjectsContainer = styled.div`
 const Project = styled.div`
   display: flex;
   flex-direction: column;
-  height: ${({ isProjectHovered }) => (isProjectHovered ? "100%" : "10%")};
+  height: ${({ isProjectHovered }) => (isProjectHovered === null ? "33.333%" : isProjectHovered ? "60%" : "15%")};
+  padding: ${({ isProjectHovered }) => (isProjectHovered ? "1% 5%" : "0% 5%")};
+  margin: ${({ isProjectHovered }) => (isProjectHovered ? "1% 5%" : "0% 5%")};
   justify-content: flex-start;
-  /* padding: 0.5em 5%;
-  margin: 0.5em 0; */
   border: 1px solid #3bc9d1;
-  transition: height 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 `;
 
 const TitleTypeContainer = styled.div`
