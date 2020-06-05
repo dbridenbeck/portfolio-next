@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ProjectTiles from "./ProjectTiles";
+import project from "../models/appState";
 
 const InfoTextContainer = styled.div`
   position: relative;
@@ -21,14 +23,22 @@ const InfoTextContainer = styled.div`
 
 interface InfoTextProps {
   infoText: {__html: string};
+  projects: [project, project, project];
+  currentPage: string;
 }
 
 const InfoText: React.FC<InfoTextProps> = ({
   infoText,
-}) => (
+  projects,
+  currentPage
+}) => 
+  currentPage !== "PORTFOLIO" ? (
     <InfoTextContainer
       dangerouslySetInnerHTML={infoText}
     ></InfoTextContainer>
-);
+   ) : (
+    <InfoTextContainer>
+      <ProjectTiles projects={projects}/>
+    </InfoTextContainer> )
 
 export default InfoText;
