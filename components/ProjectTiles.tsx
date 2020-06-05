@@ -50,8 +50,8 @@ const Project = styled.div`
   flex-direction: column;
   height: ${({ isProjectHovered }) => (isProjectHovered ? "100%" : "10%")};
   justify-content: flex-start;
-  padding: 0.5em 5%;
-  margin: 0.5em 0;
+  /* padding: 0.5em 5%;
+  margin: 0.5em 0; */
   border: 1px solid #3bc9d1;
   transition: height 0.75s ease-in-out;
 `;
