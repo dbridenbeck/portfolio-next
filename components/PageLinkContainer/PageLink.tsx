@@ -5,23 +5,31 @@ const PageLinkSpan = styled.span`
   font-size: 0.9em;
   font-style: italic;
   cursor: pointer;
-  color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};
+  color: ${({ linkSelected, color }) => linkSelected ? color : "#ff8aff"};
+  :hover {
+  color: ${({ color }) => color};
+  }
 `;
 
 interface PageLinkProps {
-  text: string;
+  page: {pageName: string, color: string};
+  currentPage: string;
   handleChangePage: (text: string) => void;
 }
 
-const PageLink = ({text, handleChangePage}) => (
-  <>
-    <PageLinkSpan 
-      color="blue"
-      onClick={() => handleChangePage(text)}
-    >
-      {text}
-    </PageLinkSpan>
-  </>
-);
+const PageLink = ({page, handleChangePage, currentPage}) => {
+  const linkSelected = currentPage === page.pageName;
+  return (
+    <>
+      <PageLinkSpan 
+        color={page.color}
+        linkSelected={linkSelected}
+        onClick={() => handleChangePage(page.pageName)}
+      >
+        {page.pageName}
+      </PageLinkSpan>
+    </>
+  )
+};
 
 export default PageLink;

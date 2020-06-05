@@ -9,13 +9,18 @@ const LinkContainer = styled.div`
   align-content: center;
   margin: 0 auto;
   width: 100%;
-  height: 5%;
+  height: 3%;
   font-size: 0.85em;
+  z-index: 99;
 `;
 
 interface PageLinkContainerProps {
   currentPage: string;
-  pages: [string, string, string];
+  pages: [
+    {pageName: string, color: string}, 
+    {pageName: string, color: string}, 
+    {pageName: string, color: string} 
+  ];
   changePage: (text: string) => void;
 }
 
@@ -27,8 +32,9 @@ const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
   <LinkContainer >
     {pages.map(page => (
       <PageLink 
-        text={page}
-        key={page}
+        page={page}
+        key={page.pageName}
+        currentPage={currentPage}
         handleChangePage={changePage}
       />
     ))}

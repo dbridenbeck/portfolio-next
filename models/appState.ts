@@ -1,8 +1,12 @@
 export default interface AppStateModel {
   currentPage: string;
   indexToSelect: number;
-  pages: [string, string, string];
-  infoText: {
+  pages: [
+    {pageName: string, color: string}, 
+    {pageName: string, color: string}, 
+    {pageName: string, color: string} 
+  ];
+    infoText: {
     HELLO: {__html: string},
     ABOUT: {__html: string}
   }
