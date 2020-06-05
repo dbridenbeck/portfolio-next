@@ -5,15 +5,33 @@ import TitleAnimation from "../animations/TitleAnimation";
 
 const Title = styled.h1`
   position: absolute;
-  margin: -5% 0 0 2.5%;
+  margin-top: ${({ currentPage }) =>
+    currentPage === "PORTFOLIO" ? "-0.5em" : "-.325em"};
+  margin-left: ${({ currentPage }) =>
+    currentPage === "PORTFOLIO" ? "0" : "2.5%"};
   padding: 0;
   font-family: "Crimson Text", serif;
-  font-size: 4em;
+  font-size: ${({ currentPage }) =>
+    currentPage === "PORTFOLIO" ? "2.5em" : "4em"};
   font-weight: 200;
   line-height: 1em;
-  color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")}; 
+  color: ${({ color }) =>
+    color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#ffff8a"};
   @media (min-width: 1270px) {
-    font-size: 6em;
+    font-size: ${({ currentPage }) =>
+      currentPage === "PORTFOLIO" ? "3.333em" : "6em"};
+  }
+`;
+
+const SubTitle = styled.h2`
+  position: absolute;
+  margin-top: 0.5em;
+  color: #ffff8a;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: "Muli", sans-serif; 
+  @media (min-width: 1270px) {
+    font-size: 2.125em;
   }
 `;
 
@@ -45,6 +63,19 @@ const TitleText: React.FC<TitleTextProps> = ({ currentPage }) => {
         {currentPage === "ABOUT" && (
           <TitleAnimation>
             <Title color={"red"}>{currentPage}</Title>
+          </TitleAnimation>
+        )}
+      </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {currentPage === "PORTFOLIO" && (
+          <TitleAnimation>
+            <Title 
+              color={"yellow"}
+              currentPage={currentPage}
+            >
+              Darren Bridenbeck
+            </Title>
+            <SubTitle>Software Engineer</SubTitle>
           </TitleAnimation>
         )}
       </AnimatePresence>
