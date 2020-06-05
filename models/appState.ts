@@ -1,4 +1,4 @@
-export interface project {
+export interface ProjectModel {
   title: string;
   type: string;
   tech: string[];
@@ -19,6 +19,6 @@ export default interface AppStateModel {
     HELLO: { __html: string };
     ABOUT: { __html: string };
   };
-  projects: [project, project, project];
+  projects: [Project, Project, Project];
   pageClickedOnce: boolean;
 }

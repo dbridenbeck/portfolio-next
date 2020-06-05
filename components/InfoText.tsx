@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProjectTiles from "./ProjectTiles";
-import project from "../models/appState";
+import { ProjectModel } from "../models/appState";
 
 const InfoTextContainer = styled.div`
   position: relative;
@@ -23,7 +23,7 @@ const InfoTextContainer = styled.div`
 
 interface InfoTextProps {
   infoText: {__html: string};
-  projects: [project, project, project];
+  projects: [ProjectModel, ProjectModel, ProjectModel];
   currentPage: string;
 }
 
