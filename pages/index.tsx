@@ -56,6 +56,34 @@ export default function Home() {
         `,
       },
     },
+    projects: [
+      {
+        title: "Whidbey Herbal",
+        type: "eCommerce Website",
+        tech: ["React", "Redux", "Styled-Components", "Shopify API"],
+        goals:
+          "Remove reliance on Shopify theme by building a custom site, tell “the story” of the brand through images and photos",
+        projectDetail:
+          "Implement designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
+        url: "http://whidbeyherbal.com",
+      },
+      {
+        title: "string",
+        type: "string",
+        tech: ["string"],
+        goals: "string",
+        projectDetail: "string",
+        url: "string",
+      },
+      {
+        title: "string",
+        type: "string",
+        tech: ["string"],
+        goals: "string",
+        projectDetail: "string",
+        url: "string",
+      },
+    ],
     pageClickedOnce: false,
   });
 
