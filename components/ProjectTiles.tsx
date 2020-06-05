@@ -45,14 +45,19 @@ const InfoP = styled.p`
 
 interface ProjectTilesProps {
   projects: [ProjectModel, ProjectModel, ProjectModel];
+  handleProjectHover: (projectIndex) => void;
 }
 
 const ProjectTiles: React.FC<ProjectTilesProps> = ({
   projects,
-}) => 
+  handleProjectHover,
+}) => (
   <ProjectsContainer>
-    {projects.map(project => (
-      <Project key={project.url}>
+    {projects.map((project, index) => (
+      <Project 
+        key={project.url}
+        onMouseEnter={() => handleProjectHover(index)}
+      >
         <TitleTypeContainer>
           <Title>{project.title}</Title>
           <ProjectType>{project.type}</ProjectType>
@@ -65,5 +70,6 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
       </Project>
     ))}
   </ProjectsContainer>
+);
   
 export default ProjectTiles;

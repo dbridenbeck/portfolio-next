@@ -21,6 +21,7 @@ export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
     currentPage: "PORTFOLIO",
+    projectHoveredIndex: null,
     indexToSelect: 0,
     pages: [
       {
@@ -73,7 +74,7 @@ export default function Home() {
         tech: ["string"],
         goals: "string",
         projectDetail: "string",
-        url: "string",
+        url: "why",
       },
       {
         title: "string",
@@ -94,6 +95,15 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
+    });
+  };
+
+  // update state when project is hovered
+  // on hover, show animated gif of proj in circle and expand that project's details
+  const updateProjectHoveredIndex = (projectIndex) => {
+    updateAppState({
+      ...appState,
+      projectHoveredIndex: projectIndex,
     });
   };
 
@@ -146,6 +156,7 @@ export default function Home() {
             infoText={appState.infoText[appState.currentPage]} 
             currentPage={appState.currentPage}
             projects={appState.projects}
+            updateProjectHoveredIndex={updateProjectHoveredIndex}
           />
         </MainContent>
         <PageLinkContainer

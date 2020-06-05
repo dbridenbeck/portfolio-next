@@ -9,6 +9,7 @@ export interface ProjectModel {
 
 export default interface AppStateModel {
   currentPage: string;
+  projectHoveredIndex: number;
   indexToSelect: number;
   pages: [
     { pageName: string; color: string },
@@ -19,6 +20,6 @@ export default interface AppStateModel {
     HELLO: { __html: string };
     ABOUT: { __html: string };
   };
-  projects: [Project, Project, Project];
+  projects: [ProjectModel, ProjectModel, ProjectModel];
   pageClickedOnce: boolean;
 }

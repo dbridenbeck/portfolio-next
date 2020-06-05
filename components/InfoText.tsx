@@ -25,21 +25,27 @@ interface InfoTextProps {
   infoText: {__html: string};
   projects: [ProjectModel, ProjectModel, ProjectModel];
   currentPage: string;
+  updateProjectHoveredIndex: (projectIndex: number) => void;
 }
 
 const InfoText: React.FC<InfoTextProps> = ({
   infoText,
   projects,
-  currentPage
-}) => 
+  currentPage,
+  updateProjectHoveredIndex,
+}) =>
   currentPage !== "PORTFOLIO" ? (
     <InfoTextContainer
       currentPage={currentPage}
       dangerouslySetInnerHTML={infoText}
     ></InfoTextContainer>
-   ) : (
+  ) : (
     <InfoTextContainer>
-      <ProjectTiles projects={projects}/>
-    </InfoTextContainer> )
+      <ProjectTiles
+        projects={projects}
+        handleProjectHover={updateProjectHoveredIndex}
+      />
+    </InfoTextContainer>
+  );
 
 export default InfoText;
