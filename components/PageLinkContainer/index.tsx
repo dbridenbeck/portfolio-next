@@ -9,7 +9,7 @@ const LinkContainer = styled.div`
   align-content: center;
   margin: 0 auto;
   width: 100%;
-  height: 60px;
+  height: 5%;
   font-size: 0.85em;
 `;
 
