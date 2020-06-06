@@ -15,6 +15,7 @@ const MainContent = styled.div`
   justify-content: center;
   flex-grow: 1;
   align-self: center;
+  width: 100%;
 `;
 
 export default function Home() {

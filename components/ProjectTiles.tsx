@@ -48,8 +48,8 @@ const ProjectsContainer = styled.div`
 const Project = styled.div`
   display: flex;
   flex-direction: column;
-  height: ${({ isProjectHovered }) => (isProjectHovered === null ? "33.333%" : isProjectHovered ? "60%" : "15%")};
-  padding: ${({ isProjectHovered }) => (isProjectHovered ? "1% 5%" : "0% 5%")};
+  height: ${({ isProjectHovered }) => (isProjectHovered ? "60%" : "2em")};
+  padding: 0.125em 5%;
   margin: ${({ isProjectHovered }) => (isProjectHovered ? "1% 5%" : "0% 5%")};
   justify-content: flex-start;
   border: 1px solid #3bc9d1;
