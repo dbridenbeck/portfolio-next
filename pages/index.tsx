@@ -8,6 +8,9 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
+import whidbeyGif from "../public/images/whidbeyherbal.gif";
+import chatappGif from "../public/images/chatapp.gif";
+import taskManagerGif from "../public/images/taskmanager.gif";
 
 const MainContent = styled.div`
   display: flex;
@@ -69,6 +72,7 @@ export default function Home() {
           "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
         url: "http://whidbeyherbal.com",
         color: "#F067A5",
+        gif: `${whidbeyGif}`,
       },
       {
         title: "Chat App",
@@ -80,6 +84,7 @@ export default function Home() {
           "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "why",
         color: "#8aff8a",
+        gif: `${chatappGif}`,
       },
       {
         title: "Task Manager",
@@ -91,6 +96,7 @@ export default function Home() {
           "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
         url: "string",
         color: "#ff8a8a",
+        gif: `${taskManagerGif}`,
       },
     ],
     pageClickedOnce: false,
@@ -148,6 +154,8 @@ export default function Home() {
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
+            projectHoveredIndex={appState.projectHoveredIndex}
+            projects={appState.projects}
           >
             <ImagePairs
               leftOriented={true}
