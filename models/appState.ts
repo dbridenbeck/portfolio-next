@@ -6,6 +6,7 @@ export interface ProjectModel {
   projectDetail: string;
   url: string;
   color: string;
+  gif: string;
 }
 
 export default interface AppStateModel {
