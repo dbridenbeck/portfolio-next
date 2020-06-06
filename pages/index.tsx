@@ -12,7 +12,7 @@ import AppStateModel from "../models/appState";
 const MainContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   flex-grow: 1;
   align-self: center;
   width: 100%;
