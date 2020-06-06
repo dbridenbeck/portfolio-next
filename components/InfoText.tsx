@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ProjectTiles from "./ProjectTiles";
+import { ProjectModel } from "../models/appState";
 
 const InfoTextContainer = styled.div`
   position: relative;
@@ -10,25 +12,50 @@ const InfoTextContainer = styled.div`
   font-weight: 400;
   line-height: 1.5em;
   width: 95%;
-  height: 40%;
+  height: 40vh;
   color: #d4d4e4;
   @media screen and (min-width: 1270px) {
     width: 80%;
     margin: 0 auto;
     font-size: 0.875rem;
+    height: 33vh;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    height: 30vh;
   }
 `;
 
 interface InfoTextProps {
   infoText: {__html: string};
+  projects: [ProjectModel, ProjectModel, ProjectModel];
+  currentPage: string;
+  projectHoveredIndex: number;
+  updateProjectHoveredIndex: (projectIndex: number) => void;
 }
 
 const InfoText: React.FC<InfoTextProps> = ({
   infoText,
-}) => (
+  projects,
+  currentPage,
+  updateProjectHoveredIndex,
+  projectHoveredIndex,
+}) =>
+  currentPage !== "PORTFOLIO" ? (
     <InfoTextContainer
+      currentPage={currentPage}
       dangerouslySetInnerHTML={infoText}
     ></InfoTextContainer>
-);
+  ) : (
+    <InfoTextContainer>
+      <ProjectTiles
+        projects={projects}
+        handleProjectHover={updateProjectHoveredIndex}
+        projectHoveredIndex={projectHoveredIndex}
+      />
+    </InfoTextContainer>
+  );
 
 export default InfoText;

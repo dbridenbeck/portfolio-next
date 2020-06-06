@@ -15,12 +15,14 @@ const MainContent = styled.div`
   justify-content: center;
   flex-grow: 1;
   align-self: center;
+  width: 100%;
 `;
 
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    currentPage: "HELLO",
+    currentPage: "PORTFOLIO",
+    projectHoveredIndex: -1,
     indexToSelect: 0,
     pages: [
       {
@@ -56,6 +58,41 @@ export default function Home() {
         `,
       },
     },
+    projects: [
+      {
+        title: "Whidbey Herbal",
+        type: "eCommerce Website",
+        tech: ["React", "Redux", "Styled-Components", "Shopify API"],
+        goals:
+          "Remove reliance on Shopify theme by building a custom site, tell “the story” of the brand through images and photos",
+        projectDetail:
+          "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
+        url: "http://whidbeyherbal.com",
+        color: "#F067A5",
+      },
+      {
+        title: "Chat App",
+        type: "Realtime Chat Application",
+        tech: ["NodeJS", "Express", "Socket.io", "Handlebars"],
+        goals:
+          "Build a chat app that supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
+        projectDetail:
+          "Used Socket.io for realtime communication, Handlebars for UI templating",
+        url: "why",
+        color: "#8aff8a",
+      },
+      {
+        title: "Task Manager",
+        type: "CRUD API",
+        tech: ["NodeJS", "Express", "MongoDB", "Multer", "JWT"],
+        goals:
+          "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
+        projectDetail:
+          "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
+        url: "string",
+        color: "#ff8a8a",
+      },
+    ],
     pageClickedOnce: false,
   });
 
@@ -66,6 +103,15 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
+    });
+  };
+
+  // update state when project is hovered
+  // on hover, show animated gif of proj in circle and expand that project's details
+  const updateProjectHoveredIndex = (projectIndex) => {
+    updateAppState({
+      ...appState,
+      projectHoveredIndex: projectIndex,
     });
   };
 
@@ -92,7 +138,7 @@ export default function Home() {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Muli:wght@300;600&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -103,10 +149,6 @@ export default function Home() {
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
           >
-            {/* 
-              if current route is not porfolio show images, otherwise show
-              component that renders projects that are selected
-            */}
             <ImagePairs
               leftOriented={true}
               currentPage={appState.currentPage}
@@ -118,11 +160,13 @@ export default function Home() {
               pageClickedOnce={appState.pageClickedOnce}
             />
           </CircleContainer>
-          {/* 
-            if current route is not portfolio show InfoText otherwise show
-            projects div
-          */}
-          <InfoText infoText={appState.infoText[appState.currentPage]} />
+          <InfoText
+            infoText={appState.infoText[appState.currentPage]}
+            currentPage={appState.currentPage}
+            projects={appState.projects}
+            updateProjectHoveredIndex={updateProjectHoveredIndex}
+            projectHoveredIndex={appState.projectHoveredIndex}
+          />
         </MainContent>
         <PageLinkContainer
           currentPage={appState.currentPage}
