@@ -28,13 +28,13 @@ const fadeOut = keyframes`
 
 const fadeInAnimation = () => (
   css`
-    animation: ${fadeIn} 1s ease-in-out forwards;
+    animation: ${fadeIn} 0.75s ease-in-out forwards;
   `
 );
 
 const fadeOutAnimation = () => (
   css`
-    animation: ${fadeOut} 0.5s ease-in-out forwards;
+    animation: ${fadeOut} 0.75s ease-in-out forwards;
 `
 );
 
