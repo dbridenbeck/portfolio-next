@@ -12,12 +12,19 @@ const InfoTextContainer = styled.div`
   font-weight: 400;
   line-height: 1.5em;
   width: 95%;
-  height: 30vh;
+  height: 40vh;
   color: #d4d4e4;
   @media screen and (min-width: 1270px) {
     width: 80%;
     margin: 0 auto;
     font-size: 0.875rem;
+    height: 33vh;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    height: 30vh;
   }
 `;
 

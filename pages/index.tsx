@@ -22,7 +22,7 @@ export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
     currentPage: "PORTFOLIO",
-    projectHoveredIndex: null,
+    projectHoveredIndex: -1,
     indexToSelect: 0,
     pages: [
       {
@@ -75,7 +75,7 @@ export default function Home() {
         type: "Realtime Chat Application",
         tech: ["NodeJS", "Express", "Socket.io", "Handlebars"],
         goals:
-          "Build a chat app supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
+          "Build a chat app that supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
         projectDetail:
           "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "why",
@@ -88,7 +88,7 @@ export default function Home() {
         goals:
           "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
         projectDetail:
-          "I handled the DB configuration, building the API, implementing JWT for auth, and adding Multer to handle form-data",
+          "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
         url: "string",
         color: "#ff8a8a",
       },
@@ -138,7 +138,7 @@ export default function Home() {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Muli:wght@300;600&display=swap"
           rel="stylesheet"
         />
       </Head>
