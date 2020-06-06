@@ -8,9 +8,9 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
-import whidbeyGif from "../public/images/whidbeyherbal.gif";
-import chatappGif from "../public/images/chatapp.gif";
-import taskManagerGif from "../public/images/taskmanager.gif";
+const whidbeyGif = require("../public/images/whidbeyherbal.gif");
+const chatappGif = require("../public/images/chatapp.gif");
+const taskManagerGif = require("../public/images/taskmanager.gif");
 
 const MainContent = styled.div`
   display: flex;
