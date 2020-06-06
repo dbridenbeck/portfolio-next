@@ -10,10 +10,6 @@ const StyledLayout = styled.div`
   height: 100%;
   max-width: 650px;
   color: white;
-
-  @media screen and (min-width: 1270px) {
-    padding: 2em 0 0 0;
-  }
 `;
 
 interface LayoutProps {

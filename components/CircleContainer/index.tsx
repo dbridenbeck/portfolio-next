@@ -12,17 +12,17 @@ const CircleContainerDiv = styled.div`
   margin: 0 auto;
 
   @media screen and (min-width: 1270px) {
-    width: 400px;
-    height: 400px;
-    max-width: 400px;
-    max-height: 400px;
+    width: 375px;
+    height: 375px;
+    max-width: 375px;
+    max-height: 375px;
   }
 
   @media screen and (min-width: 1400px) {
-    width: 600px;
-    height: 600px;
-    max-width: 600px;
-    max-height: 600px;
+    width: 575px;
+    height: 575px;
+    max-width: 575px;
+    max-height: 575px;
   }
 `;
 
