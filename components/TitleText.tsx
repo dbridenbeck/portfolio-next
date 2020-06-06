@@ -5,8 +5,7 @@ import TitleAnimation from "../animations/TitleAnimation";
 
 const Title = styled.h1`
   position: absolute;
-  margin-top: ${({ currentPage }) =>
-    currentPage === "PORTFOLIO" ? "-0.5em" : "-.325em"};
+  margin-top: -0.325em;
   margin-left: ${({ currentPage }) =>
     currentPage === "PORTFOLIO" ? "0" : "2.5%"};
   padding: 0;
@@ -25,7 +24,7 @@ const Title = styled.h1`
 
 const SubTitle = styled.h2`
   position: absolute;
-  margin-top: 0.5em;
+  margin-top: .825em;
   color: #ffff8a;
   font-weight: bold;
   font-size: 1.5em;

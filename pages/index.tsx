@@ -30,12 +30,12 @@ export default function Home() {
         color: "#3bc9d1",
       },
       {
-        pageName: "ABOUT",
-        color: "#d13b40",
-      },
-      {
         pageName: "PORTFOLIO",
         color: "#ffff8a",
+      },
+      {
+        pageName: "ABOUT",
+        color: "#d13b40",
       },
     ],
     infoText: {
