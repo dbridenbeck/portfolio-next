@@ -6,8 +6,8 @@ const fadeIn = keyframes`
     opacity: 0;
     height: 0;
   }
-  10% {
-    height: 100%;
+  50% {
+    opacity: 0;
   }
   100% {
     height: 100%;
@@ -20,23 +20,24 @@ const fadeOut = keyframes`
     opacity: 1;
     height: 100%;
   }
+  50% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
     height: 0%;
   }
 `;
 
-const fadeInAnimation = () => (
+const fadeInAnimation = () =>
   css`
     animation: ${fadeIn} 0.75s ease-in-out forwards;
-  `
-);
+  `;
 
-const fadeOutAnimation = () => (
+const fadeOutAnimation = () =>
   css`
     animation: ${fadeOut} 0.75s ease-in-out forwards;
-`
-);
+  `;
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -49,10 +50,11 @@ const Project = styled.div`
   display: flex;
   flex-direction: column;
   height: ${({ isProjectHovered }) => (isProjectHovered ? "60%" : "2em")};
-  padding: 0.125em 5%;
-  margin: ${({ isProjectHovered }) => (isProjectHovered ? "1% 5%" : "0% 5%")};
+  padding: 0.15em 2.5%;
+  margin: 1% 2.5%;
   justify-content: flex-start;
-  border: 1px solid #3bc9d1;
+  border: ${({ isProjectHovered, color }) =>
+    isProjectHovered ? `2px solid ${color}` : `2px solid #3bc9d1`};
   transition: all 0.75s ease-in-out;
 `;
 
@@ -76,17 +78,33 @@ const ProjectType = styled.h4`
 const ProjectInfoContainer = styled.div`
   ${({ isProjectHovered }) =>
     isProjectHovered ? fadeInAnimation : fadeOutAnimation};
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 0;
+  margin: 0;
+  overflow: hidden;
+`;
+
+const TechPills = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.825em;
+`;
+
+const TechPill = styled.div`
+  border: ${({ color }) => `1px solid ${color}`};
+  border-radius: 1000px;
+  padding: 0 0.725em;
   margin: 0;
 `;
 
-const Tech = styled.span`
-  padding: 0;
-  margin: 0;
+const BoldSpan = styled.span`
+  color: ${({ color }) => color};
 `;
 
 const InfoP = styled.p`
+  font-weight: normal;
   padding: 0;
   margin: 0;
 `;
@@ -112,15 +130,25 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
           key={project.url}
           onMouseEnter={updateProjectHoverIndex}
           isProjectHovered={isProjectHovered}
+          color={project.color}
         >
           <TitleTypeContainer>
             <Title>{project.title}</Title>
             <ProjectType>{project.type}</ProjectType>
           </TitleTypeContainer>
           <ProjectInfoContainer isProjectHovered={isProjectHovered}>
-            <Tech>{project.tech}</Tech>
-            <InfoP>Goals: {project.goals}</InfoP>
-            <InfoP>Details: {project.projectDetail}</InfoP>
+            <TechPills>
+              {project.tech.map((singleTech) => (
+                <TechPill color={project.color}>{singleTech}</TechPill>
+              ))}
+            </TechPills>
+            <InfoP>
+              <BoldSpan color={project.color}>Goals:</BoldSpan> {project.goals}
+            </InfoP>
+            <InfoP>
+              <BoldSpan color={project.color}>Details:</BoldSpan>{" "}
+              {project.projectDetail}
+            </InfoP>
           </ProjectInfoContainer>
         </Project>
       );

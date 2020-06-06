@@ -5,6 +5,7 @@ export interface ProjectModel {
   goals: string;
   projectDetail: string;
   url: string;
+  color: string;
 }
 
 export default interface AppStateModel {

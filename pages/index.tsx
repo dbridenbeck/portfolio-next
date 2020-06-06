@@ -66,24 +66,31 @@ export default function Home() {
         goals:
           "Remove reliance on Shopify theme by building a custom site, tell “the story” of the brand through images and photos",
         projectDetail:
-          "Implement designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
+          "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
         url: "http://whidbeyherbal.com",
+        color: "#F067A5",
       },
       {
-        title: "string",
-        type: "string",
-        tech: ["string"],
-        goals: "string",
-        projectDetail: "string",
+        title: "Chat App",
+        type: "Realtime Chat Application",
+        tech: ["NodeJS", "Express", "Socket.io", "Handlebars"],
+        goals:
+          "Build a chat app supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
+        projectDetail:
+          "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "why",
+        color: "#8aff8a",
       },
       {
-        title: "string",
-        type: "string",
-        tech: ["string"],
-        goals: "string",
-        projectDetail: "string",
+        title: "Task Manager",
+        type: "CRUD API",
+        tech: ["NodeJS", "Express", "MongoDB", "Multer", "JWT"],
+        goals:
+          "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
+        projectDetail:
+          "I handled the DB configuration, building the API, implementing JWT for auth, and adding Multer to handle form-data",
         url: "string",
+        color: "#ff8a8a",
       },
     ],
     pageClickedOnce: false,
