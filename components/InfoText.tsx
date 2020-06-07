@@ -13,7 +13,7 @@ const InfoTextContainer = styled.div`
   line-height: 1.5em;
   width: 95%;
   height: 40vh;
-  color: #d4d4e4;
+  color: #333333;
   @media screen and (min-width: 1270px) {
     width: 80%;
     margin: 0 auto;

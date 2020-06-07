@@ -5,7 +5,7 @@ const PageLinkSpan = styled.span`
   font-size: 0.9em;
   font-style: italic;
   cursor: pointer;
-  color: ${({ linkSelected, color }) => linkSelected ? color : "#ff8aff"};
+  color: ${({ linkSelected, color }) => linkSelected ? color : "black"};
   :hover {
   color: ${({ color }) => color};
   }

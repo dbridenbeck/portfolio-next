@@ -30,15 +30,15 @@ export default function Home() {
     pages: [
       {
         pageName: "HELLO",
-        color: "#3bc9d1",
+        color: "#6f59e9",
       },
       {
         pageName: "PORTFOLIO",
-        color: "#ffff8a",
+        color: "#427ce6",
       },
       {
         pageName: "ABOUT",
-        color: "#d13b40",
+        color: "#b0292e",
       },
     ],
     infoText: {
@@ -71,7 +71,7 @@ export default function Home() {
         projectDetail:
           "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
         url: "http://whidbeyherbal.com",
-        color: "#F067A5",
+        color: "#9686ef",
         gif: `${whidbeyGif}`,
       },
       {
@@ -83,7 +83,7 @@ export default function Home() {
         projectDetail:
           "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "why",
-        color: "#8aff8a",
+        color: "#6f9bec",
         gif: `${chatappGif}`,
       },
       {
@@ -95,7 +95,7 @@ export default function Home() {
         projectDetail:
           "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
         url: "string",
-        color: "#ff8a8a",
+        color: "#d13b40",
         gif: `${taskManagerGif}`,
       },
     ],
@@ -189,7 +189,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          background-color: black;
+          background-color: wheat;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
@@ -197,7 +197,7 @@ export default function Home() {
           height: 100%;
         }
         a {
-          color: #8affff;
+          color: #6f59e9;
           text-decoration: none;
         }
 

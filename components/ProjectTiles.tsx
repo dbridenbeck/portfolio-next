@@ -51,7 +51,12 @@ const Project = styled.div`
   flex-direction: column;
   height: ${({ isProjectHovered, projectHoveredIndex }) =>
     isProjectHovered ? "70%" : projectHoveredIndex === -1 ? "4em" : "1.825em"};
-  padding: ${({ isProjectHovered, projectHoveredIndex }) => isProjectHovered ? "0 2.5%" : projectHoveredIndex === -1 ? "1em" : "0 2.5%"};
+  padding: ${({ isProjectHovered, projectHoveredIndex }) =>
+    isProjectHovered
+      ? "0 2.5%"
+      : projectHoveredIndex === -1
+      ? "1em"
+      : "0 2.5%"};
   margin: 0.5% 2.5%;
   justify-content: flex-start;
   border: ${({ isProjectHovered, color }) =>
@@ -83,7 +88,12 @@ const ProjectInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: ${({ isProjectHovered, projectHoveredIndex }) => isProjectHovered ? "0" : !isProjectHovered && projectHoveredIndex === -1 ? "8em" : "0" };
+  padding-top: ${({ isProjectHovered, projectHoveredIndex }) =>
+    isProjectHovered
+      ? "0"
+      : !isProjectHovered && projectHoveredIndex === -1
+      ? "8em"
+      : "0"};
   margin: 0;
 `;
 

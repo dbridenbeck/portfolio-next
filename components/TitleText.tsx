@@ -15,7 +15,7 @@ const Title = styled.h1`
   font-weight: 200;
   line-height: 1em;
   color: ${({ color }) =>
-    color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#ffff8a"};
+    color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#333333"};
   @media (min-width: 1270px) {
     font-size: ${({ currentPage }) =>
       currentPage === "PORTFOLIO" ? "3.333em" : "6em"};
@@ -24,11 +24,11 @@ const Title = styled.h1`
 
 const SubTitle = styled.h2`
   position: absolute;
-  margin-top: .825em;
-  color: #ffff8a;
+  margin-top: 0.825em;
+  color: #333333;
   font-weight: bold;
   font-size: 1.5em;
-  font-family: "Muli", sans-serif; 
+  font-family: "Muli", sans-serif;
   @media (min-width: 1270px) {
     font-size: 2.125em;
   }
