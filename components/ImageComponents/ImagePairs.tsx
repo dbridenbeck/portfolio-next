@@ -17,12 +17,22 @@ const Images: React.FC<ImagesProps> = ({
 }) => {
   const helloImageConfig = {
     initial: "flyIn",
-    animate: currentPage === "HELLO" ? "center" : "flyOut",
+    animate:
+      currentPage === "HELLO"
+        ? "center"
+        : currentPage === "PORTFOLIO"
+        ? "portfolioUp"
+        : "flyOut",
   };
 
   const aboutImageConfig = {
     initial: false,
-    animate: currentPage === "ABOUT" ? "center" : "flyOut",
+    animate:
+      currentPage === "ABOUT"
+        ? "center"
+        : currentPage === "PORTFOLIO"
+        ? "portfolioDown"
+        : "flyOut",
   };
 
   return (

@@ -24,6 +24,7 @@ const { className, styles } = css.resolve`
 const imageVariants = {
   center: {
     x: "0px",
+    y: "0px",
     transition: {
       type: "spring",
       stiffness: 35,
@@ -33,6 +34,23 @@ const imageVariants = {
   },
   flyOut: (leftOriented) => ({
     x: leftOriented ? "-75%" : "75%",
+    y: "0vh",
+    transition: {
+      type: "spring",
+      stiffness: 35,
+    },
+  }),
+  portfolioUp: (leftOriented) => ({
+    x: leftOriented ? "-90%" : "90%",
+    y: "40vh",
+    transition: {
+      type: "spring",
+      stiffness: 35,
+    },
+  }),
+  portfolioDown: (leftOriented) => ({
+    x: leftOriented ? "-90%" : "90%",
+    y: "-10vh",
     transition: {
       type: "spring",
       stiffness: 35,
