@@ -23,12 +23,14 @@ const StyledPinballImage = styled.img`
   animation-delay: 100ms;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "filter 0.5s" : ""};
-  filter: ${({ currentPage }) => triggerFilter(currentPage)};
+  filter: ${({ currentPage, projectHoveredIndex }) =>
+    triggerFilter(currentPage, projectHoveredIndex)};
 `;
 
 const PinballImage: React.FC<ImageModel> = ({
   currentPage,
   pageClickedOnce,
+  projectHoveredIndex
 }) => (
   <picture>
     <source
@@ -42,6 +44,7 @@ const PinballImage: React.FC<ImageModel> = ({
     <StyledPinballImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
+      projectHoveredIndex={projectHoveredIndex}
       srcSet={require("../../public/images/pinball.png")}
       alt="A pinball table"
     />

@@ -162,11 +162,13 @@ export default function Home() {
               leftOriented={true}
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
+              projectHoveredIndex={appState.projectHoveredIndex}
             />
             <ImagePairs
               leftOriented={false}
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
+              projectHoveredIndex={appState.projectHoveredIndex}
             />
           </CircleContainer>
           <InfoText

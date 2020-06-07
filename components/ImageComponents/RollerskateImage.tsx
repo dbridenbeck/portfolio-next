@@ -23,10 +23,15 @@ const StyledRollerskateImage = styled.img`
   animation-delay: 400ms;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "filter 0.5s" : ""};
-  filter: ${({ currentPage }) => triggerFilter(currentPage)};
+  filter: ${({ currentPage, projectHoveredIndex }) =>
+    triggerFilter(currentPage, projectHoveredIndex)};
 `;
 
-const RollerskateImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce }) =>
+const RollerskateImage: React.FC<ImageModel> = ({
+  currentPage,
+  pageClickedOnce,
+  projectHoveredIndex,
+}) => (
   <picture>
     <source
       srcSet={require("../../public/images/rollerskate.png?webp")}
@@ -39,9 +44,11 @@ const RollerskateImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce }
     <StyledRollerskateImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
+      projectHoveredIndex={projectHoveredIndex}
       src={require("../../public/images/rollerskate.png")}
       alt="A quad rollerskate"
     />
   </picture>
+);
 
 export default RollerskateImage;

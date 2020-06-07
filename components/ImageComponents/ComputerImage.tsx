@@ -21,13 +21,16 @@ const StyledComputerImage = styled.img`
   width: 55%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
-  transition: ${({ pageClickedOnce }) => pageClickedOnce ? "filter 0.5s" : ""};
-  filter: ${({ currentPage }) => triggerFilter(currentPage)};
+  transition: ${({ pageClickedOnce }) =>
+    pageClickedOnce ? "filter 0.5s" : ""};
+  filter: ${({ currentPage, projectHoveredIndex }) =>
+    triggerFilter(currentPage, projectHoveredIndex)};
 `;
 
 const ComputerImage: React.FC<ImageModel> = ({
   currentPage,
   pageClickedOnce,
+  projectHoveredIndex,
 }) => (
   <picture>
     <source
@@ -41,6 +44,7 @@ const ComputerImage: React.FC<ImageModel> = ({
     <StyledComputerImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
+      projectHoveredIndex={projectHoveredIndex}
       srcSet={require("../../public/images/computer.png")}
       alt="An open laptop"
     />

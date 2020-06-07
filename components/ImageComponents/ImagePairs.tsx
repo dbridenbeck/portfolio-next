@@ -8,12 +8,14 @@ interface ImagesProps {
   leftOriented: boolean;
   currentPage: string;
   pageClickedOnce: boolean;
+  projectHoveredIndex: number;
 }
 
 const Images: React.FC<ImagesProps> = ({
   leftOriented,
   currentPage,
   pageClickedOnce,
+  projectHoveredIndex,
 }) => {
   const helloImageConfig = {
     initial: "flyIn",
@@ -46,11 +48,13 @@ const Images: React.FC<ImagesProps> = ({
           <ComputerImage
             currentPage={currentPage}
             pageClickedOnce={pageClickedOnce}
+            projectHoveredIndex={projectHoveredIndex}
           />
         ) : (
           <PhoneImage
             currentPage={currentPage}
             pageClickedOnce={pageClickedOnce}
+            projectHoveredIndex={projectHoveredIndex}
           />
         )}
       </ImageAnimation>
@@ -64,11 +68,13 @@ const Images: React.FC<ImagesProps> = ({
           <PinballImage
             currentPage={currentPage}
             pageClickedOnce={pageClickedOnce}
+            projectHoveredIndex={projectHoveredIndex}
           />
         ) : (
           <RollerskateImage
             currentPage={currentPage}
             pageClickedOnce={pageClickedOnce}
+            projectHoveredIndex={projectHoveredIndex}
           />
         )}
       </ImageAnimation>
