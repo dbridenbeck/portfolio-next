@@ -109,6 +109,7 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
+      projectHoveredIndex: -1
     });
   };
 
