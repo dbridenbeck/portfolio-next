@@ -13,7 +13,6 @@ const LinkContainer = styled.div`
   max-height: 45px;
   font-size: 0.85em;
   z-index: 99;
-  border: 1px solid blue;
 `;
 
 interface PageLinkContainerProps {

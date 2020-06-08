@@ -10,14 +10,14 @@ const projectVariants = {
     border: "2px solid green",
   },
   expanded: {
-    height: "70%",
+    height: "60%",
     padding: "0% 2.5%",
     margin: "0% 2.5%",
     border: "2px solid red",
   },
   collapsed: {
     height: "10%",
-    padding: "1.5% 2.5%",
+    padding: "0 2.5%",
     margin: "1% 2.5%",
     border: "2px solid green",
   },
@@ -43,7 +43,6 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  border: 1px solid red;
 `;
 
 const Project = styled(motion.div)`
@@ -76,6 +75,7 @@ const ProjectInfoContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  overflow: hidden;
   margin: 0;
 `;
 
