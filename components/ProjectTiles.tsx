@@ -1,44 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import styled, { keyframes, css } from "styled-components";
+import styled from "styled-components";
 import { ProjectModel } from "../models/appState";
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    height: 100%;
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-    height: 100%;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    height: 0%;
-  }
-`;
-
-const fadeInAnimation = () =>
-  css`
-    animation: ${fadeIn} 0.75s ease-in-out forwards;
-  `;
-
-const fadeOutAnimation = () =>
-  css`
-    animation: ${fadeOut} 0.75s ease-in-out forwards;
-  `;
 
 const projectVariants = {
   initial: {
@@ -54,9 +16,9 @@ const projectVariants = {
     border: "2px solid red",
   },
   collapsed: {
-    height: "15%",
+    height: "10%",
     padding: "1.5% 2.5%",
-    margin: "2% 2.5%",
+    margin: "1% 2.5%",
     border: "2px solid green",
   },
 };
@@ -81,6 +43,7 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+  border: 1px solid red;
 `;
 
 const Project = styled(motion.div)`
