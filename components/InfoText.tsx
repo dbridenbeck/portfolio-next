@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProjectTiles from "./ProjectTiles";
+import Projects from "./Projects";
 import { ProjectModel } from "../models/appState";
 
 const InfoTextContainer = styled.div`
@@ -50,9 +50,9 @@ const InfoText: React.FC<InfoTextProps> = ({
     ></InfoTextContainer>
   ) : (
     <InfoTextContainer>
-      <ProjectTiles
+      <Projects
         projects={projects}
-        handleProjectHover={updateProjectHoveredIndex}
+        updateProjectHoveredIndex={updateProjectHoveredIndex}
         projectHoveredIndex={projectHoveredIndex}
       />
     </InfoTextContainer>
