@@ -21,8 +21,7 @@ const StyledPinballImage = styled.img`
   width: 40%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
-  transition: ${({ pageClickedOnce }) =>
-    pageClickedOnce ? "filter 0.5s" : ""};
+  transition: filter 2s;
   filter: ${({ currentPage, projectHoveredIndex }) =>
     triggerFilter(currentPage, projectHoveredIndex)};
 `;

@@ -21,10 +21,9 @@ const StyledComputerImage = styled.img`
   width: 55%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
-  transition: ${({ pageClickedOnce }) =>
-    pageClickedOnce ? "filter 0.5s" : ""};
   filter: ${({ currentPage, projectHoveredIndex }) =>
     triggerFilter(currentPage, projectHoveredIndex)};
+  transition: filter 2s; 
 `;
 
 const ComputerImage: React.FC<ImageModel> = ({

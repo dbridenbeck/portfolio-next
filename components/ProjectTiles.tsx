@@ -7,19 +7,19 @@ const projectVariants = {
     height: "20%",
     padding: "2.5% 2.5%",
     margin: "2.5% 2.5%",
-    border: "2px solid green",
+    border: "2px solid #3BC9D1",
   },
-  expanded: {
+  expanded: (color) => ({
     height: "60%",
     padding: "0% 2.5%",
     margin: "0% 2.5%",
-    border: "2px solid red",
-  },
+    border: `2px solid ${color}`,
+  }),
   collapsed: {
     height: "10%",
     padding: "0 2.5%",
     margin: "1% 2.5%",
-    border: "2px solid green",
+    border: "2px solid #3BC9D1",
   },
 };
 
@@ -117,16 +117,13 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
   <ProjectsContainer>
     {projects.map((project: ProjectModel, index: number) => {
       const isProjectHovered = projectHoveredIndex === index;
-      // look into useCallback! and useMemo! look at formatOnSave and add esLint!
       const updateProjectHoverIndex = () => handleProjectHover(index);
       return (
         <Project
           key={project.url}
           onClick={updateProjectHoverIndex}
-          isProjectHovered={isProjectHovered}
-          projectHoveredIndex={projectHoveredIndex}
-          color={project.color}
           initial="initial"
+          custom={project.color}
           variants={projectVariants}
           animate={
             isProjectHovered
