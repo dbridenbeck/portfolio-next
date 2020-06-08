@@ -5,7 +5,7 @@ import ProjectInfo from "./ProjectInfo";
 
 const projectVariants = {
   initial: {
-    height: "20%",
+    height: "25%",
     padding: "1% 2.5%",
     margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
@@ -17,9 +17,9 @@ const projectVariants = {
     border: `2px solid ${color}`,
   }),
   collapsed: {
-    height: "18%",
-    padding: "1% 2.5%",
-    margin: "1% 2.5%",
+    height: "20%",
+    padding: "0.5% 2.5%",
+    margin: "0.5% 2.5%",
     border: "2px solid #3BC9D1",
   },
 };
@@ -58,9 +58,10 @@ const TechPill = styled.div`
   border: ${({ color, isProjectHovered }) =>
     isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
   padding: 0 0.725em;
-  margin-top: ${({ isProjectHovered }) => (isProjectHovered ? "2.5%" : "0%")};
+  margin-top: ${({ isProjectHovered }) => (isProjectHovered ? "0.75%" : "0%")};
   border-radius: 1000px;
   font-size: 0.825em;
+  line-height: 1.5em;
 `;
 
 interface ProjectProps {

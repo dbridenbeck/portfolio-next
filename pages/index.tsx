@@ -88,7 +88,7 @@ export default function Home() {
       },
       {
         title: "Task Manager",
-        type: "CRUD API",
+        type: "Auth Enabled CRUD API",
         tech: ["NodeJS", "Express", "MongoDB", "Multer", "JWT"],
         goals:
           "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
