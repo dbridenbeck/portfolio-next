@@ -82,19 +82,19 @@ export default function Home() {
           "Build a chat app that supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
         projectDetail:
           "Used Socket.io for realtime communication, Handlebars for UI templating",
-        url: "why",
+        url: "https://secret-hollows-65310.herokuapp.com/",
         color: "#6f9bec",
         gif: `${chatappGif}`,
       },
       {
         title: "Task Manager",
-        type: "CRUD API",
+        type: "Auth Enabled CRUD API",
         tech: ["NodeJS", "Express", "MongoDB", "Multer", "JWT"],
         goals:
           "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
         projectDetail:
           "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
-        url: "string",
+        url: "https://github.com/dbridenbeck/task-manager-api",
         color: "#d13b40",
         gif: `${taskManagerGif}`,
       },
