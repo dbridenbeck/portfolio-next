@@ -178,12 +178,12 @@ export default function Home() {
             updateProjectHoveredIndex={updateProjectHoveredIndex}
             projectHoveredIndex={appState.projectHoveredIndex}
           />
+          <PageLinkContainer
+            currentPage={appState.currentPage}
+            pages={appState.pages}
+            changePage={changePage}
+          />
         </MainContent>
-        <PageLinkContainer
-          currentPage={appState.currentPage}
-          pages={appState.pages}
-          changePage={changePage}
-        />
       </Layout>
       <style jsx global>{`
         #__next,

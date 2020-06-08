@@ -5,8 +5,8 @@ import { ProjectModel } from "../../models/appState";
 const StyledCircle = styled.div`
   position: relative;
   display: block;
-  height: 100%;
   width: 100%;
+  padding-bottom: 100%;
   margin: 0 auto;
   border-radius: 50%;
   transition: ${({ pageClickedOnce }) =>
