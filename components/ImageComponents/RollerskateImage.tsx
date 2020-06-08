@@ -21,7 +21,8 @@ const StyledRollerskateImage = styled.img`
   width: 45%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
-  transition: filter 2s;
+  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
+    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
   filter: ${({ currentPage, projectHoveredIndex }) =>
     triggerFilter(currentPage, projectHoveredIndex)};
 `;
