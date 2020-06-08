@@ -6,19 +6,19 @@ import ProjectInfo from "./ProjectInfo";
 const projectVariants = {
   initial: {
     height: "20%",
-    padding: "2.5% 2.5%",
-    margin: "2.5% 2.5%",
+    padding: "1% 2.5%",
+    margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
   },
   expanded: (color) => ({
     height: "60%",
-    padding: "0% 2.5%",
-    margin: "0% 2.5%",
+    padding: "1% 2.5%",
+    margin: "1% 2.5%",
     border: `2px solid ${color}`,
   }),
   collapsed: {
-    height: "10%",
-    padding: "0 2.5%",
+    height: "18%",
+    padding: "1% 2.5%",
     margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
   },
@@ -27,9 +27,7 @@ const projectVariants = {
 const ProjectContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2.5%;
-  margin: 2.5%;
+  justify-content: space-around;
   overflow: hidden;
 `;
 
@@ -53,12 +51,14 @@ const ProjectType = styled.h4`
 const TechPills = styled.div`
   display: flex;
   justify-content: space-between;
+  font-size: 0.975em;
 `;
 
 const TechPill = styled.div`
-  border: ${({ color }) => `1px solid ${color}`};
+  border: ${({ color, isProjectHovered }) =>
+    isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
   padding: 0 0.725em;
-  margin: 0;
+  margin-top: ${({ isProjectHovered }) => (isProjectHovered ? "2.5%" : "0%")};
   border-radius: 1000px;
   font-size: 0.825em;
 `;
@@ -98,19 +98,20 @@ const Project: React.FC<ProjectProps> = ({
         <Title>{project.title}</Title>
         <ProjectType>{project.type}</ProjectType>
       </TitleTypeContainer>
-        <TechPills>
-          {project.tech.map((singleTech) => (
-            <TechPill color={project.color} key={singleTech}>
-              {singleTech}
-            </TechPill>
-          ))}
-        </TechPills>
+      <TechPills>
+        {project.tech.map((singleTech) => (
+          <TechPill
+            color={project.color}
+            key={singleTech}
+            isProjectHovered={isProjectHovered}
+          >
+            {singleTech}
+          </TechPill>
+        ))}
+      </TechPills>
       <AnimatePresence initial={false}>
         {isProjectHovered && (
-          <ProjectInfo
-            project={project}
-            isProjectHovered={isProjectHovered}
-          />
+          <ProjectInfo project={project} isProjectHovered={isProjectHovered} />
         )}
       </AnimatePresence>
     </ProjectContainer>
