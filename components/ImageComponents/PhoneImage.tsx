@@ -22,7 +22,8 @@ const StyledPhoneImage = styled.img`
   height: auto;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 300ms;
-  transition: filter 2s;
+  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
+    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
   filter: ${({ currentPage, projectHoveredIndex }) =>
     triggerFilter(currentPage, projectHoveredIndex)};
 `;

@@ -22,6 +22,7 @@ const StyledCircle = styled.div`
     background-color: white;
     border: 5px solid ${projects[projectHoveredIndex].color};
     transition: border-color 0.75s ease-in-out;
+    transition: background-image 0.25s ease-in-out;
   `
       : null}
 `;
