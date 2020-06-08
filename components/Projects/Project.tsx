@@ -43,6 +43,12 @@ const Title = styled.h3`
   margin: 0;
 `;
 
+const LiveLink = styled.a`
+  font-size: 0.925em;
+  margin: 0;
+  display: ${({ isProjectHovered }) => (isProjectHovered ? "block" : "none")};
+`;
+
 const ProjectType = styled.h4`
   padding: 0;
   margin: 0;
@@ -77,7 +83,7 @@ const Project: React.FC<ProjectProps> = ({
   isProjectHovered,
   handleProjectHover,
   projectHoveredIndex,
-  index
+  index,
 }) => {
   const updateProjectHoverIndex = () => handleProjectHover(index);
   return (
@@ -97,6 +103,13 @@ const Project: React.FC<ProjectProps> = ({
     >
       <TitleTypeContainer>
         <Title>{project.title}</Title>
+        <LiveLink
+          href={project.url}
+          target="_blank"
+          isProjectHovered={isProjectHovered}
+        >
+          (Visit Site)
+        </LiveLink>
         <ProjectType>{project.type}</ProjectType>
       </TitleTypeContainer>
       <TechPills>
