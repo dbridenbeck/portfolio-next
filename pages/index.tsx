@@ -29,12 +29,12 @@ export default function Home() {
     indexToSelect: 0,
     pages: [
       {
-        pageName: "HELLO",
-        color: "#6f59e9",
-      },
-      {
         pageName: "PORTFOLIO",
         color: "#427ce6",
+      },
+      {
+        pageName: "SKILLS",
+        color: "#6f59e9",
       },
       {
         pageName: "ABOUT",
@@ -42,7 +42,7 @@ export default function Home() {
       },
     ],
     infoText: {
-      HELLO: {
+      SKILLS: {
         __html: `
           <p>My name is Darren and I’m a web developer.</p>
           <p>I have been helping people build websites for over ten years, from

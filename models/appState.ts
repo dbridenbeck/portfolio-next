@@ -19,7 +19,7 @@ export default interface AppStateModel {
     { pageName: string; color: string }
   ];
   infoText: {
-    HELLO: { __html: string };
+    SKILLS: { __html: string };
     ABOUT: { __html: string };
   };
   projects: [ProjectModel, ProjectModel, ProjectModel];

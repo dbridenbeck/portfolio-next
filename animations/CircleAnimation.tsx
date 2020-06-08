@@ -20,7 +20,7 @@ const { className, styles } = css.resolve`
 `;
 
 const circleVariants = {
-  hello: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
+  SKILLS: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
   about: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
 };
 
@@ -34,8 +34,8 @@ const CircleAnimation: React.FC<CircleAnimationProps> = ({
     className={className}
     initial={false}
     animate={
-      currentPage === "HELLO" && pageClickedOnce
-        ? "hello"
+      currentPage === "SKILLS" && pageClickedOnce
+        ? "skills"
         : currentPage === "ABOUT" && pageClickedOnce
         ? "about"
         : null

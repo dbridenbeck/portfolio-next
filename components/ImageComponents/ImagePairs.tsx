@@ -17,10 +17,10 @@ const Images: React.FC<ImagesProps> = ({
   pageClickedOnce,
   projectHoveredIndex,
 }) => {
-  const helloImageConfig = {
-    initial: "flyIn",
+  const skillsImageConfig = {
+    initial: false,
     animate:
-      currentPage === "HELLO"
+      currentPage === "SKILLS"
         ? "center"
         : currentPage === "PORTFOLIO"
         ? "portfolioUp"
@@ -39,9 +39,9 @@ const Images: React.FC<ImagesProps> = ({
 
   return (
     <>
-      {/* handle images for HELLO */}
+      {/* handle images for SKILLS */}
       <ImageAnimation
-        imageConfig={helloImageConfig}
+        imageConfig={skillsImageConfig}
         leftOriented={leftOriented}
       >
         {leftOriented ? (

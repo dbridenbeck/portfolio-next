@@ -155,7 +155,9 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
           >
             <TechPills>
               {project.tech.map((singleTech) => (
-                <TechPill color={project.color}>{singleTech}</TechPill>
+                <TechPill color={project.color} key={singleTech}>
+                  {singleTech}
+                </TechPill>
               ))}
             </TechPills>
             <InfoP>

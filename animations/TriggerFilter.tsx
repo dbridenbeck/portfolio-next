@@ -8,7 +8,7 @@ const triggerFilter = (currentPage, projectHoveredIndex) => {
       return "invert(29%) sepia(58%) saturate(2574%) hue-rotate(336deg) brightness(87%) contrast(86%)";
     }
   }
-  if (currentPage === "HELLO") {
+  if (currentPage === "SKILLS") {
     return "invert(70%) sepia(34%) saturate(803%) hue-rotate(134deg) brightness(95%) contrast(83%)";
   } else {
     return "invert(15%) sepia(100%) saturate(2397%) hue-rotate(343deg) brightness(99%) contrast(80%)";

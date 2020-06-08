@@ -52,7 +52,7 @@ const TitleText: React.FC<TitleTextProps> = ({ currentPage }) => {
         which triggers AnimatePresence to fire animation
       */}
       <AnimatePresence initial={false}>
-        {currentPage === "HELLO" && (
+        {currentPage === "SKILLS" && (
           <TitleAnimation>
             <Title color={"blue"}>{currentPage}</Title>
           </TitleAnimation>
