@@ -1,43 +1,42 @@
-import styled, { keyframes, css } from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
 import { ProjectModel } from "../models/appState";
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    height: 100%;
-    opacity: 1;
-  }
-`;
+const projectVariants = {
+  initial: {
+    height: "20%",
+    padding: "2.5% 2.5%",
+    margin: "2.5% 2.5%",
+    border: "2px solid #3BC9D1",
+  },
+  expanded: (color) => ({
+    height: "60%",
+    padding: "0% 2.5%",
+    margin: "0% 2.5%",
+    border: `2px solid ${color}`,
+  }),
+  collapsed: {
+    height: "10%",
+    padding: "0 2.5%",
+    margin: "1% 2.5%",
+    border: "2px solid #3BC9D1",
+  },
+};
 
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-    height: 100%;
+const infoContainerVariants = {
+  initial: {
+    opacity: 0,
+    height: "0%"
+  },
+  animate: {
+    opacity: 1,
+    height: "100%",
+  },
+  exit: {
+    opacity: 0,
+    height: "0%",
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    height: 0%;
-  }
-`;
-
-const fadeInAnimation = () =>
-  css`
-    animation: ${fadeIn} 0.75s ease-in-out forwards;
-  `;
-
-const fadeOutAnimation = () =>
-  css`
-    animation: ${fadeOut} 0.75s ease-in-out forwards;
-  `;
+}
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -46,22 +45,12 @@ const ProjectsContainer = styled.div`
   height: 100%;
 `;
 
-const Project = styled.div`
+const Project = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  height: ${({ isProjectHovered, projectHoveredIndex }) =>
-    isProjectHovered ? "70%" : projectHoveredIndex === -1 ? "4em" : "1.825em"};
-  padding: ${({ isProjectHovered, projectHoveredIndex }) =>
-    isProjectHovered
-      ? "0 2.5%"
-      : projectHoveredIndex === -1
-      ? "1em"
-      : "0 2.5%"};
-  margin: 0.5% 2.5%;
-  justify-content: flex-start;
-  border: ${({ isProjectHovered, color }) =>
-    isProjectHovered ? `2px solid ${color}` : `2px solid #3bc9d1`};
-  transition: all 0.75s ease-in-out;
+  justify-content: center;
+  padding: 2.5%;
+  margin: 2.5%;
   overflow: hidden;
 `;
 
@@ -82,18 +71,11 @@ const ProjectType = styled.h4`
   margin: 0;
 `;
 
-const ProjectInfoContainer = styled.div`
-  ${({ isProjectHovered }) =>
-    isProjectHovered ? fadeInAnimation : fadeOutAnimation};
+const ProjectInfoContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: ${({ isProjectHovered, projectHoveredIndex }) =>
-    isProjectHovered
-      ? "0"
-      : !isProjectHovered && projectHoveredIndex === -1
-      ? "8em"
-      : "0"};
+  overflow: hidden;
   margin: 0;
 `;
 
@@ -135,39 +117,54 @@ const ProjectTiles: React.FC<ProjectTilesProps> = ({
   <ProjectsContainer>
     {projects.map((project: ProjectModel, index: number) => {
       const isProjectHovered = projectHoveredIndex === index;
-      // look into useCallback! and useMemo! look at formatOnSave and add esLint!
       const updateProjectHoverIndex = () => handleProjectHover(index);
       return (
         <Project
           key={project.url}
-          onMouseEnter={updateProjectHoverIndex}
-          isProjectHovered={isProjectHovered}
-          projectHoveredIndex={projectHoveredIndex}
-          color={project.color}
+          onClick={updateProjectHoverIndex}
+          initial="initial"
+          custom={project.color}
+          variants={projectVariants}
+          animate={
+            isProjectHovered
+              ? "expanded"
+              : projectHoveredIndex === -1
+              ? "initial"
+              : "collapsed"
+          }
         >
           <TitleTypeContainer>
             <Title>{project.title}</Title>
             <ProjectType>{project.type}</ProjectType>
           </TitleTypeContainer>
-          <ProjectInfoContainer
-            isProjectHovered={isProjectHovered}
-            projectHoveredIndex={projectHoveredIndex}
-          >
-            <TechPills>
-              {project.tech.map((singleTech) => (
-                <TechPill color={project.color} key={singleTech}>
-                  {singleTech}
-                </TechPill>
-              ))}
-            </TechPills>
-            <InfoP>
-              <BoldSpan color={project.color}>Goals:</BoldSpan> {project.goals}
-            </InfoP>
-            <InfoP>
-              <BoldSpan color={project.color}>Details:</BoldSpan>{" "}
-              {project.projectDetail}
-            </InfoP>
-          </ProjectInfoContainer>
+          <AnimatePresence initial={false}>
+            {isProjectHovered && (
+              <ProjectInfoContainer
+                isProjectHovered={isProjectHovered}
+                projectHoveredIndex={projectHoveredIndex}
+                initial="initial"
+                exit="exit"
+                animate="animate"
+                variants={infoContainerVariants}
+              >
+                <TechPills>
+                  {project.tech.map((singleTech) => (
+                    <TechPill color={project.color} key={singleTech}>
+                      {singleTech}
+                    </TechPill>
+                  ))}
+                </TechPills>
+                <InfoP>
+                  <BoldSpan color={project.color}>Goals:</BoldSpan>{" "}
+                  {project.goals}
+                </InfoP>
+                <InfoP>
+                  <BoldSpan color={project.color}>Details:</BoldSpan>{" "}
+                  {project.projectDetail}
+                </InfoP>
+              </ProjectInfoContainer>
+            )}
+          </AnimatePresence>
         </Project>
       );
     })}

@@ -18,13 +18,13 @@ const InfoTextContainer = styled.div`
     width: 80%;
     margin: 0 auto;
     font-size: 0.875rem;
-    height: 30vh;
+    height: 37vh;
   }
   @media screen and (min-width: 1400px) {
     width: 80%;
     margin: 0 auto;
     font-size: 0.875rem;
-    height: 30vh;
+    height: 35vh;
   }
 `;
 
