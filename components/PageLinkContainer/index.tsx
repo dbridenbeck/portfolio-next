@@ -4,13 +4,12 @@ import PageLink from "./PageLink";
 const LinkContainer = styled.div`
   position: relative;
   display: flex;
-  flex-grow: 1;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
-  max-height: 45px;
+  height: 7%;
+  max-height: 7%;
   font-size: 0.85em;
   z-index: 99;
 `;

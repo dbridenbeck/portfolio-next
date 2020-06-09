@@ -6,14 +6,13 @@ const StyledLayout = styled.div`
   flex-direction: column;
   position: relative;
   margin: 0 auto -30px auto;
-  padding: 1em 0 0 0;
   height: 100%;
   max-width: 650px;
   color: white;
 `;
 
 interface LayoutProps {
-  children: ReactElement[];
+  children: ReactElement;
 }
 
 const Layout: React.FC<LayoutProps> = ({children}) => 

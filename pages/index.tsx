@@ -16,9 +16,9 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-grow: 1;
   align-self: center;
   width: 100%;
+  height: 100%;
 `;
 
 export default function Home() {
@@ -178,12 +178,12 @@ export default function Home() {
             updateProjectHoveredIndex={updateProjectHoveredIndex}
             projectHoveredIndex={appState.projectHoveredIndex}
           />
+          <PageLinkContainer
+            currentPage={appState.currentPage}
+            pages={appState.pages}
+            changePage={changePage}
+          />
         </MainContent>
-        <PageLinkContainer
-          currentPage={appState.currentPage}
-          pages={appState.pages}
-          changePage={changePage}
-        />
       </Layout>
       <style jsx global>{`
         #__next,

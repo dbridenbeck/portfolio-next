@@ -5,10 +5,11 @@ import { ProjectModel } from "../../models/appState";
 const StyledCircle = styled.div`
   position: relative;
   display: block;
-  height: 100%;
   width: 100%;
+  padding-bottom: 100%;
   margin: 0 auto;
   border-radius: 50%;
+  border: 5px solid wheat;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.3s" : ""};
   background-color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};

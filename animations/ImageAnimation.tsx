@@ -42,7 +42,7 @@ const imageVariants = {
   }),
   portfolioUp: (leftOriented) => ({
     x: leftOriented ? "-90%" : "90%",
-    y: "40vh",
+    y: "50vh",
     transition: {
       type: "spring",
       stiffness: 35,
@@ -50,7 +50,7 @@ const imageVariants = {
   }),
   portfolioDown: (leftOriented) => ({
     x: leftOriented ? "-90%" : "90%",
-    y: "-10vh",
+    y: "-5vh",
     transition: {
       type: "spring",
       stiffness: 35,
