@@ -5,8 +5,7 @@ import { ProjectModel } from "../models/appState";
 const InfoTextContainer = styled.div`
   position: relative;
   width: 95%;
-  height: 39%;
-  max-height: 39%;
+  height: 43%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
   font-size: 0.75rem;
