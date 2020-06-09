@@ -17,6 +17,10 @@ const infoContainerVariants = {
   },
 };
 
+const infoContainerTransition = {
+  type: "spring",
+}
+
 const ProjectInfoContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -51,6 +55,7 @@ const ProjectInfo: React.FC<ProjectProps> = ({
     exit="exit"
     animate="animate"
     variants={infoContainerVariants}
+    transition={infoContainerTransition}
   >
     <InfoP>
       <BoldSpan color={project.color}>Goals:</BoldSpan> {project.goals}

@@ -6,29 +6,30 @@ import ProjectInfo from "./ProjectInfo";
 const projectVariants = {
   initial: {
     height: "25%",
-    padding: "1% 2.5%",
-    margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
   },
   expanded: (color) => ({
     height: "60%",
-    padding: "1% 2.5%",
-    margin: "1% 2.5%",
     border: `2px solid ${color}`,
   }),
   collapsed: {
     height: "20%",
-    padding: "1% 2.5%",
-    margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
   },
 };
 
+const projectTransition = {
+  type: "spring",
+  damping: 50
+}
+
 const ProjectContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   overflow: hidden;
+  padding: 1% 2.5%;
+  margin: 1% 2.5%;
 `;
 
 const TitleTypeContainer = styled.div`
@@ -64,10 +65,11 @@ const TechPill = styled.div`
   border: ${({ color, isProjectHovered }) =>
     isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
   padding: 0 0.725em;
-  margin-top: ${({ isProjectHovered }) => (isProjectHovered ? "0.75%" : "0%")};
   border-radius: 1000px;
-  font-size: 0.825em;
-  line-height: 1.5em;
+  font-size: 0.725em;
+  @media (min-width: 1400px) {
+    margin-top: 1.5%;
+  }
 `;
 
 interface ProjectProps {
@@ -99,7 +101,8 @@ const Project: React.FC<ProjectProps> = ({
           : projectHoveredIndex === -1
           ? "initial"
           : "collapsed"
-      }
+        }
+      transition={projectTransition}
     >
       <TitleTypeContainer>
         <Title>{project.title}</Title>
