@@ -59,8 +59,11 @@ const TechPills = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 0.975em;
-  margin: 0.5em 0 0 0;
+  margin: 0;
   padding: 0;
+  @media (min-width: 1400px) {
+    margin: 0.5em 0 0 0;
+  }
 `;
 
 const TechPill = styled.div`

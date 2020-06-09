@@ -7,7 +7,7 @@ const CircleContainerDiv = styled.div`
   display: block;
   position: relative;
   width: 50vh;
-  max-height: 50%;
+  max-height: 45%;
   margin: 0 auto;
 `;
 
