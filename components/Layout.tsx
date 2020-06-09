@@ -5,7 +5,7 @@ const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto -30px auto;
+  margin: 0 auto;
   height: 100%;
   max-width: 650px;
   color: white;
