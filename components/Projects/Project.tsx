@@ -59,12 +59,15 @@ const TechPills = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 0.975em;
+  margin: 0;
+  padding: 0;
 `;
 
 const TechPill = styled.div`
   border: ${({ color, isProjectHovered }) =>
     isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
   padding: 0 0.725em;
+  margin: 0;
   border-radius: 1000px;
   font-size: 0.825em;
 `;
