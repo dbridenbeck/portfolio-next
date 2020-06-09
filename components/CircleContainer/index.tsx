@@ -6,8 +6,7 @@ import { ProjectModel } from "../../models/appState";
 const CircleContainerDiv = styled.div`
   display: block;
   position: relative;
-  width: 50vh;
-  max-height: 50%;
+  width: 50%;
   margin: 0 auto;
 `;
 
