@@ -5,7 +5,7 @@ import ProjectInfo from "./ProjectInfo";
 
 const projectVariants = {
   initial: {
-    height: "25%",
+    height: "27%",
     border: "2px solid #3BC9D1",
   },
   expanded: (color) => ({
@@ -13,7 +13,7 @@ const projectVariants = {
     border: `2px solid ${color}`,
   }),
   collapsed: {
-    height: "20%",
+    height: "22%",
     border: "2px solid #3BC9D1",
   },
 };
@@ -29,7 +29,7 @@ const ProjectContainer = styled(motion.div)`
   justify-content: center;
   overflow: hidden;
   padding: 1% 2.5%;
-  margin: 1% 2.5%;
+  margin: 0.5% 2.5%;
 `;
 
 const TitleTypeContainer = styled.div`
@@ -66,10 +66,7 @@ const TechPill = styled.div`
     isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
   padding: 0 0.725em;
   border-radius: 1000px;
-  font-size: 0.725em;
-  @media (min-width: 1400px) {
-    margin-top: 1.5%;
-  }
+  font-size: 0.825em;
 `;
 
 interface ProjectProps {
