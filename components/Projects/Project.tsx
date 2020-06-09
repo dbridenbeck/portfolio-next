@@ -69,7 +69,7 @@ const TechPill = styled.div`
   padding: 0 0.725em;
   border-radius: 1000px;
   font-size: 0.825em;
-  height: 1.825em;
+  height: 1.875em;
 `;
 
 interface ProjectProps {
