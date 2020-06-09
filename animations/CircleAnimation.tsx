@@ -14,6 +14,7 @@ const { className, styles } = css.resolve`
     position: relative;
     display: block;
     height: 100%;
+    max-height: 50%;
     width: 100%;
     margin: 0 auto;
   }
