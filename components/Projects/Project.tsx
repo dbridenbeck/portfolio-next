@@ -18,8 +18,8 @@ const projectVariants = {
   }),
   collapsed: {
     height: "20%",
-    padding: "0.5% 2.5%",
-    margin: "0.5% 2.5%",
+    padding: "1% 2.5%",
+    margin: "1% 2.5%",
     border: "2px solid #3BC9D1",
   },
 };

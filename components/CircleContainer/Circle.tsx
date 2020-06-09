@@ -9,6 +9,7 @@ const StyledCircle = styled.div`
   padding-bottom: 100%;
   margin: 0 auto;
   border-radius: 50%;
+  border: 5px solid wheat;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.3s" : ""};
   background-color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};
