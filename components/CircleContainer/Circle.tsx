@@ -5,10 +5,9 @@ import { ProjectModel } from "../../models/appState";
 const StyledCircle = styled.div`
   position: relative;
   display: block;
-  width: 100%;
-  height: 0;
+  width: 80%;
   /* padding-bottom keeps circle proportional */
-  padding-bottom: 97%;
+  padding-bottom: 77.75%;
   margin: 0 auto;
   border-radius: 50%;
   border: 5px solid wheat;
@@ -28,6 +27,10 @@ const StyledCircle = styled.div`
     transition: background-image 0.25s ease-in-out;
   `
       : null}
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    padding-bottom: 97.75%;
+  }
 `;
 
 interface CircleProps {
