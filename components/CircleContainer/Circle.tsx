@@ -6,6 +6,7 @@ const StyledCircle = styled.div`
   position: relative;
   display: block;
   width: 100%;
+  max-height: 45%;
   /* padding-bottom keeps circle proportional */
   padding-bottom: 97%;
   margin: 0 auto;
