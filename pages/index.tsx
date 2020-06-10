@@ -44,20 +44,27 @@ export default function Home() {
     infoText: {
       SKILLS: {
         __html: `
-          <p>My name is Darren and I’m a web developer.</p>
-          <p>I have been helping people build websites for over ten years, from
-          designing and wireframing to getting code on servers so users can see
-          their stuff. I recently expanded my skills with React, Redux, Node.js,
-          MongoDB, and other fun things.</p>
-          <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
-          you’d like to work together. </p>
-          <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
+          <strong>Front End:</strong> React, Redux, Styled-Components, JavaScript ES6, Next.js, Gatsby.js
+          <br/><strong>Back End:</strong> Node.js, Express, RESTful API’s, MongoDB, Mongoose, Socket.io
+          <br/><strong>Misc:</strong> Typescript, Webpack, Jest, Github, TDD, Shopify, Figma, Adobe Creative Suite
+
+          <p>I am a detail oriented and intrinsically motivated software engineer with five years’ experience creating custom 
+          websites using HTML/CSS/JavaScript, and eight years’ experience working directly with clients to solve complex technical 
+          challenges. I enjoy coding great tech, bringing people together and having fun.</p>
+          <p> <a href="mailto:darren.bridenbeck@gmail.com">CONTACT</a> / <a href="https://drive.google.com/file/d/1u4k2mapd49OVnDdJK1ebYFju1jYkXAPp/view?usp=sharing" target="_blank">RESUME</a></p>
         `,
       },
       ABOUT: {
         __html: `
-          <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
-          <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
+          <p>Beyond tech, I have a background in sales development, solutions engineering, and
+            account/vendor management, although my previous experience as a life coach most defines me. 
+            In that role I improved my listening skills and ability to ask questions to help people figure out their own solutions. 
+            I bring all of this to my work as web developer.</p>
+          <p>When I’m not working, I am hanging out with my wife and daughter, playing pinball, or rollerskating. 
+            <p>I also volunteer for the <a href="https://github.com/codeforpdx/dwellingly-app" target="_blank">Dwelling.ly</a> project at <a href="http://www.codeforpdx.org/" target="_blank">Code for PDX</a> and participate in coding meetups like
+            <a href="https://www.meetup.com/Portland-ReactJS/" target="_blank">Portland ReactJS</a> and 
+            <a href="https://www.meetup.com/Mentorship-Saturdays/" target="_blank">Mentorship Saturdays</a>.</p>
+          </p> 
         `,
       },
     },
@@ -102,14 +109,14 @@ export default function Home() {
     pageClickedOnce: false,
   });
 
-  // control which content to show from text's state pageClickedOnce prevents 
+  // control which content to show from text's state pageClickedOnce prevents
   // animations from firing on initial load
   const changePage = (newPage): void => {
     updateAppState({
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
-      projectHoveredIndex: -1
+      projectHoveredIndex: -1,
     });
   };
 
