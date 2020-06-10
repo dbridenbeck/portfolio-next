@@ -6,7 +6,7 @@ const size = {
   laptop: "1280px",
 };
 
-export const device = {
+export const devices = {
   mobilePortrait: `(max-width: ${size.mobilePortrait})`,
   mobileLandscape: `(min-width: ${size.mobileLandscape})`,
   tabletPortrait: `(min-width: ${size.tabletPortrait})`,

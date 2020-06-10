@@ -8,6 +8,8 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
+import { devices } from '../utils/cssBreakpoints';
+
 const whidbeyGif = require("../public/images/whidbeyherbal.gif");
 const chatappGif = require("../public/images/chatapp.gif");
 const taskManagerGif = require("../public/images/taskmanager.gif");
@@ -16,9 +18,12 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 80%;
+  width: 95%;
   height: 100%;
   margin: 0 auto;
+  @media ${devices.mobileLandscape} {
+    width: 80%;
+  }
 `;
 
 export default function Home() {
