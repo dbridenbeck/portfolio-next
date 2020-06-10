@@ -9,7 +9,6 @@ const StyledLayout = styled.div`
   height: 100%;
   max-width: 650px;
   font-family: "Muli", sans-serif;
-  font-size: 1em;
   font-style: normal;
 `;
 

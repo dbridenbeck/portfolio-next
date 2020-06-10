@@ -19,7 +19,9 @@ const infoContainerVariants = {
 
 const infoContainerTransition = {
   type: "spring",
-}
+  stiffness: 125,
+  damping: 20,
+};
 
 const ProjectInfoContainer = styled(motion.div)`
   display: flex;
@@ -29,15 +31,11 @@ const ProjectInfoContainer = styled(motion.div)`
   margin: 0;
 `;
 
-const BoldSpan = styled.span`
-  font-weight: 600;
-  color: ${({ color }) => color};
-`;
-
 const InfoP = styled.p`
-  font-weight: normal;
   padding: 0;
   margin: 0;
+  font-weight: normal;
+  font-size: 0.975em;
 `;
 
 interface ProjectProps {
@@ -58,10 +56,9 @@ const ProjectInfo: React.FC<ProjectProps> = ({
     transition={infoContainerTransition}
   >
     <InfoP>
-      <BoldSpan color={project.color}>Goals:</BoldSpan> {project.goals}
+      {project.goals}
     </InfoP>
     <InfoP>
-      <BoldSpan color={project.color}>Details:</BoldSpan>{" "}
       {project.projectDetail}
     </InfoP>
   </ProjectInfoContainer>

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { ProjectModel } from "../../models/appState";
 import ProjectInfo from "./ProjectInfo";
+import { devices } from "../../utils/cssBreakpoints";
 
 const projectVariants = {
   initial: {
@@ -11,13 +12,14 @@ const projectVariants = {
     height: "60%",
   },
   collapsed: {
-    height: "22%",
+    height: "27%",
   },
 };
 
 const projectTransition = {
   type: "spring",
-  damping: 50
+  stiffness: 50,
+  damping: 20
 }
 
 const ProjectContainer = styled(motion.div)`
@@ -25,20 +27,32 @@ const ProjectContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding: 1.5rem 1.625rem;
-  margin: 0 0 1.5rem 0;
+  font-size: 0.75rem;
+  padding: 1em 1.25em;
+  margin: 0 0 0.75em 0;
   border: 1px solid #373636;
+  :last-child {
+    margin: 0;
+  }
+  @media ${devices.mobileLandscape} {
+    font-size: 0.875rem;
+  }
 `;
 
-const TitleTypeContainer = styled.div`
+const ProjectOverview = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ProjectHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5em 0;
   padding: 0;
 `;
 
 const Title = styled.h3`
-  font-size: 1.125rem;
+  font-size: 1.125em;
   padding: 0;
   margin: 0 2em 0 0;
   color: #3d3838;
@@ -52,22 +66,21 @@ const LiveLink = styled.a`
 const ProjectType = styled.h4`
   padding: 0;
   margin: 0 auto 0 0;
-  font-size: 0.875rem;
+  font-size: 0.875em;
   font-weight: 300;
   color: #333333;
 `;
 
 const TechPills = styled.div`
   display: flex;
-  justify-content: space-between;
-  font-size: 0.975em;
+  justify-content: flex-start;
   margin: 0;
-  padding: 0;
 `;
 
 const TechPill = styled.div`
-  height: 1.5rem;
-  padding: 0.133rem 0.725rem;
+  height: 2.25em;
+  padding: 0.133em 0.825em;
+  margin: 0 0.5em 0 0;
   color: #584D4D;
   background-color: #f2f2f2;
   border-radius: 1000px;
@@ -102,31 +115,34 @@ const Project: React.FC<ProjectProps> = ({
           : projectHoveredIndex === -1
           ? "initial"
           : "collapsed"
-        }
+      }
       transition={projectTransition}
     >
-      <TitleTypeContainer>
-        <Title>{project.title}</Title>
-        <LiveLink
-          href={project.url}
-          target="_blank"
-          isProjectHovered={isProjectHovered}
-        >
-          (Visit Site)
-        </LiveLink>
-        <ProjectType>{project.type}</ProjectType>
-      </TitleTypeContainer>
-      <TechPills>
-        {project.tech.map((singleTech) => (
-          <TechPill
-            color={project.color}
-            key={singleTech}
+      <ProjectOverview>
+        <ProjectHeader>
+          <Title>{project.title}</Title>
+          {/* <LiveLink
+            href={project.url}
+            target="_blank"
             isProjectHovered={isProjectHovered}
           >
-            {singleTech}
-          </TechPill>
-        ))}
-      </TechPills>
+            (Visit Site)
+          </LiveLink> */}
+          <ProjectType>{project.type}</ProjectType>
+        </ProjectHeader>
+        <TechPills>
+          {project.tech.map((singleTech) => (
+            <TechPill
+              color={project.color}
+              key={singleTech}
+              isProjectHovered={isProjectHovered}
+            >
+              {singleTech}
+            </TechPill>
+          ))}
+        </TechPills>
+      </ProjectOverview>
+
       <AnimatePresence initial={false}>
         {isProjectHovered && (
           <ProjectInfo project={project} isProjectHovered={isProjectHovered} />

@@ -6,7 +6,7 @@ import { devices } from "../utils/cssBreakpoints";
 const InfoTextContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 55%;
+  height: 57%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
   font-size: ${({ onProjectsPage }) => onProjectsPage ? "0.825rem" : "0.85rem"};
@@ -14,7 +14,7 @@ const InfoTextContainer = styled.div`
   line-height: 1.5em;
   color: #333333;
   @media ${devices.mobileLandscape} {
-    height: 55%;
+    max-height: 85%;
   }
 `;
 

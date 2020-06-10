@@ -179,11 +179,11 @@ export default function Home() {
             updateProjectHoveredIndex={updateProjectHoveredIndex}
             projectHoveredIndex={appState.projectHoveredIndex}
           />
-          {/* <PageLinkContainer
+          <PageLinkContainer
             currentPage={appState.currentPage}
             pages={appState.pages}
             changePage={changePage}
-          /> */}
+          />
         </MainContent>
       </Layout>
       <style jsx global>{`
@@ -198,6 +198,7 @@ export default function Home() {
             sans-serif;
           overflow: hidden;
           height: 100%;
+          font-size: 1em;
         }
         a {
           color: #6f59e9;
