@@ -31,18 +31,18 @@ const StyledPhoneImage = styled.img`
 const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce, projectHoveredIndex }) => (
   <picture>
     <source
-      srcSet="/images/phone.png?webp"
+      srcSet={require("../../public/images/phone.png?webp")}
       type="image/webp"
     />
     <source
-      srcSet="/images/phone.png"
+      srcSet={require("../../public/images/phone.png")}
       type="image/png"
     />
     <StyledPhoneImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
       projectHoveredIndex={projectHoveredIndex}
-      srcSet="/images/phone.png"
+      srcSet={require("../../public/images/phone.png")}
       alt="An 80's style mobile phone"
     />
   </picture>
