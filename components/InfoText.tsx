@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import Projects from "./Projects";
 import { ProjectModel } from "../models/appState";
+import { devices } from "../utils/cssBreakpoints";
 
 const InfoTextContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 45%;
+  height: 55%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
   font-size: ${({ onProjectsPage }) => onProjectsPage ? "0.825rem" : "0.85rem"};
   font-weight: 400;
   line-height: 1.5em;
   color: #333333;
+  @media ${devices.mobileLandscape} {
+    height: 45%;
+  }
 `;
 
 interface InfoTextProps {

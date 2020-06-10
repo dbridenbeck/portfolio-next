@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { ProjectModel } from "../../models/appState";
 import Project from './Project';
