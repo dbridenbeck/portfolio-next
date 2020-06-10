@@ -17,7 +17,7 @@ const taskManagerGif = require("../public/images/taskmanager.gif");
 const MainContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 95%;
   height: 100%;
   margin: 0 auto;
