@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 import PageLink from "./PageLink";
+import { devices } from "../../utils/cssBreakpoints";
 
 const LinkContainer = styled.div`
-  position: fixed;
-  bottom: 1.333%;
-  right: 1.333%;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
-  width: 20%;
+  width: 100%;
   z-index: 99;
+  @media ${devices.mobileLandscape} {
+    position: fixed;
+    justify-content: space-between;
+    bottom: 1.333%;
+    right: 1.333%;
+    width: 20%;
+  }
 `;
 
 interface PageLinkContainerProps {
