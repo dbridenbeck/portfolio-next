@@ -12,9 +12,9 @@ const StyledCircle = styled.div`
   border-radius: 50%;
   overflow: hidden;
   transition: ${({ pageClickedOnce }) =>
-    pageClickedOnce ? "background-color 0.3s" : ""};
+    pageClickedOnce ? "background-color 0.75s" : ""};
   background-color: ${({ color }) =>
-    color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#883B38"};
+    color === "grey" ? "#E5E5E5" : color === "yellow" ? "#F9E44D" : "#883B38"};
 `;
 
 const StyledGif = styled.img`
@@ -44,9 +44,9 @@ const Circle: React.FC<CircleProps> = ({
     <StyledCircle
       color={
         currentPage === "SKILLS"
-          ? "red"
+          ? "grey"
           : currentPage === "ABOUT"
-          ? "blue"
+          ? "yellow"
           : "reddish"
       }
       pageClickedOnce={pageClickedOnce}
