@@ -43,9 +43,9 @@ const Circle: React.FC<CircleProps> = ({
   <CircleAnimation currentPage={currentPage} pageClickedOnce={pageClickedOnce}>
     <StyledCircle
       color={
-        currentPage === "SKILLS"
+        currentPage === "skills"
           ? "grey"
-          : currentPage === "ABOUT"
+          : currentPage === "about"
           ? "yellow"
           : "reddish"
       }

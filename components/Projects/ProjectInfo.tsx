@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { ProjectModel } from "../../models/appState";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight	 } from "@fortawesome/free-solid-svg-icons";
 
 const infoContainerVariants = {
   initial: {
@@ -19,7 +21,9 @@ const infoContainerVariants = {
 
 const infoContainerTransition = {
   type: "spring",
-}
+  stiffness: 125,
+  damping: 20,
+};
 
 const ProjectInfoContainer = styled(motion.div)`
   display: flex;
@@ -29,15 +33,15 @@ const ProjectInfoContainer = styled(motion.div)`
   margin: 0;
 `;
 
-const BoldSpan = styled.span`
-  font-weight: 600;
-  color: ${({ color }) => color};
-`;
-
 const InfoP = styled.p`
-  font-weight: normal;
   padding: 0;
   margin: 0;
+  font-weight: normal;
+  font-size: 0.975em;
+`;
+
+const ProjectLink = styled.a`
+  padding-left: 0.333em;
 `;
 
 interface ProjectProps {
@@ -58,11 +62,13 @@ const ProjectInfo: React.FC<ProjectProps> = ({
     transition={infoContainerTransition}
   >
     <InfoP>
-      <BoldSpan color={project.color}>Goals:</BoldSpan> {project.goals}
+      {project.goals}
     </InfoP>
     <InfoP>
-      <BoldSpan color={project.color}>Details:</BoldSpan>{" "}
       {project.projectDetail}
+      <ProjectLink href={project.url} target="_blank">
+        Visit the website <FontAwesomeIcon icon={faArrowRight} />
+      </ProjectLink>
     </InfoP>
   </ProjectInfoContainer>
 

@@ -20,9 +20,9 @@ const Images: React.FC<ImagesProps> = ({
   const skillsImageConfig = {
     initial: false,
     animate:
-      currentPage === "SKILLS"
+      currentPage === "skills"
         ? "center"
-        : currentPage === "PORTFOLIO"
+        : currentPage === "portfolio"
         ? "portfolioUp"
         : "flyOut",
   };
@@ -30,9 +30,9 @@ const Images: React.FC<ImagesProps> = ({
   const aboutImageConfig = {
     initial: false,
     animate:
-      currentPage === "ABOUT"
+      currentPage === "about"
         ? "center"
-        : currentPage === "PORTFOLIO"
+        : currentPage === "portfolio"
         ? "portfolioDown"
         : "flyOut",
   };

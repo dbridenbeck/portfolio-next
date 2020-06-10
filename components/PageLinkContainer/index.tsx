@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PageLink from "./PageLink";
+import { devices } from "../../utils/cssBreakpoints";
 
 const LinkContainer = styled.div`
   position: relative;
@@ -8,10 +9,15 @@ const LinkContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  height: 7%;
-  max-height: 6%;
-  font-size: 0.85em;
   z-index: 99;
+  @media ${devices.tabletLandscape} {
+    position: fixed;
+    justify-content: space-between;
+    bottom: 1.333%;
+    right: 1.333%;
+    width: 20%;
+    min-width: 256px;
+  }
 `;
 
 interface PageLinkContainerProps {

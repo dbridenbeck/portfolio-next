@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const PageLinkSpan = styled.span`
   display: block;
-  font-size: 1em;
-  font-style: italic;
+  font-size: 1.125em;
   cursor: pointer;
   color: ${({ linkSelected, color }) => linkSelected ? color : "black"};
   :hover {
