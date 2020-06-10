@@ -21,10 +21,7 @@ const StyledPinballImage = styled.img`
   width: 80%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
-  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
-    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
-  filter: ${({ currentPage, projectHoveredIndex }) =>
-    triggerFilter(currentPage, projectHoveredIndex)};
+  opacity: 0.15;
 `;
 
 const PinballImage: React.FC<ImageModel> = ({

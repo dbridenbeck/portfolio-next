@@ -21,10 +21,7 @@ const StyledRollerskateImage = styled.img`
   width: 90%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
-  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
-    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
-  filter: ${({ currentPage, projectHoveredIndex }) =>
-    triggerFilter(currentPage, projectHoveredIndex)};
+  opacity: 0.15;
 `;
 
 const RollerskateImage: React.FC<ImageModel> = ({

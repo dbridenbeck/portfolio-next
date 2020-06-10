@@ -14,7 +14,7 @@ const StyledCircle = styled.div`
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.75s" : ""};
   background-color: ${({ color }) =>
-    color === "grey" ? "#E5E5E5" : color === "yellow" ? "#F9E44D" : "#883B38"};
+    color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : "#883B38"};
 `;
 
 const StyledGif = styled.img`
