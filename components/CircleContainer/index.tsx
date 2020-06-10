@@ -23,13 +23,13 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   pageClickedOnce,
   children,
   projects,
-  projectHoveredIndex
+  projectHoveredIndex,
 }) => (
   <CircleContainerDiv>
     {children}
-    <Circle 
-      currentPage={currentPage} 
-      pageClickedOnce={pageClickedOnce} 
+    <Circle
+      currentPage={currentPage}
+      pageClickedOnce={pageClickedOnce}
       projects={projects}
       projectHoveredIndex={projectHoveredIndex}
     />
