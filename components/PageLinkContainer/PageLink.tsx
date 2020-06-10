@@ -19,12 +19,13 @@ interface PageLinkProps {
 
 const PageLink = ({page, handleChangePage, currentPage}) => {
   const linkSelected = currentPage === page.pageName;
+  const updatePage = () => handleChangePage(page.pageName);
   return (
     <>
       <PageLinkSpan 
         color={page.color}
         linkSelected={linkSelected}
-        onClick={() => handleChangePage(page.pageName)}
+        onClick={updatePage}
       >
         {page.pageName}
       </PageLinkSpan>

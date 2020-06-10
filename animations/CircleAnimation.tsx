@@ -20,8 +20,9 @@ const { className, styles } = css.resolve`
 `;
 
 const circleVariants = {
-  SKILLS: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
+  skills: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
   about: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] },
+  portfolio: { scale: [null, 0.95, 1.05, 0.975, 1.025, 0.985, 1] }
 };
 
 const CircleAnimation: React.FC<CircleAnimationProps> = ({
@@ -38,6 +39,8 @@ const CircleAnimation: React.FC<CircleAnimationProps> = ({
         ? "skills"
         : currentPage === "ABOUT" && pageClickedOnce
         ? "about"
+        : currentPage === "PORTFOLIO" && pageClickedOnce
+        ? "portfolio"
         : null
     }
     transition={{ ease: "easeInOut", timing: [0, 0.6, 0.8, 0.8, 0.9, 1] }}
