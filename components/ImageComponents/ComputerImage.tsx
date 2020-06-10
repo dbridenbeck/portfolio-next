@@ -23,7 +23,6 @@ const StyledComputerImage = styled.img`
   animation-delay: 200ms;
   transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
     pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
-  transition: left 5s ease-in-out;
   filter: ${({ currentPage, projectHoveredIndex }) =>
     triggerFilter(currentPage, projectHoveredIndex)};
 `;
