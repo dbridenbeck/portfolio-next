@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { ProjectModel } from "../../models/appState";
 import ProjectInfo from "./ProjectInfo";
 import { devices } from "../../utils/cssBreakpoints";
@@ -58,11 +58,6 @@ const Title = styled.h3`
   padding: 0;
   margin: 0 2em 0 0;
   color: #3d3838;
-`;
-
-const LiveLink = styled.a`
-  margin: 0;
-  display: ${({ isProjectHovered }) => (isProjectHovered ? "block" : "none")};
 `;
 
 const ProjectType = styled.h4`
@@ -123,14 +118,12 @@ const Project: React.FC<ProjectProps> = ({
       <ProjectOverview>
         <ProjectHeader>
           <Title>{project.title}</Title>
-          {/* <LiveLink
-            href={project.url}
-            target="_blank"
-            isProjectHovered={isProjectHovered}
-          >
-            (Visit Site)
-          </LiveLink> */}
           <ProjectType>{project.type}</ProjectType>
+          {isProjectHovered ? (
+            <FontAwesomeIcon icon={faChevronUp} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronDown} />
+          )}
         </ProjectHeader>
         <TechPills>
           {project.tech.map((singleTech) => (
@@ -143,7 +136,6 @@ const Project: React.FC<ProjectProps> = ({
             </TechPill>
           ))}
         </TechPills>
-        <FontAwesomeIcon icon={faChevronDown} />
       </ProjectOverview>
 
       <AnimatePresence initial={false}>

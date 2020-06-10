@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { ProjectModel } from "../../models/appState";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight	 } from "@fortawesome/free-solid-svg-icons";
 
 const infoContainerVariants = {
   initial: {
@@ -38,6 +40,10 @@ const InfoP = styled.p`
   font-size: 0.975em;
 `;
 
+const ProjectLink = styled.a`
+  padding-left: 0.333em;
+`;
+
 interface ProjectProps {
   project: ProjectModel;
   isProjectHovered: boolean;
@@ -60,6 +66,9 @@ const ProjectInfo: React.FC<ProjectProps> = ({
     </InfoP>
     <InfoP>
       {project.projectDetail}
+      <ProjectLink href={project.url} target="_blank">
+        Visit the website <FontAwesomeIcon icon={faArrowRight} />
+      </ProjectLink>
     </InfoP>
   </ProjectInfoContainer>
 
