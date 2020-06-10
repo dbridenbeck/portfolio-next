@@ -10,27 +10,24 @@ const StyledCircle = styled.div`
   padding-bottom: 77.75%;
   margin: 0 auto;
   border-radius: 50%;
-  border: 5px solid wheat;
+border: ${({ projectHoveredIndex, projects }) => projectHoveredIndex === -1 ? `5px solid wheat` : `5px solid ${projects[projectHoveredIndex].color}`};
+  overflow: hidden;
+  transition: border-color 0.75s ease-in-out;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.3s" : ""};
-  background-color: ${({ color }) => (color === "red" ? "#d13b40" : "#3bc9d1")};
-  ${({ currentPage, projects, projectHoveredIndex }) =>
-    currentPage === "PORTFOLIO" && projectHoveredIndex !== -1
-      ? `
-    background-image: url(${projects[projectHoveredIndex].gif});
-    background-size: 80%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border: 5px solid ${projects[projectHoveredIndex].color};
-    transition: border-color 0.75s ease-in-out;
-    transition: background-image 0.25s ease-in-out;
-  `
-      : null}
+  background-color: ${({ color }) => (color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#fff")};
   @media screen and (min-width: 768px) {
     width: 100%;
     padding-bottom: 97.75%;
   }
+`;
+
+const StyledGif = styled.img`
+  position: absolute;
+  height: 75%;
+  width: 75%;
+  left: 12.5%;
+  top: 12.5%;
 `;
 
 interface CircleProps {
@@ -48,12 +45,20 @@ const Circle: React.FC<CircleProps> = ({
 }) => (
   <CircleAnimation currentPage={currentPage} pageClickedOnce={pageClickedOnce}>
     <StyledCircle
-      color={currentPage === "SKILLS" ? "red" : "blue"}
+      color={currentPage === "SKILLS" ? "red" : currentPage === "ABOUT" ? "blue" : "white"}
       pageClickedOnce={pageClickedOnce}
       currentPage={currentPage}
       projects={projects}
       projectHoveredIndex={projectHoveredIndex}
-    />
+    >
+      {projectHoveredIndex === 0 ? (
+        <StyledGif src={require("../../public/images/whidbeyherbal.gif")} />
+      ) : projectHoveredIndex === 1 ? (
+        <StyledGif src={require("../../public/images/chatapp.gif")} />
+      ) : projectHoveredIndex === 2 ? (
+        <StyledGif src={require("../../public/images/taskmanager.gif")} />
+      ) : null}
+    </StyledCircle>
   </CircleAnimation>
 );
 
