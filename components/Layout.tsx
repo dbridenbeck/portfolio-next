@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 const StyledLayout = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 2.667%;
+  padding: 1.667%;
   height: 100%;
   max-width: 650px;
 `;
