@@ -18,7 +18,7 @@ const StyledComputerImage = styled.img`
   display: block;
   position: absolute;
   margin: 25% 0 0 0;
-  width: 120%;
+  width: 110%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
   transition: ${({ pageClickedOnce, projectHoveredIndex }) =>

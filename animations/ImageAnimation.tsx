@@ -22,35 +22,35 @@ const { className, styles } = css.resolve`
 `;
 
 const imageVariants = {
-  center: {
-    x: "0px",
-    y: "0px",
+  center: (leftOriented) => ({
+    x: leftOriented ? "-50%" : "70%",
+    y: "-7.5vh",
     transition: {
       type: "spring",
       stiffness: 35,
       mass: 0.2,
       damping: 3.5,
     },
-  },
+  }),
   flyOut: (leftOriented) => ({
-    x: leftOriented ? "-75%" : "75%",
-    y: "0vh",
+    x: leftOriented ? "-250%" : "265%",
+    y: "-7.5vh",
     transition: {
       type: "spring",
       stiffness: 35,
     },
   }),
   portfolioUp: (leftOriented) => ({
-    x: leftOriented ? "-90%" : "90%",
-    y: "50vh",
+    x: leftOriented ? "-250%" : "265%",
+    y: "40vh",
     transition: {
       type: "spring",
       stiffness: 35,
     },
   }),
   portfolioDown: (leftOriented) => ({
-    x: leftOriented ? "-90%" : "90%",
-    y: "-5vh",
+    x: leftOriented ? "-250%" : "250%",
+    y: "-15vh",
     transition: {
       type: "spring",
       stiffness: 35,
