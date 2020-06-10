@@ -25,22 +25,23 @@ const ProjectContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding: 1.5em 1.625em;
-  margin: 0 0 1.5em 0;
+  padding: 1.5rem 1.625rem;
+  margin: 0 0 1.5rem 0;
   border: 1px solid #373636;
 `;
 
 const TitleTypeContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 0 1em 0;
+  margin: 0 0 1rem 0;
   padding: 0;
-  font-size: 1.125em;
 `;
 
 const Title = styled.h3`
+  font-size: 1.125rem;
   padding: 0;
   margin: 0 2em 0 0;
+  color: #3d3838;
 `;
 
 const LiveLink = styled.a`
@@ -51,25 +52,26 @@ const LiveLink = styled.a`
 const ProjectType = styled.h4`
   padding: 0;
   margin: 0 auto 0 0;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-weight: 300;
+  color: #333333;
 `;
 
 const TechPills = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 0.975em;
-  margin: 0.25em 0 0 0;
+  margin: 0;
   padding: 0;
 `;
 
 const TechPill = styled.div`
-  border: ${({ color, isProjectHovered }) =>
-    isProjectHovered ? `1px solid ${color}` : `1px solid #7f7f7f`};
-  padding: 0 0.725em;
+  height: 1.5rem;
+  padding: 0.133rem 0.725rem;
+  color: #584D4D;
+  background-color: #f2f2f2;
   border-radius: 1000px;
   font-size: 0.825em;
-  height: 1.875em;
 `;
 
 interface ProjectProps {
