@@ -14,7 +14,7 @@ const InfoTextContainer = styled.div`
   line-height: 1.5em;
   color: #333333;
   @media ${devices.mobileLandscape} {
-    height: 45%;
+    height: 55%;
   }
 `;
 

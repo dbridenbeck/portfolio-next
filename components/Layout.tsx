@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
     <Head>
       <link
-        href="https://fonts.googleapis.com/css2?family=Muli:wght@300;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;600&display=swap"
         rel="stylesheet"
       />
     </Head>

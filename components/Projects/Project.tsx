@@ -6,15 +6,12 @@ import ProjectInfo from "./ProjectInfo";
 const projectVariants = {
   initial: {
     height: "27%",
-    border: "2px solid #3BC9D1",
   },
-  expanded: (color) => ({
+  expanded: {
     height: "60%",
-    border: `2px solid ${color}`,
-  }),
+  },
   collapsed: {
     height: "22%",
-    border: "2px solid #3BC9D1",
   },
 };
 
@@ -28,31 +25,34 @@ const ProjectContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding: 1% 2.5%;
-  margin: 0.5% 2.5%;
+  padding: 1.5em 1.625em;
+  margin: 0 0 1.5em 0;
+  border: 1px solid #373636;
 `;
 
 const TitleTypeContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0;
+  margin: 0 0 1em 0;
   padding: 0;
+  font-size: 1.125em;
 `;
 
 const Title = styled.h3`
   padding: 0;
-  margin: 0;
+  margin: 0 2em 0 0;
 `;
 
 const LiveLink = styled.a`
-  font-size: 0.925em;
   margin: 0;
   display: ${({ isProjectHovered }) => (isProjectHovered ? "block" : "none")};
 `;
 
 const ProjectType = styled.h4`
   padding: 0;
-  margin: 0;
+  margin: 0 auto 0 0;
+  font-size: 0.875em;
+  font-weight: 300;
 `;
 
 const TechPills = styled.div`
@@ -93,7 +93,6 @@ const Project: React.FC<ProjectProps> = ({
       key={project.url}
       onClick={updateProjectHoverIndex}
       initial="initial"
-      custom={project.color}
       variants={projectVariants}
       animate={
         isProjectHovered
