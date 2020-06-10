@@ -16,8 +16,9 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: 0 auto;
 `;
 
 export default function Home() {
@@ -143,21 +144,17 @@ export default function Home() {
           href="/images/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Muli:wght@300;600&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Layout>
         <MainContent>
-          <TitleText currentPage={appState.currentPage} />
+          <TitleText/>
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
             projectHoveredIndex={appState.projectHoveredIndex}
             projects={appState.projects}
           >
-            <ImagePairs
+            {/* <ImagePairs
               leftOriented={true}
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
@@ -168,7 +165,7 @@ export default function Home() {
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
               projectHoveredIndex={appState.projectHoveredIndex}
-            />
+            /> */}
           </CircleContainer>
           <InfoText
             infoText={appState.infoText[appState.currentPage]}

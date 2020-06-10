@@ -1,37 +1,35 @@
 import styled from "styled-components";
-import Head from "next/head";
+
+const TitleContainer = styled.div`
+  padding-left: 4.667%;
+`;
 
 const Title = styled.h1`
   position: relative;
   margin: 0;
   padding: 0;
-  font-family: "Crimson Text", serif;
-  font-weight: 200;
+  font-size: 2.25rem;
+  font-weight: 600;
   line-height: 1em;
-  border: 1px solid red;
 `;
 
 const SubTitle = styled.h2`
   position: relative;
+  font-size: 1.75em;
+  margin: 0;
+  padding: 0;
   color: #333333;
-  font-weight: bold;
-  font-family: "Muli", sans-serif;
+  font-weight: normal;
 `;
 
 const TitleText: React.FC = () => {
   return (
-    <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <TitleContainer>
       <Title>
-        Darren Bridenbeck
+        I'm Darren Bridenbeck,
       </Title>
-      <SubTitle>Software Engineer</SubTitle>
-    </>
+      <SubTitle>a software engineer.</SubTitle>
+    </TitleContainer>
   );
 };
 
