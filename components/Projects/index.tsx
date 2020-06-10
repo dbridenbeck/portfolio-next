@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { ProjectModel } from "../../models/appState";
 import Project from './Project';
+import { devices } from "../../utils/cssBreakpoints";
 
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  @media ${devices.mobileLandscape} {
+    justify-content: space-around;
+  }
 `;
 
 interface ProjectsProps {
