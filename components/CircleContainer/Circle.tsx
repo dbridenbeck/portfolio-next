@@ -28,6 +28,8 @@ const StyledGif = styled.img`
   width: 75%;
   left: 12.5%;
   top: 12.5%;
+  opacity: ${({ isSelected }) => isSelected ? "1" : "0"};
+  transition: opacity 0.5s ease-in-out;
 `;
 
 interface CircleProps {
@@ -45,19 +47,30 @@ const Circle: React.FC<CircleProps> = ({
 }) => (
   <CircleAnimation currentPage={currentPage} pageClickedOnce={pageClickedOnce}>
     <StyledCircle
-      color={currentPage === "SKILLS" ? "red" : currentPage === "ABOUT" ? "blue" : "white"}
+      color={
+        currentPage === "SKILLS"
+          ? "red"
+          : currentPage === "ABOUT"
+          ? "blue"
+          : "white"
+      }
       pageClickedOnce={pageClickedOnce}
       currentPage={currentPage}
       projects={projects}
       projectHoveredIndex={projectHoveredIndex}
     >
-      {projectHoveredIndex === 0 ? (
-        <StyledGif src={require("../../public/images/whidbeyherbal.gif")} />
-      ) : projectHoveredIndex === 1 ? (
-        <StyledGif src={require("../../public/images/chatapp.gif")} />
-      ) : projectHoveredIndex === 2 ? (
-        <StyledGif src={require("../../public/images/taskmanager.gif")} />
-      ) : null}
+      <StyledGif
+        isSelected={projectHoveredIndex === 0}
+        src="/images/whidbeyherbal.gif"
+      />
+      <StyledGif
+        isSelected={projectHoveredIndex === 1}
+        src="/images/chatapp.gif"
+      />
+      <StyledGif
+        isSelected={projectHoveredIndex === 2}
+        src="/images/taskmanager.gif"
+      />
     </StyledCircle>
   </CircleAnimation>
 );
