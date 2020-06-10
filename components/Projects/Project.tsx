@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { ProjectModel } from "../../models/appState";
 import ProjectInfo from "./ProjectInfo";
 import { devices } from "../../utils/cssBreakpoints";
@@ -141,6 +143,7 @@ const Project: React.FC<ProjectProps> = ({
             </TechPill>
           ))}
         </TechPills>
+        <FontAwesomeIcon icon={faChevronDown} />
       </ProjectOverview>
 
       <AnimatePresence initial={false}>
