@@ -18,13 +18,10 @@ const StyledComputerImage = styled.img`
   display: block;
   position: absolute;
   margin: 25% 0 0 0;
-  width: 55%;
+  width: 110%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
-  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
-    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
-  filter: ${({ currentPage, projectHoveredIndex }) =>
-    triggerFilter(currentPage, projectHoveredIndex)};
+  opacity: 0.15;
 `;
 
 const ComputerImage: React.FC<ImageModel> = ({

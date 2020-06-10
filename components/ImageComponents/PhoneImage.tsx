@@ -17,15 +17,12 @@ const rotate = keyframes`
 const StyledPhoneImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0px 0px 60%;
-  width: 35%;
+  margin: 25% 0 0 0;
+  width: 70%;
   height: auto;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 300ms;
-  transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
-    pageClickedOnce || projectHoveredIndex !== -1 ? "filter 2s" : ""};
-  filter: ${({ currentPage, projectHoveredIndex }) =>
-    triggerFilter(currentPage, projectHoveredIndex)};
+  opacity: 0.15;
 `;
 
 const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce, projectHoveredIndex }) => (

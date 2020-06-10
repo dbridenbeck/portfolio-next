@@ -152,14 +152,14 @@ export default function Home() {
       </Head>
       <Layout>
         <MainContent>
-          <TitleText/>
+          <TitleText />
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
             projectHoveredIndex={appState.projectHoveredIndex}
             projects={appState.projects}
           >
-            {/* <ImagePairs
+            <ImagePairs
               leftOriented={true}
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
@@ -170,7 +170,7 @@ export default function Home() {
               currentPage={appState.currentPage}
               pageClickedOnce={appState.pageClickedOnce}
               projectHoveredIndex={appState.projectHoveredIndex}
-            /> */}
+            />
           </CircleContainer>
           <InfoText
             infoText={appState.infoText[appState.currentPage]}
@@ -192,7 +192,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          background-color: wheat;
+          background-color: #f3edde;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;

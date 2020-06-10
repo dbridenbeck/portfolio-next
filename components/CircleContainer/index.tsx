@@ -4,9 +4,8 @@ import { ReactElement } from "react";
 import { ProjectModel } from "../../models/appState";
 
 const CircleContainerDiv = styled.div`
-  display: block;
   position: relative;
-  width: 50vh;
+  width: 40.625%;
   margin: 0 auto;
 `;
 
