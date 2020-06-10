@@ -10,12 +10,13 @@ const LinkContainer = styled.div`
   margin: 0 auto;
   width: 100%;
   z-index: 99;
-  @media ${devices.mobileLandscape} {
+  @media ${devices.tabletLandscape} {
     position: fixed;
     justify-content: space-between;
     bottom: 1.333%;
     right: 1.333%;
     width: 20%;
+    min-width: 256px;
   }
 `;
 
