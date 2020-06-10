@@ -52,11 +52,11 @@ const Circle: React.FC<CircleProps> = ({
       projectHoveredIndex={projectHoveredIndex}
     >
       {projectHoveredIndex === 0 ? (
-        <StyledGif src="/images/whidbeyherbal.gif" />
+        <StyledGif src={require("../../public/images/whidbeyherbal.gif")} />
       ) : projectHoveredIndex === 1 ? (
-        <StyledGif src="/images/chatapp.gif" />
+        <StyledGif src={require("../../public/images/chatapp.gif")} />
       ) : projectHoveredIndex === 2 ? (
-        <StyledGif src="/images/taskmanager.gif" />
+        <StyledGif src={require("../../public/images/taskmanager.gif")} />
       ) : null}
     </StyledCircle>
   </CircleAnimation>
