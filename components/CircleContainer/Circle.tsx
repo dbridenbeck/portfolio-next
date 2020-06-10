@@ -13,7 +13,8 @@ const StyledCircle = styled.div`
   overflow: hidden;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.3s" : ""};
-  background-color: ${({ color }) => (color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#fff")};
+  background-color: ${({ color }) =>
+    color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#883B38"};
 `;
 
 const StyledGif = styled.img`
@@ -46,7 +47,7 @@ const Circle: React.FC<CircleProps> = ({
           ? "red"
           : currentPage === "ABOUT"
           ? "blue"
-          : "white"
+          : "reddish"
       }
       pageClickedOnce={pageClickedOnce}
       currentPage={currentPage}

@@ -152,7 +152,7 @@ export default function Home() {
       </Head>
       <Layout>
         <MainContent>
-          <TitleText/>
+          <TitleText />
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
@@ -192,7 +192,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          background-color: wheat;
+          background-color: #f3edde;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
