@@ -34,18 +34,18 @@ const ComputerImage: React.FC<ImageModel> = ({
 }) => (
   <picture>
     <source
-      srcSet={require("../../public/images/computer.png?webp")}
+      srcSet="images/computer.png?webp"
       type="image/webp"
     />
     <source
-      srcSet={require("../../public/images/computer.png")}
+      srcSet="images/computer.png"
       type="image/png"
     />
     <StyledComputerImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
       projectHoveredIndex={projectHoveredIndex}
-      srcSet={require("../../public/images/computer.png")}
+      srcSet="/images/computer.png"
       alt="An open laptop"
     />
   </picture>

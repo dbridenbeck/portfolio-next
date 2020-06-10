@@ -34,18 +34,18 @@ const RollerskateImage: React.FC<ImageModel> = ({
 }) => (
   <picture>
     <source
-      srcSet={require("../../public/images/rollerskate.png?webp")}
+      srcSet="/images/rollerskate.png?webp"
       type="image/webp"
     />
     <source
-      srcSet={require("../../public/images/rollerskate.png")}
+      srcSet="/images/rollerskate.png"
       type="image/jpeg"
     />
     <StyledRollerskateImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
       projectHoveredIndex={projectHoveredIndex}
-      src={require("../../public/images/rollerskate.png")}
+      src="/images/rollerskate.png"
       alt="A quad rollerskate"
     />
   </picture>
