@@ -24,11 +24,11 @@ border: ${({ projectHoveredIndex, projects }) => projectHoveredIndex === -1 ? `5
 
 const StyledGif = styled.img`
   position: absolute;
-  height: 75%;
-  width: 75%;
-  left: 12.5%;
-  top: 12.5%;
-  opacity: ${({ isSelected }) => isSelected ? "1" : "0"};
+  height: 70%;
+  width: 70%;
+  left: 15%;
+  top: 15%;
+  opacity: ${({ isSelected }) => (isSelected ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
 `;
 
