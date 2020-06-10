@@ -1,14 +1,18 @@
 import styled from "styled-components";
+import { devices } from "../utils/cssBreakpoints";
 
 const TitleContainer = styled.div`
-  padding-left: 4.667%;
+  @media ${devices.mobilePortrait} {
+    font-size: 0.825em;
+    padding-left: 4.667%;
+  }
 `;
 
 const Title = styled.h1`
   position: relative;
   margin: 0;
   padding: 0;
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-weight: 600;
   line-height: 1em;
 `;
