@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { devices } from "../utils/cssBreakpoints";
 
 const TitleContainer = styled.div`
-  @media ${devices.mobilePortrait} {
-    font-size: 0.825em;
+  font-size: 0.825em;
+  @media ${devices.mobileLandscape} {
+    font-size: 1em;
     padding-left: 4.667%;
   }
 `;
