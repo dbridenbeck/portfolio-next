@@ -18,7 +18,7 @@ const StyledPinballImage = styled.img`
   display: block;
   position: absolute;
   margin: 25% 0 0 5%;
-  width: 40%;
+  width: 100%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
   transition: ${({ pageClickedOnce, projectHoveredIndex }) =>

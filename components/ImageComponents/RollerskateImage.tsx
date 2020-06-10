@@ -18,7 +18,7 @@ const StyledRollerskateImage = styled.img`
   display: block;
   position: absolute;
   margin: 25% 0px 0px 50%;
-  width: 45%;
+  width: 100%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
   transition: ${({ pageClickedOnce, projectHoveredIndex }) =>
