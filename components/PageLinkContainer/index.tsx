@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import PageLink from "./PageLink";
 
 const LinkContainer = styled.div`
-  position: relative;
+  position: fixed;
+  bottom: 1.333%;
+  right: 1.333%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 100%;
-  font-size: 0.85em;
+  width: 20%;
   z-index: 99;
 `;
 

@@ -29,25 +29,25 @@ const MainContent = styled.div`
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    currentPage: "PORTFOLIO",
+    currentPage: "portfolio",
     projectHoveredIndex: -1,
     indexToSelect: 0,
     pages: [
       {
-        pageName: "PORTFOLIO",
+        pageName: "portfolio",
         color: "#427ce6",
       },
       {
-        pageName: "SKILLS",
+        pageName: "skills",
         color: "#6f59e9",
       },
       {
-        pageName: "ABOUT",
+        pageName: "about",
         color: "#b0292e",
       },
     ],
     infoText: {
-      SKILLS: {
+      skills: {
         __html: `
           <p>My name is Darren and I’m a web developer.</p>
           <p>I have been helping people build websites for over ten years, from
@@ -59,7 +59,7 @@ export default function Home() {
           <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
         `,
       },
-      ABOUT: {
+      about: {
         __html: `
           <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
           <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
@@ -179,11 +179,11 @@ export default function Home() {
             updateProjectHoveredIndex={updateProjectHoveredIndex}
             projectHoveredIndex={appState.projectHoveredIndex}
           />
-          {/* <PageLinkContainer
+          <PageLinkContainer
             currentPage={appState.currentPage}
             pages={appState.pages}
             changePage={changePage}
-          /> */}
+          />
         </MainContent>
       </Layout>
       <style jsx global>{`

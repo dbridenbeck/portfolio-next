@@ -33,7 +33,7 @@ const InfoText: React.FC<InfoTextProps> = ({
   updateProjectHoveredIndex,
   projectHoveredIndex,
 }) =>
-  currentPage !== "PORTFOLIO" ? (
+  currentPage !== "portfolio" ? (
     <InfoTextContainer
       currentPage={currentPage}
       dangerouslySetInnerHTML={infoText}

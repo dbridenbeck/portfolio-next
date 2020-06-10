@@ -35,11 +35,11 @@ const CircleAnimation: React.FC<CircleAnimationProps> = ({
     className={className}
     initial={false}
     animate={
-      currentPage === "SKILLS" && pageClickedOnce
+      currentPage === "skills" && pageClickedOnce
         ? "skills"
-        : currentPage === "ABOUT" && pageClickedOnce
+        : currentPage === "about" && pageClickedOnce
         ? "about"
-        : currentPage === "PORTFOLIO" && pageClickedOnce
+        : currentPage === "portfolio" && pageClickedOnce
         ? "portfolio"
         : null
     }
