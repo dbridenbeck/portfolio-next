@@ -5,21 +5,15 @@ import { ProjectModel } from "../../models/appState";
 const StyledCircle = styled.div`
   position: relative;
   display: block;
-  width: 80%;
+  width: 100%;
   /* padding-bottom keeps circle proportional */
-  padding-bottom: 77.75%;
+  padding-bottom: 100%;
   margin: 0 auto;
   border-radius: 50%;
-border: ${({ projectHoveredIndex, projects }) => projectHoveredIndex === -1 ? `5px solid wheat` : `5px solid ${projects[projectHoveredIndex].color}`};
   overflow: hidden;
-  transition: border-color 0.75s ease-in-out;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.3s" : ""};
   background-color: ${({ color }) => (color === "red" ? "#d13b40" : color === "blue" ? "#3bc9d1" : "#fff")};
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    padding-bottom: 97.75%;
-  }
 `;
 
 const StyledGif = styled.img`
