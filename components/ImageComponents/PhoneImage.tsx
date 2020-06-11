@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import ImageModel from "../../models/images";
-import triggerFilter from "../../animations/TriggerFilter";
+import { devices } from "../../utils/cssBreakpoints";
 
 const rotate = keyframes`
   0% {
@@ -17,12 +17,16 @@ const rotate = keyframes`
 const StyledPhoneImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 70%;
+  margin: 25vh 0 0 0%;
+  width: 32.5%;
   height: auto;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 300ms;
   opacity: 0.15;
+  @media ${devices.mobileLandscape} {
+    width: 20%;
+    margin: 32.5vh 0 0 5%;
+  }
 `;
 
 const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce, projectHoveredIndex }) => (

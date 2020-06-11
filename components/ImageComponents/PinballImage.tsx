@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import triggerFilter from "../../animations/TriggerFilter";
+import { devices } from "../../utils/cssBreakpoints";
 import ImageModel from "../../models/images";
 
 const rotate = keyframes`
@@ -17,11 +17,15 @@ const rotate = keyframes`
 const StyledPinballImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 80%;
+  margin: 28vh 0 0 -7.5%;
+  width: 32.5%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
   opacity: 0.15;
+  @media ${devices.mobileLandscape} {
+    width: 22.5%;
+    margin: 30vh 0 0 0;
+  }
 `;
 
 const PinballImage: React.FC<ImageModel> = ({

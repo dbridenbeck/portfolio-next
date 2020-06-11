@@ -6,10 +6,9 @@ const StyledCircle = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  /* padding-bottom keeps circle proportional */
-  padding-bottom: 100%;
+  height: 100%;
   margin: 0 auto;
-  border-radius: 50%;
+  border-radius: 10000px;
   overflow: hidden;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.75s" : ""};
@@ -54,6 +53,18 @@ const Circle: React.FC<CircleProps> = ({
       projects={projects}
       projectHoveredIndex={projectHoveredIndex}
     >
+      {/* <StyledGif
+        isSelected={projectHoveredIndex === 0}
+        src="/images/whidbeyherbal.gif"
+      />
+      <StyledGif
+        isSelected={projectHoveredIndex === 1}
+        src="/images/chatapp.gif"
+      />
+      <StyledGif
+        isSelected={projectHoveredIndex === 2}
+        src="/images/taskmanager.gif"
+      /> */}
     </StyledCircle>
   </CircleAnimation>
 );

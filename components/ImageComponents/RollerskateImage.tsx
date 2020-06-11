@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import triggerFilter from '../../animations/TriggerFilter';
+import { devices } from "../../utils/cssBreakpoints";
 import ImageModel from '../../models/images';
 
 const rotate = keyframes`
@@ -17,11 +17,15 @@ const rotate = keyframes`
 const StyledRollerskateImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 90%;
+  margin: 30vh 0 0 0;
+  width: 35%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
   opacity: 0.15;
+  @media ${devices.mobileLandscape} {
+    width: 25%;
+    margin: 32.5vh 0 0 0;
+  }
 `;
 
 const RollerskateImage: React.FC<ImageModel> = ({

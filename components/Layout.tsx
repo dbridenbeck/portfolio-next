@@ -13,7 +13,7 @@ const StyledLayout = styled.div`
 `;
 
 interface LayoutProps {
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
