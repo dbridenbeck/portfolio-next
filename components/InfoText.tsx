@@ -20,7 +20,7 @@ const InfoTextContainer = styled.div`
 
 interface InfoTextProps {
   infoText: {__html: string};
-  projects: [ProjectModel, ProjectModel, ProjectModel];
+  projects: ProjectModel[];
   currentPage: string;
   projectHoveredIndex: number;
   updateProjectHoveredIndex: (projectIndex: number) => void;

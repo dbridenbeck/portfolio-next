@@ -78,6 +78,7 @@ export default function Home() {
         url: "http://whidbeyherbal.com",
         color: "#9686ef",
         gif: `${whidbeyGif}`,
+        open: false,
       },
       {
         title: "Chat App",
@@ -90,6 +91,7 @@ export default function Home() {
         url: "https://secret-hollows-65310.herokuapp.com/",
         color: "#6f9bec",
         gif: `${chatappGif}`,
+        open: false,
       },
       {
         title: "Task Manager",
@@ -102,6 +104,7 @@ export default function Home() {
         url: "https://github.com/dbridenbeck/task-manager-api",
         color: "#d13b40",
         gif: `${taskManagerGif}`,
+        open: false,
       },
     ],
     pageClickedOnce: false,
@@ -124,6 +127,17 @@ export default function Home() {
     updateAppState({
       ...appState,
       projectHoveredIndex: projectIndex,
+      projects: appState.projects.map((project, index) => {
+        if (index === projectIndex) {
+          return {
+            ...project,
+            open: !project.open,
+          }
+        }
+        else {
+          return project;
+        }
+      })
     });
   };
 

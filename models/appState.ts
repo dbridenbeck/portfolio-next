@@ -7,6 +7,7 @@ export interface ProjectModel {
   url: string;
   color: string;
   gif: string;
+  open: boolean;
 }
 
 export default interface AppStateModel {
@@ -22,6 +23,6 @@ export default interface AppStateModel {
     skills: { __html: string };
     about: { __html: string };
   };
-  projects: [ProjectModel, ProjectModel, ProjectModel];
+  projects: ProjectModel[];
   pageClickedOnce: boolean;
 }
