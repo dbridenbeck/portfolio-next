@@ -75,7 +75,7 @@ const TechPills = styled.div`
 `;
 
 const TechPill = styled.div`
-  height: 2em;
+  height: 1.75em;
   padding: 0.133em 0.825em;
   margin: 0 0.75em 0 0;
   color: #584D4D;

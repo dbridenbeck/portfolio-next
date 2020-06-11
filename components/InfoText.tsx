@@ -9,9 +9,7 @@ const InfoTextContainer = styled.div`
   height: 57%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
-  font-size: ${({ onProjectsPage }) => onProjectsPage ? "0.825rem" : "0.85rem"};
   font-weight: 400;
-  line-height: 1.5em;
   color: #333333;
   @media ${devices.mobileLandscape} {
     height: 53%;
@@ -33,7 +31,7 @@ const InfoText: React.FC<InfoTextProps> = ({
   updateProjectHoveredIndex,
   projectHoveredIndex,
 }) =>
-  currentPage !== "portfolio" ? (
+  currentPage === "skills" ? (
     <InfoTextContainer
       currentPage={currentPage}
       dangerouslySetInnerHTML={infoText}
