@@ -44,7 +44,7 @@ const InfoText: React.FC<InfoTextProps> = ({
      <AboutSection />
     </InfoTextContainer>
   ) : (
-    <InfoTextContainer onProjectsPage={true}>
+    <InfoTextContainer>
       <Projects
         projects={projects}
         updateProjectHoveredIndex={updateProjectHoveredIndex}

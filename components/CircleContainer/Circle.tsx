@@ -8,7 +8,7 @@ const StyledCircle = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-border-radius: ${({ projectHoveredIndex }) => projectHoveredIndex !== -1 ? "10000px" : "50%"};
+  border-radius: 10000px;
   overflow: hidden;
   transition: ${({ pageClickedOnce }) =>
     pageClickedOnce ? "background-color 0.75s" : ""};
