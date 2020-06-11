@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Projects from "./Projects";
+import SkillsSection from "./SkillsSection";
 import { ProjectModel } from "../models/appState";
 import { devices } from "../utils/cssBreakpoints";
 
@@ -33,10 +34,14 @@ const InfoText: React.FC<InfoTextProps> = ({
 }) =>
   currentPage === "skills" ? (
     <InfoTextContainer
-      currentPage={currentPage}
-      dangerouslySetInnerHTML={infoText}
-      onProjectsPage={false}
-    ></InfoTextContainer>
+    >
+      <SkillsSection />
+    </InfoTextContainer>
+  ) : currentPage === "about" ? (
+    <InfoTextContainer
+    >
+     about 
+    </InfoTextContainer>
   ) : (
     <InfoTextContainer onProjectsPage={true}>
       <Projects
