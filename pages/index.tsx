@@ -29,7 +29,7 @@ const MainContent = styled.div`
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    currentPage: "about",
+    currentPage: "skills",
     projectHoveredIndex: -1,
     indexToSelect: 0,
     pages: [
