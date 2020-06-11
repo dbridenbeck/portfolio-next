@@ -75,14 +75,12 @@ const TechPills = styled.div`
 interface ProjectProps {
   project: ProjectModel;
   handleProjectHover: (projectIndex) => void;
-  projectHoveredIndex: number;
   index: number;
 }
 
 const Project: React.FC<ProjectProps> = ({
   project,
   handleProjectHover,
-  projectHoveredIndex,
   index,
 }) => {
   const updateProjectHoverIndex = () => handleProjectHover(index);

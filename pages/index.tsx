@@ -30,7 +30,7 @@ export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
     currentPage: "portfolio",
-    projectHoveredIndex: -1,
+    projectSelectedIndex: -1,
     indexToSelect: 0,
     pages: [
       {
@@ -117,16 +117,16 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
-      projectHoveredIndex: -1
+      projectSelectedIndex: -1
     });
   };
 
-  // update state when project is hovered
+  // update state when project is Selected
   // on hover, show animated gif of proj in circle and expand that project's details
-  const updateProjectHoveredIndex = (projectIndex) => {
+  const updateProjectSelectedIndex = (projectIndex) => {
     updateAppState({
       ...appState,
-      projectHoveredIndex: projectIndex,
+      projectSelectedIndex: projectIndex,
       projects: appState.projects.map((project, index) => {
         if (index === projectIndex) {
           return {
@@ -172,28 +172,25 @@ export default function Home() {
           leftOriented={true}
           currentPage={appState.currentPage}
           pageClickedOnce={appState.pageClickedOnce}
-          projectHoveredIndex={appState.projectHoveredIndex}
         />
         <ImagePairs
           leftOriented={false}
           currentPage={appState.currentPage}
           pageClickedOnce={appState.pageClickedOnce}
-          projectHoveredIndex={appState.projectHoveredIndex}
         />
         <MainContent>
           <TitleText />
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
-            projectHoveredIndex={appState.projectHoveredIndex}
+            projectSelectedIndex={appState.projectSelectedIndex}
             projects={appState.projects}
           ></CircleContainer>
           <InfoText
             infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}
             projects={appState.projects}
-            updateProjectHoveredIndex={updateProjectHoveredIndex}
-            projectHoveredIndex={appState.projectHoveredIndex}
+            updateProjectSelectedIndex={updateProjectSelectedIndex}
           />
           <PageLinkContainer
             currentPage={appState.currentPage}

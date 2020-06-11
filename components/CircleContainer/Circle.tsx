@@ -29,7 +29,6 @@ const StyledGif = styled.img`
 interface CircleProps {
   currentPage: string;
   pageClickedOnce: boolean;
-  projectHoveredIndex: number;
   projects: ProjectModel[];
 }
 
@@ -37,7 +36,6 @@ const Circle: React.FC<CircleProps> = ({
   currentPage,
   pageClickedOnce,
   projects,
-  projectHoveredIndex,
 }) => (
   <CircleAnimation currentPage={currentPage} pageClickedOnce={pageClickedOnce}>
     <StyledCircle
@@ -51,18 +49,17 @@ const Circle: React.FC<CircleProps> = ({
       pageClickedOnce={pageClickedOnce}
       currentPage={currentPage}
       projects={projects}
-      projectHoveredIndex={projectHoveredIndex}
     >
       {/* <StyledGif
-        isSelected={projectHoveredIndex === 0}
+        isSelected={projectSelectedIndex === 0}
         src="/images/whidbeyherbal.gif"
       />
       <StyledGif
-        isSelected={projectHoveredIndex === 1}
+        isSelected={projectSelectedIndex === 1}
         src="/images/chatapp.gif"
       />
       <StyledGif
-        isSelected={projectHoveredIndex === 2}
+        isSelected={projectSelectedIndex === 2}
         src="/images/taskmanager.gif"
       /> */}
     </StyledCircle>

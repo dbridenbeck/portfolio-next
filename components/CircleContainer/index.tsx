@@ -5,8 +5,8 @@ import { ProjectModel } from "../../models/appState";
 const CircleContainerDiv = styled.div`
   position: relative;
   height: 28vh;
-  width: ${({ projectHoveredIndex }) =>
-    projectHoveredIndex !== -1 ? "100%" : "28vh"};
+  width: ${({ projectSelectedIndex }) =>
+    projectSelectedIndex !== -1 ? "100%" : "28vh"};
   margin: 0 auto;
   transition: width 0.75s;
 `;
@@ -14,7 +14,7 @@ const CircleContainerDiv = styled.div`
 interface CircleContainerProps {
   currentPage: string;
   pageClickedOnce: boolean;
-  projectHoveredIndex: number;
+  projectSelectedIndex: number;
   projects: ProjectModel[];
 }
 
@@ -22,14 +22,13 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   currentPage,
   pageClickedOnce,
   projects,
-  projectHoveredIndex,
+  projectSelectedIndex,
 }) => (
-  <CircleContainerDiv projectHoveredIndex={projectHoveredIndex}>
+  <CircleContainerDiv projectSelectedIndex={projectSelectedIndex}>
     <Circle
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
       projects={projects}
-      projectHoveredIndex={projectHoveredIndex}
     />
   </CircleContainerDiv>
 );

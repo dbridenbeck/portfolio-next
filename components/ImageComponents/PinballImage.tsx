@@ -31,7 +31,6 @@ const StyledPinballImage = styled.img`
 const PinballImage: React.FC<ImageModel> = ({
   currentPage,
   pageClickedOnce,
-  projectHoveredIndex
 }) => (
   <picture>
     <source
@@ -45,7 +44,6 @@ const PinballImage: React.FC<ImageModel> = ({
     <StyledPinballImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
-      projectHoveredIndex={projectHoveredIndex}
       srcSet={require("../../public/images/pinball.png")}
       alt="A pinball table"
     />

@@ -31,7 +31,6 @@ const StyledRollerskateImage = styled.img`
 const RollerskateImage: React.FC<ImageModel> = ({
   currentPage,
   pageClickedOnce,
-  projectHoveredIndex,
 }) => (
   <picture>
     <source
@@ -45,7 +44,6 @@ const RollerskateImage: React.FC<ImageModel> = ({
     <StyledRollerskateImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
-      projectHoveredIndex={projectHoveredIndex}
       src={require("../../public/images/rollerskate.png")}
       alt="A quad rollerskate"
     />

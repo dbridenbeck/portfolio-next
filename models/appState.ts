@@ -12,7 +12,7 @@ export interface ProjectModel {
 
 export default interface AppStateModel {
   currentPage: string;
-  projectHoveredIndex: number;
+  projectSelectedIndex: number;
   indexToSelect: number;
   pages: [
     { pageName: string; color: string },
