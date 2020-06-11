@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Projects from "./Projects";
+import SkillsSection from "./SkillsSection";
+import AboutSection from "./AboutSection";
 import { ProjectModel } from "../models/appState";
 import { devices } from "../utils/cssBreakpoints";
 
@@ -9,9 +11,7 @@ const InfoTextContainer = styled.div`
   height: 57%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
-  font-size: ${({ onProjectsPage }) => onProjectsPage ? "0.825rem" : "0.85rem"};
   font-weight: 400;
-  line-height: 1.5em;
   color: #333333;
   @media ${devices.mobileLandscape} {
     height: 53%;
@@ -33,12 +33,16 @@ const InfoText: React.FC<InfoTextProps> = ({
   updateProjectHoveredIndex,
   projectHoveredIndex,
 }) =>
-  currentPage !== "portfolio" ? (
+  currentPage === "skills" ? (
     <InfoTextContainer
-      currentPage={currentPage}
-      dangerouslySetInnerHTML={infoText}
-      onProjectsPage={false}
-    ></InfoTextContainer>
+    >
+      <SkillsSection />
+    </InfoTextContainer>
+  ) : currentPage === "about" ? (
+    <InfoTextContainer
+    >
+     <AboutSection />
+    </InfoTextContainer>
   ) : (
     <InfoTextContainer onProjectsPage={true}>
       <Projects

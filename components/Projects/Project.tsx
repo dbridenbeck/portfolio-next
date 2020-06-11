@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { ProjectModel } from "../../models/appState";
 import ProjectInfo from "./ProjectInfo";
+import Pill from "../SharedComponents/Pill";
 import { devices } from "../../utils/cssBreakpoints";
 
 const projectVariants = {
@@ -74,16 +75,6 @@ const TechPills = styled.div`
   margin: 0;
 `;
 
-const TechPill = styled.div`
-  height: 2em;
-  padding: 0.133em 0.825em;
-  margin: 0 0.75em 0 0;
-  color: #584D4D;
-  background-color: #f2f2f2;
-  border-radius: 1000px;
-  font-size: 0.825em;
-`;
-
 interface ProjectProps {
   project: ProjectModel;
   handleProjectHover: (projectIndex) => void;
@@ -126,14 +117,8 @@ const Project: React.FC<ProjectProps> = ({
           )}
         </ProjectHeader>
         <TechPills>
-          {project.tech.map((singleTech) => (
-            <TechPill
-              color={project.color}
-              key={singleTech}
-              isProjectHovered={isProjectHovered}
-            >
-              {singleTech}
-            </TechPill>
+          {project.tech.map((techName) => (
+            <Pill key={techName} setMargin={"0 0.75em 0 0"}>{techName}</Pill>
           ))}
         </TechPills>
       </ProjectOverview>
