@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import triggerFilter from "../../animations/TriggerFilter";
+import { devices } from "../../utils/cssBreakpoints";
 import ImageModel from "../../models/images";
 
 const rotate = keyframes`
@@ -17,11 +17,15 @@ const rotate = keyframes`
 const StyledComputerImage = styled.img`
   display: block;
   position: absolute;
-  margin: 30vh 0 0 -5%;
-  width: 32.5%;
+  width: 50%;
+  margin: 25vh 0 0 -20%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
   opacity: 0.15;
+  @media ${devices.mobileLandscape} {
+    width: 32.5%;
+    margin: 30vh 0 0 -5%;
+  }
 `;
 
 const ComputerImage: React.FC<ImageModel> = ({
