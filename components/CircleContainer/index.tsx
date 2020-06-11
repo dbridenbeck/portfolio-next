@@ -8,7 +8,7 @@ const CircleContainerDiv = styled.div`
   width: ${({ projectHoveredIndex }) =>
     projectHoveredIndex !== -1 ? "100%" : "28vh"};
   margin: 0 auto;
-  transition: width 2s;
+  transition: width 0.75s;
 `;
 
 interface CircleContainerProps {
