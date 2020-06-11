@@ -13,10 +13,7 @@ const projectVariants = {
   },
   expanded: {
     height: "60%",
-  },
-  collapsed: {
-    height: "27%",
-  },
+  }
 };
 
 const projectTransition = {
@@ -78,14 +75,12 @@ const TechPills = styled.div`
 interface ProjectProps {
   project: ProjectModel;
   handleProjectHover: (projectIndex) => void;
-  isProjectHovered: boolean;
   projectHoveredIndex: number;
   index: number;
 }
 
 const Project: React.FC<ProjectProps> = ({
   project,
-  isProjectHovered,
   handleProjectHover,
   projectHoveredIndex,
   index,
@@ -98,11 +93,9 @@ const Project: React.FC<ProjectProps> = ({
       initial="initial"
       variants={projectVariants}
       animate={
-        isProjectHovered
+        project.open
           ? "expanded"
-          : projectHoveredIndex === -1
-          ? "initial"
-          : "collapsed"
+          : "initial"
       }
       transition={projectTransition}
     >
@@ -110,7 +103,7 @@ const Project: React.FC<ProjectProps> = ({
         <ProjectHeader>
           <Title>{project.title}</Title>
           <ProjectType>{project.type}</ProjectType>
-          {isProjectHovered ? (
+          {project.open ? (
             <FontAwesomeIcon icon={faChevronUp} />
           ) : (
             <FontAwesomeIcon icon={faChevronDown} />
@@ -124,8 +117,8 @@ const Project: React.FC<ProjectProps> = ({
       </ProjectOverview>
 
       <AnimatePresence initial={false}>
-        {isProjectHovered && (
-          <ProjectInfo project={project} isProjectHovered={isProjectHovered} />
+        {project.open && (
+          <ProjectInfo project={project} />
         )}
       </AnimatePresence>
     </ProjectContainer>

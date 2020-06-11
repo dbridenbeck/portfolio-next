@@ -135,7 +135,10 @@ export default function Home() {
           }
         }
         else {
-          return project;
+          return {
+            ...project,
+            open: false,
+          }
         }
       })
     });
