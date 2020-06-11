@@ -54,18 +54,6 @@ const Circle: React.FC<CircleProps> = ({
       projects={projects}
       projectHoveredIndex={projectHoveredIndex}
     >
-      <StyledGif
-        isSelected={projectHoveredIndex === 0}
-        src="/images/whidbeyherbal.gif"
-      />
-      <StyledGif
-        isSelected={projectHoveredIndex === 1}
-        src="/images/chatapp.gif"
-      />
-      <StyledGif
-        isSelected={projectHoveredIndex === 2}
-        src="/images/taskmanager.gif"
-      />
     </StyledCircle>
   </CircleAnimation>
 );
