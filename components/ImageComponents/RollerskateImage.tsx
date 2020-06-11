@@ -17,8 +17,8 @@ const rotate = keyframes`
 const StyledRollerskateImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 90%;
+  margin: 32.5vh 0 0 0;
+  width: 25%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 400ms;
   opacity: 0.15;

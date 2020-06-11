@@ -29,7 +29,7 @@ const MainContent = styled.div`
 export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
-    currentPage: "skills",
+    currentPage: "about",
     projectHoveredIndex: -1,
     indexToSelect: 0,
     pages: [
@@ -151,6 +151,18 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Layout>
+        <ImagePairs
+          leftOriented={true}
+          currentPage={appState.currentPage}
+          pageClickedOnce={appState.pageClickedOnce}
+          projectHoveredIndex={appState.projectHoveredIndex}
+        />
+        <ImagePairs
+          leftOriented={false}
+          currentPage={appState.currentPage}
+          pageClickedOnce={appState.pageClickedOnce}
+          projectHoveredIndex={appState.projectHoveredIndex}
+        />
         <MainContent>
           <TitleText />
           <CircleContainer
@@ -158,20 +170,7 @@ export default function Home() {
             pageClickedOnce={appState.pageClickedOnce}
             projectHoveredIndex={appState.projectHoveredIndex}
             projects={appState.projects}
-          >
-            <ImagePairs
-              leftOriented={true}
-              currentPage={appState.currentPage}
-              pageClickedOnce={appState.pageClickedOnce}
-              projectHoveredIndex={appState.projectHoveredIndex}
-            />
-            <ImagePairs
-              leftOriented={false}
-              currentPage={appState.currentPage}
-              pageClickedOnce={appState.pageClickedOnce}
-              projectHoveredIndex={appState.projectHoveredIndex}
-            />
-          </CircleContainer>
+          ></CircleContainer>
           <InfoText
             infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}

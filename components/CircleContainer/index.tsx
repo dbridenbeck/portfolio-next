@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Circle from "./Circle";
-import { ReactElement } from "react";
 import { ProjectModel } from "../../models/appState";
 
 const CircleContainerDiv = styled.div`
@@ -15,7 +14,6 @@ const CircleContainerDiv = styled.div`
 interface CircleContainerProps {
   currentPage: string;
   pageClickedOnce: boolean;
-  children: ReactElement[];
   projectHoveredIndex: number;
   projects: ProjectModel[];
 }
@@ -23,12 +21,10 @@ interface CircleContainerProps {
 const CircleContainer: React.FC<CircleContainerProps> = ({
   currentPage,
   pageClickedOnce,
-  children,
   projects,
   projectHoveredIndex,
 }) => (
   <CircleContainerDiv projectHoveredIndex={projectHoveredIndex}>
-    {children}
     <Circle
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}

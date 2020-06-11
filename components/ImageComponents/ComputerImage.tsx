@@ -17,8 +17,8 @@ const rotate = keyframes`
 const StyledComputerImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 110%;
+  margin: 30vh 0 0 -5%;
+  width: 32.5%;
   animation: ${rotate} 90s infinite linear;
   animation-delay: 200ms;
   opacity: 0.15;

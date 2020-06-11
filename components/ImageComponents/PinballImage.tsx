@@ -17,8 +17,8 @@ const rotate = keyframes`
 const StyledPinballImage = styled.img`
   display: block;
   position: absolute;
-  margin: 25% 0 0 0;
-  width: 80%;
+  margin: 30vh 0 0 0;
+  width: 22.5%;
   animation: ${rotate} 80s infinite linear;
   animation-delay: 100ms;
   opacity: 0.15;
