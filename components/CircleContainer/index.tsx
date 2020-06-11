@@ -5,8 +5,11 @@ import { ProjectModel } from "../../models/appState";
 
 const CircleContainerDiv = styled.div`
   position: relative;
-  width: 40.625%;
+  height: 28vh;
+  width: ${({ projectHoveredIndex }) =>
+    projectHoveredIndex !== -1 ? "100%" : "28vh"};
   margin: 0 auto;
+  transition: width 2s;
 `;
 
 interface CircleContainerProps {
@@ -24,7 +27,7 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   projects,
   projectHoveredIndex,
 }) => (
-  <CircleContainerDiv>
+  <CircleContainerDiv projectHoveredIndex={projectHoveredIndex}>
     {children}
     <Circle
       currentPage={currentPage}
