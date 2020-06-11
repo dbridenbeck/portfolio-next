@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Projects from "./Projects";
 import SkillsSection from "./SkillsSection";
+import AboutSection from "./AboutSection";
 import { ProjectModel } from "../models/appState";
 import { devices } from "../utils/cssBreakpoints";
 
@@ -40,7 +41,7 @@ const InfoText: React.FC<InfoTextProps> = ({
   ) : currentPage === "about" ? (
     <InfoTextContainer
     >
-     about 
+     <AboutSection />
     </InfoTextContainer>
   ) : (
     <InfoTextContainer onProjectsPage={true}>
