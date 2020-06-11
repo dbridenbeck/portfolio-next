@@ -117,8 +117,8 @@ const Project: React.FC<ProjectProps> = ({
           )}
         </ProjectHeader>
         <TechPills>
-          {project.tech.map((singleTech) => (
-            <Pill setMargin={"0 0.75em 0 0"}>{singleTech}</Pill>
+          {project.tech.map((techName) => (
+            <Pill key={techName} setMargin={"0 0.75em 0 0"}>{techName}</Pill>
           ))}
         </TechPills>
       </ProjectOverview>
