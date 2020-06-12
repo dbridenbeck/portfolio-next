@@ -5,8 +5,8 @@ import { ProjectModel } from "../../models/appState";
 const CircleContainerDiv = styled.div`
   position: relative;
   height: 28vh;
-  width: ${({ projectHoveredIndex }) =>
-    projectHoveredIndex !== -1 ? "100%" : "28vh"};
+  width: ${({ areAllProjectsClosed }) =>
+    areAllProjectsClosed ? "28vh" : "100%"};
   margin: 0 auto;
   transition: width 0.75s;
 `;
@@ -14,7 +14,6 @@ const CircleContainerDiv = styled.div`
 interface CircleContainerProps {
   currentPage: string;
   pageClickedOnce: boolean;
-  projectHoveredIndex: number;
   projects: ProjectModel[];
 }
 
@@ -22,16 +21,17 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   currentPage,
   pageClickedOnce,
   projects,
-  projectHoveredIndex,
-}) => (
-  <CircleContainerDiv projectHoveredIndex={projectHoveredIndex}>
-    <Circle
-      currentPage={currentPage}
-      pageClickedOnce={pageClickedOnce}
-      projects={projects}
-      projectHoveredIndex={projectHoveredIndex}
-    />
-  </CircleContainerDiv>
-);
+}) => {
+  const areAllProjectsClosed = projects.every(project => project.open === false);
+  return (
+    <CircleContainerDiv areAllProjectsClosed={areAllProjectsClosed}>
+      <Circle
+        currentPage={currentPage}
+        pageClickedOnce={pageClickedOnce}
+        projects={projects}
+      />
+    </CircleContainerDiv>
+  );
+};
 
 export default CircleContainer;

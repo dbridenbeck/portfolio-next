@@ -20,18 +20,15 @@ const InfoTextContainer = styled.div`
 
 interface InfoTextProps {
   infoText: {__html: string};
-  projects: [ProjectModel, ProjectModel, ProjectModel];
+  projects: ProjectModel[];
   currentPage: string;
-  projectHoveredIndex: number;
-  updateProjectHoveredIndex: (projectIndex: number) => void;
+  updateProjectSelectedIndex: (projectIndex: number) => void;
 }
 
 const InfoText: React.FC<InfoTextProps> = ({
-  infoText,
   projects,
   currentPage,
-  updateProjectHoveredIndex,
-  projectHoveredIndex,
+  updateProjectSelectedIndex,
 }) =>
   currentPage === "skills" ? (
     <InfoTextContainer
@@ -47,8 +44,7 @@ const InfoText: React.FC<InfoTextProps> = ({
     <InfoTextContainer>
       <Projects
         projects={projects}
-        updateProjectHoveredIndex={updateProjectHoveredIndex}
-        projectHoveredIndex={projectHoveredIndex}
+        updateProjectSelectedIndex={updateProjectSelectedIndex}
       />
     </InfoTextContainer>
   );

@@ -31,7 +31,6 @@ const StyledComputerImage = styled.img`
 const ComputerImage: React.FC<ImageModel> = ({
   currentPage,
   pageClickedOnce,
-  projectHoveredIndex,
 }) => (
   <picture>
     <source
@@ -45,7 +44,6 @@ const ComputerImage: React.FC<ImageModel> = ({
     <StyledComputerImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
-      projectHoveredIndex={projectHoveredIndex}
       srcSet={require("../../public/images/computer.png")}
       alt="An open laptop"
     />

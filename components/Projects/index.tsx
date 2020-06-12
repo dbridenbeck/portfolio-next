@@ -15,26 +15,21 @@ const ProjectsContainer = styled.div`
 
 interface ProjectsProps {
   projects: ProjectModel[];
-  updateProjectHoveredIndex: (projectIndex) => void;
-  projectHoveredIndex: number;
+  updateProjectSelectedIndex: (projectIndex) => void;
 }
 
 const Projects: React.FC<ProjectsProps> = ({
   projects,
-  updateProjectHoveredIndex,
-  projectHoveredIndex,
+  updateProjectSelectedIndex,
 }) => (
   <ProjectsContainer>
     {projects.map((project: ProjectModel, index: number) => {
-      const isProjectHovered = projectHoveredIndex === index;
       return (
         <Project
           key={project.url}
           index={index}
           project={project}
-          handleProjectHover={updateProjectHoveredIndex}
-          isProjectHovered={isProjectHovered}
-          projectHoveredIndex={projectHoveredIndex}
+          handleProjectHover={updateProjectSelectedIndex}
         />
       );
     })}

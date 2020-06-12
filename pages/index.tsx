@@ -30,8 +30,6 @@ export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
     currentPage: "portfolio",
-    projectHoveredIndex: -1,
-    indexToSelect: 0,
     pages: [
       {
         pageName: "portfolio",
@@ -78,6 +76,7 @@ export default function Home() {
         url: "http://whidbeyherbal.com",
         color: "#9686ef",
         gif: `${whidbeyGif}`,
+        open: false,
       },
       {
         title: "Chat App",
@@ -90,6 +89,7 @@ export default function Home() {
         url: "https://secret-hollows-65310.herokuapp.com/",
         color: "#6f9bec",
         gif: `${chatappGif}`,
+        open: false,
       },
       {
         title: "Task Manager",
@@ -102,6 +102,7 @@ export default function Home() {
         url: "https://github.com/dbridenbeck/task-manager-api",
         color: "#d13b40",
         gif: `${taskManagerGif}`,
+        open: false,
       },
     ],
     pageClickedOnce: false,
@@ -114,16 +115,34 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
-      projectHoveredIndex: -1
+      projects: appState.projects.map(project => {
+        return {
+          ...project,
+          open: false
+        }
+      })
     });
   };
 
-  // update state when project is hovered
+  // update state when project is Selected
   // on hover, show animated gif of proj in circle and expand that project's details
-  const updateProjectHoveredIndex = (projectIndex) => {
+  const updateProjectSelectedIndex = (projectIndex) => {
     updateAppState({
       ...appState,
-      projectHoveredIndex: projectIndex,
+      projects: appState.projects.map((project, index) => {
+        if (index === projectIndex) {
+          return {
+            ...project,
+            open: !project.open,
+          }
+        }
+        else {
+          return {
+            ...project,
+            open: false,
+          }
+        }
+      })
     });
   };
 
@@ -155,28 +174,24 @@ export default function Home() {
           leftOriented={true}
           currentPage={appState.currentPage}
           pageClickedOnce={appState.pageClickedOnce}
-          projectHoveredIndex={appState.projectHoveredIndex}
         />
         <ImagePairs
           leftOriented={false}
           currentPage={appState.currentPage}
           pageClickedOnce={appState.pageClickedOnce}
-          projectHoveredIndex={appState.projectHoveredIndex}
         />
         <MainContent>
           <TitleText />
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
-            projectHoveredIndex={appState.projectHoveredIndex}
             projects={appState.projects}
           ></CircleContainer>
           <InfoText
             infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}
             projects={appState.projects}
-            updateProjectHoveredIndex={updateProjectHoveredIndex}
-            projectHoveredIndex={appState.projectHoveredIndex}
+            updateProjectSelectedIndex={updateProjectSelectedIndex}
           />
           <PageLinkContainer
             currentPage={appState.currentPage}

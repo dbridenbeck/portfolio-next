@@ -29,7 +29,7 @@ const StyledPhoneImage = styled.img`
   }
 `;
 
-const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce, projectHoveredIndex }) => (
+const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce }) => (
   <picture>
     <source
       srcSet={require("../../public/images/phone.png?webp")}
@@ -42,7 +42,6 @@ const PhoneImage: React.FC<ImageModel> = ({ currentPage, pageClickedOnce, projec
     <StyledPhoneImage
       currentPage={currentPage}
       pageClickedOnce={pageClickedOnce}
-      projectHoveredIndex={projectHoveredIndex}
       srcSet={require("../../public/images/phone.png")}
       alt="An 80's style mobile phone"
     />

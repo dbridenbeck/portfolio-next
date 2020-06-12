@@ -46,15 +46,12 @@ const ProjectLink = styled.a`
 
 interface ProjectProps {
   project: ProjectModel;
-  isProjectHovered: boolean;
 }
 
 const ProjectInfo: React.FC<ProjectProps> = ({
-  project,
-  isProjectHovered,
+  project
 }) =>
   <ProjectInfoContainer
-    isProjectHovered={isProjectHovered}
     initial="initial"
     exit="exit"
     animate="animate"
