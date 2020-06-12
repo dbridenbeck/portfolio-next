@@ -12,8 +12,6 @@ export interface ProjectModel {
 
 export default interface AppStateModel {
   currentPage: string;
-  projectSelectedIndex: number;
-  indexToSelect: number;
   pages: [
     { pageName: string; color: string },
     { pageName: string; color: string },

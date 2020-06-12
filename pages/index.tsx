@@ -30,8 +30,6 @@ export default function Home() {
   // infoText's structure allows the html to be injected via dangerouslySetInnerHTML
   const [appState, updateAppState] = useState<AppStateModel>({
     currentPage: "portfolio",
-    projectSelectedIndex: -1,
-    indexToSelect: 0,
     pages: [
       {
         pageName: "portfolio",
@@ -117,7 +115,12 @@ export default function Home() {
       ...appState,
       currentPage: newPage,
       pageClickedOnce: true,
-      projectSelectedIndex: -1
+      projects: appState.projects.map(project => {
+        return {
+          ...project,
+          open: false
+        }
+      })
     });
   };
 
@@ -126,7 +129,6 @@ export default function Home() {
   const updateProjectSelectedIndex = (projectIndex) => {
     updateAppState({
       ...appState,
-      projectSelectedIndex: projectIndex,
       projects: appState.projects.map((project, index) => {
         if (index === projectIndex) {
           return {
@@ -183,7 +185,6 @@ export default function Home() {
           <CircleContainer
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
-            projectSelectedIndex={appState.projectSelectedIndex}
             projects={appState.projects}
           ></CircleContainer>
           <InfoText
