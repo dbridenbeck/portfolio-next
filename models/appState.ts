@@ -6,7 +6,8 @@ export interface ProjectModel {
   projectDetail: string;
   url: string;
   color: string;
-  gif: string;
+  webm: string;
+  mp4: string;
   open: boolean;
 }
 
