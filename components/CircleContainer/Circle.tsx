@@ -11,10 +11,9 @@ const StyledCircle = styled.div`
   margin: 0 auto;
   border-radius: 10000px;
   overflow: hidden;
-  transition: ${({ pageClickedOnce }) =>
-    pageClickedOnce ? "background-color 0.75s" : ""};
+  transition: background-color 0.75s;
   background-color: ${({ color }) =>
-    color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : "#883B38"};
+    color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : color === "reddish" ? "#883B38" : "white"};
 `;
 
 const StyledVideo = styled(motion.video)`
@@ -46,6 +45,8 @@ const Circle: React.FC<CircleProps> = ({
             ? "grey"
             : currentPage === "about"
             ? "yellow"
+            : openProject
+            ? "white"
             : "reddish"
         }
         pageClickedOnce={pageClickedOnce}
