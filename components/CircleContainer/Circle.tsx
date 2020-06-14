@@ -16,7 +16,7 @@ const StyledCircle = styled.div`
     color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : "#883B38"};
 `;
 
-const StyledGif = styled.img`
+const StyledGif = styled.video`
   position: absolute;
   height: 70%;
   width: 70%;
@@ -36,34 +36,29 @@ const Circle: React.FC<CircleProps> = ({
   currentPage,
   pageClickedOnce,
   projects,
-}) => (
-  <CircleAnimation currentPage={currentPage} pageClickedOnce={pageClickedOnce}>
-    <StyledCircle
-      color={
-        currentPage === "skills"
-          ? "grey"
-          : currentPage === "about"
-          ? "yellow"
-          : "reddish"
-      }
-      pageClickedOnce={pageClickedOnce}
+}) => {
+    const projectOpen = projects.reduce((openedProject, currProject) => {
+      return currProject.open ? (openedProject = currProject) : openedProject;
+    }, {});
+    console.log(projectOpen);
+  return (
+    <CircleAnimation
       currentPage={currentPage}
-      projects={projects}
+      pageClickedOnce={pageClickedOnce}
     >
-      {/* <StyledGif
-        isSelected={projectSelectedIndex === 0}
-        src="/images/whidbeyherbal.gif"
-      />
-      <StyledGif
-        isSelected={projectSelectedIndex === 1}
-        src="/images/chatapp.gif"
-      />
-      <StyledGif
-        isSelected={projectSelectedIndex === 2}
-        src="/images/taskmanager.gif"
-      /> */}
-    </StyledCircle>
-  </CircleAnimation>
-);
-
+      <StyledCircle
+        color={
+          currentPage === "skills"
+            ? "grey"
+            : currentPage === "about"
+            ? "yellow"
+            : "reddish"
+        }
+        pageClickedOnce={pageClickedOnce}
+        currentPage={currentPage}
+        projects={projects}
+      ></StyledCircle>
+    </CircleAnimation>
+  )
+};
 export default Circle;

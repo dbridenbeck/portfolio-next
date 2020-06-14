@@ -10,12 +10,12 @@ import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
 
-const whidbeyHerbalGif = require("../public/images/whidbeyHerbalGif.webm");
-const chatAppGif = require("../public/images/chatAppGif.webm");
-const taskManagerGif = require("../public/images/taskManagerGif.webm");
-const whidbeyHerbalMp4 = require("../public/images/whidbeyHerbalGif.mp4");
-const chatAppMp4 = require("../public/images/chatAppGif.mp4");
-const taskManagerMp4 = require("../public/images/taskManagerGif.mp4");
+const whidbeyHerbalWebm = require("../public/images/whidbeyHerbalWebm.webm");
+const chatAppWebm = require("../public/images/chatAppWebm.webm");
+const taskManagerWebm = require("../public/images/taskManagerWebm.webm");
+const whidbeyHerbalMp4 = require("../public/images/whidbeyHerbalMp4.mp4");
+const chatAppMp4 = require("../public/images/chatAppMp4.mp4");
+const taskManagerMp4 = require("../public/images/taskManagerMp4.mp4");
 
 const MainContent = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ export default function Home() {
           "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
         url: "http://whidbeyherbal.com",
         color: "#9686ef",
-        webm: `${whidbeyHerbalGif}`,
+        webm: `${whidbeyHerbalWebm}`,
         mp4: `${whidbeyHerbalMp4}`,
         open: false,
       },
@@ -72,7 +72,7 @@ export default function Home() {
           "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "https://secret-hollows-65310.herokuapp.com/",
         color: "#6f9bec",
-        webm: `${chatAppGif}`,
+        webm: `${chatAppWebm}`,
         mp4: `${chatAppMp4}`,
         open: false,
       },
@@ -86,7 +86,7 @@ export default function Home() {
           "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
         url: "https://github.com/dbridenbeck/task-manager-api",
         color: "#d13b40",
-        webm: `${taskManagerGif}`,
+        webm: `${taskManagerWebm}`,
         mp4: `${taskManagerMp4}`,
         open: false,
       },
@@ -111,7 +111,7 @@ export default function Home() {
   };
 
   // update state when project is Selected
-  // on hover, show animated gif of proj in circle and expand that project's details
+  // on hover, show animated Webm of proj in circle and expand that project's details
   const updateProjectSelectedIndex = (projectIndex) => {
     updateAppState({
       ...appState,
