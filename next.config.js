@@ -11,8 +11,8 @@ const nextConfig = {
           loader: "file-loader",
           options: {
             name: "[name].[ext]",
-            publicPath: `/_next/public/files`,
-            outputPath: `public/files`
+            publicPath: `/_next/images`,
+            outputPath: `/images`
           },
         },
       ],

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 import TitleText from "../components/TitleText";
 import CircleContainer from "../components/CircleContainer";
 import ImagePairs from "../components/ImageComponents/ImagePairs";
@@ -8,14 +8,15 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
+import { ProjectModel } from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
 
-const whidbeyHerbalWebm = require("../public/images/whidbeyHerbalWebm.webm");
-const chatAppWebm = require("../public/images/chatAppWebm.webm");
-const taskManagerWebm = require("../public/images/taskManagerWebm.webm");
-const whidbeyHerbalMp4 = require("../public/images/whidbeyHerbalMp4.mp4");
-const chatAppMp4 = require("../public/images/chatAppMp4.mp4");
-const taskManagerMp4 = require("../public/images/taskManagerMp4.mp4");
+const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
+const chatAppWebm = "../images/chatAppWebm.webm";
+const taskManagerWebm = "../images/taskManagerWebm.webm";
+const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
+const chatAppMp4 = "../images/chatAppMp4.mp4";
+const taskManagerMp4 = "../images/taskManagerMp4.mp4";
 
 const MainContent = styled.div`
   display: flex;

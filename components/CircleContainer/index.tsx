@@ -6,7 +6,7 @@ const CircleContainerDiv = styled.div`
   position: relative;
   height: 28vh;
   width: ${({ areAllProjectsClosed }) =>
-    areAllProjectsClosed ? "28vh" : "100%"};
+    areAllProjectsClosed ? "100%" : "28vh"};
   margin: 0 auto;
   transition: width 0.75s;
 `;
@@ -22,13 +22,16 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   pageClickedOnce,
   projects,
 }) => {
-  const areAllProjectsClosed = projects.every(project => project.open === false);
+  
+  const findOpenedProject = projects.find(project => project.open);
+
   return (
-    <CircleContainerDiv areAllProjectsClosed={areAllProjectsClosed}>
+    <CircleContainerDiv areAllProjectsClosed={findOpenedProject}>
       <Circle
         currentPage={currentPage}
         pageClickedOnce={pageClickedOnce}
         projects={projects}
+        openProject={findOpenedProject}
       />
     </CircleContainerDiv>
   );

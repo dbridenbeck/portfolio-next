@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CircleAnimation from "../../animations/CircleAnimation";
 import { ProjectModel } from "../../models/appState";
+import { motion } from "framer-motion";
 
 const StyledCircle = styled.div`
   position: relative;
@@ -16,31 +17,24 @@ const StyledCircle = styled.div`
     color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : "#883B38"};
 `;
 
-const StyledGif = styled.video`
+const StyledVideo = styled(motion.video)`
   position: absolute;
-  height: 70%;
-  width: 70%;
-  left: 15%;
-  top: 15%;
-  opacity: ${({ isSelected }) => (isSelected ? "1" : "0")};
-  transition: opacity 0.5s ease-in-out;
+  width: 100%;
 `;
 
 interface CircleProps {
   currentPage: string;
   pageClickedOnce: boolean;
   projects: ProjectModel[];
+  openProject: ProjectModel;
 }
 
 const Circle: React.FC<CircleProps> = ({
   currentPage,
   pageClickedOnce,
   projects,
+  openProject,
 }) => {
-    const projectOpen = projects.reduce((openedProject, currProject) => {
-      return currProject.open ? (openedProject = currProject) : openedProject;
-    }, {});
-    console.log(projectOpen);
   return (
     <CircleAnimation
       currentPage={currentPage}
@@ -57,8 +51,22 @@ const Circle: React.FC<CircleProps> = ({
         pageClickedOnce={pageClickedOnce}
         currentPage={currentPage}
         projects={projects}
-      ></StyledCircle>
+      >
+        {openProject && (
+          <StyledVideo
+            autoPlay
+            loop
+            muted
+            key={openProject.title}
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+          >
+            <source src={openProject.webm} type="video/webm" />
+            <source src={openProject.mp4} type="video/mp4" />
+          </StyledVideo>
+        )}
+      </StyledCircle>
     </CircleAnimation>
-  )
+  );
 };
 export default Circle;
