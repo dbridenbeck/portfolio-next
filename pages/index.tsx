@@ -10,9 +10,12 @@ import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
 
-const whidbeyGif = require("../public/images/whidbeyherbal.gif");
-const chatappGif = require("../public/images/chatapp.gif");
-const taskManagerGif = require("../public/images/taskmanager.gif");
+const whidbeyGif = require("../public/images/whidbeyHerbalGif.webm");
+const chatappGif = require("../public/images/chatAppGif.webm");
+const taskManagerGif = require("../public/images/taskManagerGif.webm");
+const whidbeyMp4 = require("../public/images/whidbeyHerbalGif.mp4");
+const chatappMp4 = require("../public/images/chatAppGif.mp4");
+const taskManagerMp4 = require("../public/images/taskManagerGif.mp4");
 
 const MainContent = styled.div`
   display: flex;
@@ -44,26 +47,6 @@ export default function Home() {
         color: "#b0292e",
       },
     ],
-    infoText: {
-      skills: {
-        __html: `
-          <p>My name is Darren and I’m a web developer.</p>
-          <p>I have been helping people build websites for over ten years, from
-          designing and wireframing to getting code on servers so users can see
-          their stuff. I recently expanded my skills with React, Redux, Node.js,
-          MongoDB, and other fun things.</p>
-          <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
-          you’d like to work together. </p>
-          <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
-        `,
-      },
-      about: {
-        __html: `
-          <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
-          <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
-        `,
-      },
-    },
     projects: [
       {
         title: "Whidbey Herbal",
@@ -188,7 +171,6 @@ export default function Home() {
             projects={appState.projects}
           ></CircleContainer>
           <InfoText
-            infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}
             projects={appState.projects}
             updateProjectSelectedIndex={updateProjectSelectedIndex}

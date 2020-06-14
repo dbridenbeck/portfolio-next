@@ -19,7 +19,6 @@ const InfoTextContainer = styled.div`
 `;
 
 interface InfoTextProps {
-  infoText: {__html: string};
   projects: ProjectModel[];
   currentPage: string;
   updateProjectSelectedIndex: (projectIndex: number) => void;

@@ -17,10 +17,6 @@ export default interface AppStateModel {
     { pageName: string; color: string },
     { pageName: string; color: string }
   ];
-  infoText: {
-    skills: { __html: string };
-    about: { __html: string };
-  };
   projects: ProjectModel[];
   pageClickedOnce: boolean;
 }
