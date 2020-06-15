@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import CircleAnimation from "../../animations/CircleAnimation";
 import { ProjectModel } from "../../models/appState";
-import { devices } from '../../utils/cssBreakpoints';
+import { devices } from "../../utils/cssBreakpoints";
 
 const StyledCircle = styled.div`
   position: relative;
@@ -12,9 +12,17 @@ const StyledCircle = styled.div`
   margin: 0 auto;
   border-radius: 10000px;
   overflow: hidden;
-  transition: background-color 0.5s;
   background-color: ${({ color }) =>
-    color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : color === "reddish" ? "#883B38" : "white"};
+    color === "grey"
+      ? "#4A505F"
+      : color === "yellow"
+      ? "#F9E44D"
+      : color === "reddish"
+      ? "#883B38"
+      : "white"};
+  transition: background-color 0.5s;
+  transform: translate3d(0, 0, 0);
+  z-index: 5;
 `;
 
 const StyledVideo = styled(motion.video)`
@@ -22,6 +30,7 @@ const StyledVideo = styled(motion.video)`
   display: block;
   height: 100%;
   margin: 0 auto;
+  z-index: 1;
   @media ${devices.mobileLandscape} {
     position: absolute;
     height: auto;
