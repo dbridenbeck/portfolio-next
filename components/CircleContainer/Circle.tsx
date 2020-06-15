@@ -29,7 +29,7 @@ const StyledVideo = styled(motion.video)`
   position: relative;
   display: block;
   height: 100%;
-  margin: 0 auto;
+  margin: ${({ hidden }) => hidden ? "-9999px" : "0 auto"};
   z-index: 1;
   @media ${devices.mobileLandscape} {
     position: absolute;
@@ -76,16 +76,21 @@ const Circle: React.FC<CircleProps> = ({
             loop
             muted
             playsInline
-            preload={'auto'}
+            preload={"auto"}
             controls={false}
             key={openProject.title}
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
+            hidden={false}
           >
             <source src={openProject.webm} type="video/webm" />
             <source src={openProject.mp4} type="video/mp4" />
           </StyledVideo>
         )}
+        {projects.map((project) => (
+          <StyledVideo hidden={true}>
+            <source src={project.webm} type="video/webm" />
+            <source src={project.mp4} type="video/mp4" />
+          </StyledVideo>
+        ))}
       </StyledCircle>
     </CircleAnimation>
   );
