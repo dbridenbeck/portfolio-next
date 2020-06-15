@@ -67,7 +67,6 @@ const Circle: React.FC<CircleProps> = ({
             autoPlay
             loop
             muted
-            duration="4"
             controls={false}
             key={openProject.title}
             animate={{ opacity: 1 }}
