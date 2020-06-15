@@ -73,7 +73,7 @@ const Circle: React.FC<CircleProps> = ({
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
           >
-            {/* <source src={openProject.webm} type="video/webm" /> */}
+            <source src={openProject.webm} type="video/webm" />
             <source src={openProject.mp4} type="video/mp4" />
           </StyledVideo>
         )}
