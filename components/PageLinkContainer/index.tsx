@@ -7,8 +7,8 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto 2.5% auto;
   z-index: 99;
   @media ${devices.tabletLandscape} {
     position: fixed;

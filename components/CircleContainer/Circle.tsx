@@ -12,7 +12,7 @@ const StyledCircle = styled.div`
   margin: 0 auto;
   border-radius: 10000px;
   overflow: hidden;
-  transition: background-color 0.75s;
+  transition: background-color 0.5s;
   background-color: ${({ color }) =>
     color === "grey" ? "#4A505F" : color === "yellow" ? "#F9E44D" : color === "reddish" ? "#883B38" : "white"};
 `;
@@ -24,7 +24,6 @@ const StyledVideo = styled(motion.video)`
   margin: 0 auto;
   @media ${devices.mobileLandscape} {
     position: absolute;
-    width: 100%;
     height: auto;
     bottom: 0;
   }
@@ -67,6 +66,7 @@ const Circle: React.FC<CircleProps> = ({
             autoPlay
             loop
             muted
+            playsinline
             controls={false}
             key={openProject.title}
             animate={{ opacity: 1 }}
