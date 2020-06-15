@@ -8,7 +8,6 @@ import PageLinkContainer from "../components/PageLinkContainer";
 import InfoText from "../components/InfoText";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
-import { ProjectModel } from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
 
 const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";

@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import CircleAnimation from "../../animations/CircleAnimation";
 import { ProjectModel } from "../../models/appState";
-import { motion } from "framer-motion";
+import { devices } from '../../utils/cssBreakpoints';
 
 const StyledCircle = styled.div`
   position: relative;
@@ -17,8 +18,16 @@ const StyledCircle = styled.div`
 `;
 
 const StyledVideo = styled(motion.video)`
-  position: absolute;
-  width: 100%;
+  position: relative;
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  @media ${devices.mobileLandscape} {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+  }
 `;
 
 interface CircleProps {
@@ -58,11 +67,13 @@ const Circle: React.FC<CircleProps> = ({
             autoPlay
             loop
             muted
+            duration="4"
+            controls={false}
             key={openProject.title}
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
           >
-            <source src={openProject.webm} type="video/webm" />
+            {/* <source src={openProject.webm} type="video/webm" /> */}
             <source src={openProject.mp4} type="video/mp4" />
           </StyledVideo>
         )}
