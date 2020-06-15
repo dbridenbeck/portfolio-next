@@ -1,6 +1,6 @@
 import Head from "next/head";
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 import TitleText from "../components/TitleText";
 import CircleContainer from "../components/CircleContainer";
 import ImagePairs from "../components/ImageComponents/ImagePairs";
@@ -10,9 +10,12 @@ import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
 
-const whidbeyGif = require("../public/images/whidbeyherbal.gif");
-const chatappGif = require("../public/images/chatapp.gif");
-const taskManagerGif = require("../public/images/taskmanager.gif");
+const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
+const chatAppWebm = "../images/chatAppWebm.webm";
+const taskManagerWebm = "../images/taskManagerWebm.webm";
+const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
+const chatAppMp4 = "../images/chatAppMp4.mp4";
+const taskManagerMp4 = "../images/taskManagerMp4.mp4";
 
 const MainContent = styled.div`
   display: flex;
@@ -44,26 +47,6 @@ export default function Home() {
         color: "#b0292e",
       },
     ],
-    infoText: {
-      skills: {
-        __html: `
-          <p>My name is Darren and I’m a web developer.</p>
-          <p>I have been helping people build websites for over ten years, from
-          designing and wireframing to getting code on servers so users can see
-          their stuff. I recently expanded my skills with React, Redux, Node.js,
-          MongoDB, and other fun things.</p>
-          <p> <a href="mailto:darren.bridenbeck@gmail.com">Send me an email</a> if
-          you’d like to work together. </p>
-          <p>Check out my latest project for <a href="http://whidbeyherbal.com">Whidbey Herbal</a>.</p>
-        `,
-      },
-      about: {
-        __html: `
-          <p>Although I have a background in some business-bro stuff (sales dev, solutions engineer, account & vendor management, creating documentation), I used to be a life coach which completely blew my mind. I learned how to hone my listening skills and ask good questions to help people figure out their own solutions. I bring all of this to my work as web developer. </p>
-          <p> When I’m not working, I am hanging out with my wife and 18 month old daughter, playing pinball, or rollerskating. </p> 
-        `,
-      },
-    },
     projects: [
       {
         title: "Whidbey Herbal",
@@ -75,7 +58,8 @@ export default function Home() {
           "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
         url: "http://whidbeyherbal.com",
         color: "#9686ef",
-        gif: `${whidbeyGif}`,
+        webm: `${whidbeyHerbalWebm}`,
+        mp4: `${whidbeyHerbalMp4}`,
         open: false,
       },
       {
@@ -88,7 +72,8 @@ export default function Home() {
           "Used Socket.io for realtime communication, Handlebars for UI templating",
         url: "https://secret-hollows-65310.herokuapp.com/",
         color: "#6f9bec",
-        gif: `${chatappGif}`,
+        webm: `${chatAppWebm}`,
+        mp4: `${chatAppMp4}`,
         open: false,
       },
       {
@@ -101,7 +86,8 @@ export default function Home() {
           "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
         url: "https://github.com/dbridenbeck/task-manager-api",
         color: "#d13b40",
-        gif: `${taskManagerGif}`,
+        webm: `${taskManagerWebm}`,
+        mp4: `${taskManagerMp4}`,
         open: false,
       },
     ],
@@ -125,7 +111,7 @@ export default function Home() {
   };
 
   // update state when project is Selected
-  // on hover, show animated gif of proj in circle and expand that project's details
+  // on hover, show animated Webm of proj in circle and expand that project's details
   const updateProjectSelectedIndex = (projectIndex) => {
     updateAppState({
       ...appState,
@@ -188,7 +174,6 @@ export default function Home() {
             projects={appState.projects}
           ></CircleContainer>
           <InfoText
-            infoText={appState.infoText[appState.currentPage]}
             currentPage={appState.currentPage}
             projects={appState.projects}
             updateProjectSelectedIndex={updateProjectSelectedIndex}
