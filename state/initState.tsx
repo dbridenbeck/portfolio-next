@@ -1,10 +1,12 @@
+import AppStateModel from "../models/appState";
+
+// To Tyler: in projects, I'm storing these paths to their respective webm / mp4 files
 const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
 const chatAppWebm = "../images/chatAppWebm.webm";
 const taskManagerWebm = "../images/taskManagerWebm.webm";
 const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
 const chatAppMp4 = "../images/chatAppMp4.mp4";
 const taskManagerMp4 = "../images/taskManagerMp4.mp4";
-import AppStateModel from "../models/appState";
 
 const initState: AppStateModel = {
     currentPage: "portfolio",

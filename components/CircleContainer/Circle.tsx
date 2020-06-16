@@ -70,6 +70,7 @@ const Circle: React.FC<CircleProps> = ({
         currentPage={currentPage}
         projects={projects}
       >
+        {/* To Tyler: Then, if a project is opened, I am updating the source with the project's webm/mp4 path */}
         {openProject && (
           <StyledVideo
             autoPlay
