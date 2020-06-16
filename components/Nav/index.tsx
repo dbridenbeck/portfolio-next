@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PageLink from "./PageLink";
 import { devices } from "../../utils/cssBreakpoints";
 
-const LinkContainer = styled.div`
+const NavContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -20,7 +20,7 @@ const LinkContainer = styled.div`
   }
 `;
 
-interface PageLinkContainerProps {
+interface NavProps {
   currentPage: string;
   pages: [
     {pageName: string, color: string}, 
@@ -30,12 +30,12 @@ interface PageLinkContainerProps {
   changePage: (text: string) => void;
 }
 
-const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
+const Nav: React.FC<NavProps> = ({
   currentPage,
   pages,
   changePage,
 }) => (
-  <LinkContainer >
+  <NavContainer >
     {pages.map(page => (
       <PageLink 
         page={page}
@@ -44,7 +44,7 @@ const PageLinkContainer: React.FC<PageLinkContainerProps> = ({
         handleChangePage={changePage}
       />
     ))}
-  </LinkContainer>
+  </NavContainer>
 );
 
-export default PageLinkContainer;
+export default Nav;

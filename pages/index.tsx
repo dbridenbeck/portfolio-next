@@ -4,7 +4,7 @@ import styled from "styled-components";
 import TitleText from "../components/TitleText";
 import CircleContainer from "../components/CircleContainer";
 import ImagePairs from "../components/ImageComponents/ImagePairs";
-import PageLinkContainer from "../components/PageLinkContainer";
+import Nav from '../components/Nav';
 import Info from "../components/Info";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
@@ -103,13 +103,13 @@ export default function Home() {
             currentPage={appState.currentPage}
             pageClickedOnce={appState.pageClickedOnce}
             projects={appState.projects}
-          ></CircleContainer>
+          />
           <Info
             currentPage={appState.currentPage}
             projects={appState.projects}
             updateProjectSelected={updateProjectSelected}
           />
-          <PageLinkContainer
+          <Nav
             currentPage={appState.currentPage}
             pages={appState.pages}
             changePage={changePage}
