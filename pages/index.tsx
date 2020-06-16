@@ -43,7 +43,7 @@ export default function Home() {
 
   // update state when project is Selected
   // on hover, show animated Webm of proj in circle and expand that project's details
-  const updateProjectSelectedIndex = (projectIndex) => {
+  const updateProjectSelected = (projectIndex) => {
     updateAppState({
       ...appState,
       projects: appState.projects.map((project, index) => {
@@ -107,7 +107,7 @@ export default function Home() {
           <InfoText
             currentPage={appState.currentPage}
             projects={appState.projects}
-            updateProjectSelectedIndex={updateProjectSelectedIndex}
+            updateProjectSelected={updateProjectSelected}
           />
           <PageLinkContainer
             currentPage={appState.currentPage}

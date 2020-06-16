@@ -74,20 +74,20 @@ const TechPills = styled.div`
 
 interface ProjectProps {
   project: ProjectModel;
-  handleProjectHover: (projectIndex) => void;
+  handleProjectClick: (projectIndex) => void;
   index: number;
 }
 
 const Project: React.FC<ProjectProps> = ({
   project,
-  handleProjectHover,
+  handleProjectClick,
   index,
 }) => {
-  const updateProjectHoverIndex = () => handleProjectHover(index);
+  const updateProjectOnClick = () => handleProjectClick(index);
   return (
     <ProjectContainer
       key={project.url}
-      onClick={updateProjectHoverIndex}
+      onClick={updateProjectOnClick}
       initial="initial"
       variants={projectVariants}
       animate={
