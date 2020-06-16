@@ -5,7 +5,7 @@ import TitleText from "../components/TitleText";
 import CircleContainer from "../components/CircleContainer";
 import ImagePairs from "../components/ImageComponents/ImagePairs";
 import PageLinkContainer from "../components/PageLinkContainer";
-import InfoText from "../components/InfoText";
+import Info from "../components/Info";
 import Layout from "../components/Layout";
 import AppStateModel from "../models/appState";
 import { devices } from '../utils/cssBreakpoints';
@@ -104,7 +104,7 @@ export default function Home() {
             pageClickedOnce={appState.pageClickedOnce}
             projects={appState.projects}
           ></CircleContainer>
-          <InfoText
+          <Info
             currentPage={appState.currentPage}
             projects={appState.projects}
             updateProjectSelected={updateProjectSelected}

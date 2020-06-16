@@ -5,7 +5,7 @@ import AboutSection from "./AboutSection";
 import { ProjectModel } from "../models/appState";
 import { devices } from "../utils/cssBreakpoints";
 
-const InfoTextContainer = styled.div`
+const InfoContainer = styled.div`
   position: relative;
   width: 100%;
   height: 52%;
@@ -18,34 +18,34 @@ const InfoTextContainer = styled.div`
   }
 `;
 
-interface InfoTextProps {
+interface InfoProps {
   projects: ProjectModel[];
   currentPage: string;
   updateProjectSelected: (projectIndex: number) => void;
 }
 
-const InfoText: React.FC<InfoTextProps> = ({
+const Info: React.FC<InfoProps> = ({
   projects,
   currentPage,
   updateProjectSelected,
 }) =>
   currentPage === "skills" ? (
-    <InfoTextContainer
+    <InfoContainer
     >
       <SkillsSection />
-    </InfoTextContainer>
+    </InfoContainer>
   ) : currentPage === "about" ? (
-    <InfoTextContainer
+    <InfoContainer
     >
      <AboutSection />
-    </InfoTextContainer>
+    </InfoContainer>
   ) : (
-    <InfoTextContainer>
+    <InfoContainer>
       <Projects
         projects={projects}
         updateProjectSelected={updateProjectSelected}
       />
-    </InfoTextContainer>
+    </InfoContainer>
   );
 
-export default InfoText;
+export default Info;
