@@ -15,6 +15,7 @@ const Images: React.FC<ImagesProps> = ({
   currentPage,
   pageClickedOnce,
 }) => {
+  // pass animation config to images
   const skillsImageConfig = {
     initial: false,
     animate:
