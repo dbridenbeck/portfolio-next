@@ -29,7 +29,7 @@ const StyledVideo = styled(motion.video)`
   position: relative;
   display: block;
   height: 100%;
-  margin: ${({ hidden }) => hidden ? "-9999px" : "0 auto"};
+  margin: ${({ hidden }) => (hidden ? "-9999px" : "0 auto")};
   z-index: 1;
   @media ${devices.mobileLandscape} {
     position: absolute;
@@ -86,6 +86,9 @@ const Circle: React.FC<CircleProps> = ({
             <source src={openProject.mp4} type="video/mp4" />
           </StyledVideo>
         )}
+        {/* To Tyler: I thought that this would force these videos to preload, but I'm still noticing that the
+        video isn't appearing immediately when a project is clicked. Note that hidden={true} simply adds a huge negative
+        margin that puts the video off screen */}
         {projects.map((project) => (
           <StyledVideo hidden={true}>
             <source src={project.webm} type="video/webm" />
