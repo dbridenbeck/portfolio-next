@@ -2,11 +2,14 @@ import AppStateModel from "../models/appState";
 
 // To Tyler: in projects, I'm storing these paths to their respective webm / mp4 files
 const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
-const chatAppWebm = "../images/chatAppWebm.webm";
-const taskManagerWebm = "../images/taskManagerWebm.webm";
 const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
+const whidbeyHerbalThumb = "../images/whidbeyHerbalThumbSmall.webp";
+const chatAppWebm = "../images/chatAppWebm.webm";
 const chatAppMp4 = "../images/chatAppMp4.mp4";
+const chatAppThumb = "../images/chatAppThumb.webp";
+const taskManagerWebm = "../images/taskManagerWebm.webm";
 const taskManagerMp4 = "../images/taskManagerMp4.mp4";
+const taskManagerThumb = "../images/taskManagerThumb.webp";
 
 const initState: AppStateModel = {
   currentPage: "portfolio",
@@ -38,8 +41,7 @@ const initState: AppStateModel = {
       webm: `${whidbeyHerbalWebm}`,
       mp4: `${whidbeyHerbalMp4}`,
       open: false,
-      thumb:
-        "https://www.publicdomainpictures.net/pictures/30000/velka/solid-green-background.jpg",
+      thumb: `${whidbeyHerbalThumb}`,
       thumbAlt: "",
     },
     {
@@ -55,8 +57,7 @@ const initState: AppStateModel = {
       webm: `${chatAppWebm}`,
       mp4: `${chatAppMp4}`,
       open: false,
-      thumb:
-        "https://www.publicdomainpictures.net/pictures/30000/velka/solid-green-background.jpg",
+      thumb: `${chatAppThumb}`,
       thumbAlt: "",
     },
     {
@@ -72,8 +73,7 @@ const initState: AppStateModel = {
       webm: `${taskManagerWebm}`,
       mp4: `${taskManagerMp4}`,
       open: false,
-      thumb:
-        "https://image.shutterstock.com/image-photo/orange-fruit-slices-leaves-isolated-260nw-1386912362.jpg",
+      thumb: `${taskManagerThumb}`,
       thumbAlt: "",
     },
   ],

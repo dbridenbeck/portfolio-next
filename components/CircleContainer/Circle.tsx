@@ -74,6 +74,9 @@ const Circle: React.FC<CircleProps> = ({
         {openProject && (
           <Video openProject={openProject} />
         )}
+
+        {/* Calling the thumb files here to pre-load them so they are ready when a project is opened */}
+        {projects.map(project => <img style={{display: "none"}} src={project.thumb} alt={project.thumbAlt} key={project.thumb}/>)}
       </StyledCircle>
     </CircleAnimation>
   );
