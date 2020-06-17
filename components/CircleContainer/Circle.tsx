@@ -70,7 +70,6 @@ const Circle: React.FC<CircleProps> = ({
         currentPage={currentPage}
         projects={projects}
       >
-        {/* To Tyler: Then, if a project is opened, I am updating the source with the project's webm/mp4 path */}
         {openProject && (
           <StyledVideo
             autoPlay
@@ -86,15 +85,6 @@ const Circle: React.FC<CircleProps> = ({
             <source src={openProject.mp4} type="video/mp4" />
           </StyledVideo>
         )}
-        {/* To Tyler: I thought that this would force these videos to preload, but I'm still noticing that the
-        video isn't appearing immediately when a project is clicked. Note that hidden={true} simply adds a huge negative
-        margin that puts the video off screen */}
-        {projects.map((project) => (
-          <StyledVideo hidden={true}>
-            <source src={project.webm} type="video/webm" />
-            <source src={project.mp4} type="video/mp4" />
-          </StyledVideo>
-        ))}
       </StyledCircle>
     </CircleAnimation>
   );
