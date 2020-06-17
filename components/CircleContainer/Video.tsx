@@ -4,14 +4,23 @@ import { ProjectModel } from "../../models/appState";
 import { devices } from "../../utils/cssBreakpoints";
 
 const StyledImg = styled.img`
+  position: relative;
+  display: block;
+  height: 100%;
+  margin: 0 auto;
   opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
+  @media ${devices.mobileLandscape} {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+  }
 `;
 
 const StyledVideo = styled.video`
   position: relative;
   display: block;
   height: 100%;
-  margin: ${({ hidden }) => (hidden ? "-9999px" : "0 auto")};
+  margin: 0 auto;
   opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 1 : 0)};
   @media ${devices.mobileLandscape} {
     position: absolute;
