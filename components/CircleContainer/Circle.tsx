@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import Video from './Video';
 import CircleAnimation from "../../animations/CircleAnimation";
 import { ProjectModel } from "../../models/appState";
-import { devices } from "../../utils/cssBreakpoints";
 
 const StyledCircle = styled.div`
   position: relative;
@@ -24,19 +22,6 @@ const StyledCircle = styled.div`
   transition: background-color 0.5s;
   transform: translate3d(0, 0, 0);
   z-index: 5;
-`;
-
-const StyledVideo = styled(motion.video)`
-  position: relative;
-  display: block;
-  height: 100%;
-  margin: ${({ hidden }) => (hidden ? "-9999px" : "0 auto")};
-  z-index: 1;
-  @media ${devices.mobileLandscape} {
-    position: absolute;
-    height: auto;
-    bottom: 0;
-  }
 `;
 
 interface CircleProps {
