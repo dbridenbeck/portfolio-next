@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ProjectModel } from "../../models/appState";
 import { devices } from "../../utils/cssBreakpoints";
 
@@ -26,6 +26,10 @@ interface VideoProps {
 
 const Video: React.FC<VideoProps> = ({ openProject }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsVideoLoaded(false);
+  }, [openProject])
 
   const onLoadedData = () => {
     setIsVideoLoaded(true);

@@ -73,7 +73,7 @@ const initState: AppStateModel = {
       mp4: `${taskManagerMp4}`,
       open: false,
       thumb:
-        "https://www.publicdomainpictures.net/pictures/30000/velka/solid-green-background.jpg",
+        "https://image.shutterstock.com/image-photo/orange-fruit-slices-leaves-isolated-260nw-1386912362.jpg",
       thumbAlt: "",
     },
   ],
