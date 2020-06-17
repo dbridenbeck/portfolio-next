@@ -9,6 +9,8 @@ export interface ProjectModel {
   webm: string;
   mp4: string;
   open: boolean;
+  thumb: string;
+  thumbAlt: string;
 }
 
 export default interface AppStateModel {

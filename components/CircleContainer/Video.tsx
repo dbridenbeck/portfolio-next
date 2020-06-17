@@ -4,7 +4,7 @@ import { ProjectModel } from "../../models/appState";
 import { devices } from "../../utils/cssBreakpoints";
 
 const StyledImg = styled.img`
-  opacity: ${({ isVideoLoaded }) => isVideoLoaded ? 0 : 1};
+  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
 `;
 
 const StyledVideo = styled.video`

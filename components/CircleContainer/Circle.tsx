@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Video from './Video';
 import CircleAnimation from "../../animations/CircleAnimation";
 import { ProjectModel } from "../../models/appState";
 import { devices } from "../../utils/cssBreakpoints";
@@ -71,19 +72,7 @@ const Circle: React.FC<CircleProps> = ({
         projects={projects}
       >
         {openProject && (
-          <StyledVideo
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload={"auto"}
-            controls={false}
-            key={openProject.title}
-            hidden={false}
-          >
-            <source src={openProject.webm} type="video/webm" />
-            <source src={openProject.mp4} type="video/mp4" />
-          </StyledVideo>
+          <Video openProject={openProject} />
         )}
       </StyledCircle>
     </CircleAnimation>
