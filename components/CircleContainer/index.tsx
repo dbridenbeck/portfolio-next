@@ -23,8 +23,6 @@ const CircleContainer: React.FC<CircleContainerProps> = ({
   projects,
 }) => {
   
-  // To Tyler: This is how I'm determining if a project is opened or not
-  // it controls the width of the circle, and passes the result into Circle
   const findOpenedProject = projects.find(project => project.open);
 
   return (

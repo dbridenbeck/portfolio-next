@@ -1,6 +1,5 @@
 import AppStateModel from "../models/appState";
 
-// To Tyler: in projects, I'm storing these paths to their respective webm / mp4 files
 const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
 const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
 const whidbeyHerbalThumb = "../images/whidbeyHerbalThumb.webp";
