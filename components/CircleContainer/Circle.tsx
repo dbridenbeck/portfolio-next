@@ -21,7 +21,6 @@ const StyledCircle = styled.div`
       : "white"};
   transition: background-color 0.5s;
   transform: translate3d(0, 0, 0);
-  z-index: 5;
 `;
 
 interface CircleProps {
