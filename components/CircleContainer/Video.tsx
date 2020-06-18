@@ -48,11 +48,11 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
 
   return (
     <>
-      <StyledImg
+      {/* <StyledImg
         src={openProject.thumb}
         alt={openProject.thumbAlt}
         isVideoLoaded={isVideoLoaded}
-      />
+      /> */}
       <StyledVideo
         key={openProject.title}
         onLoadedData={onLoadedData}
