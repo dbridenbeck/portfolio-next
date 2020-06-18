@@ -5,7 +5,7 @@ import { devices } from "../../utils/cssBreakpoints";
 
 const StyledImg = styled.img`
   position: relative;
-  display: ${({ isVideoLoaded }) => isVideoLoaded ? "none" : "block"};
+  display: ${({ isVideoLoaded }) => (isVideoLoaded ? "none" : "block")};
   height: 100%;
   margin: 0 auto;
   z-index: 1;
@@ -13,6 +13,13 @@ const StyledImg = styled.img`
     position: absolute;
     height: auto;
     bottom: 0;
+  }
+  @media ${devices.largeScreen} {
+    position: absolute;
+    height: 100%;
+    margin: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 `;
 
@@ -26,6 +33,13 @@ const StyledVideo = styled.video`
     position: absolute;
     height: auto;
     bottom: 0;
+  }
+  @media ${devices.largeScreen} {
+    position: absolute;
+    height: 100%;
+    margin: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 `;
 
