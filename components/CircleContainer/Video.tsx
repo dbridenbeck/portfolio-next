@@ -23,7 +23,7 @@ const StyledVideo = styled.video`
   display: block;
   height: 100%;
   margin: 0 auto;
-  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 1 : 0)};
+  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 1 : 1)};
   @media ${devices.mobileLandscape} {
     position: absolute;
     height: auto;
@@ -48,15 +48,15 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
 
   return (
     <>
-      <StyledImg
+      {/* <StyledImg
         src={openProject.thumb}
         alt={openProject.thumbAlt}
         isVideoLoaded={isVideoLoaded}
-      />
+      /> */}
       <StyledVideo
         key={openProject.title}
-        onLoadedData={onLoadedData}
-        isVideoLoaded={isVideoLoaded}
+        // onLoadedData={onLoadedData}
+        // isVideoLoaded={isVideoLoaded}
         autoPlay
         loop
         muted
