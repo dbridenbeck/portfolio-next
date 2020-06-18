@@ -5,11 +5,9 @@ import { devices } from "../../utils/cssBreakpoints";
 
 const StyledImg = styled.img`
   position: relative;
-  display: block;
+  display: ${({ isVideoLoaded }) => isVideoLoaded ? "none" : "block"};
   height: 100%;
   margin: 0 auto;
-  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
-  transition: opacity 400ms ease-out 0ms;
   z-index: 1;
   @media ${devices.mobileLandscape} {
     position: absolute;
@@ -48,11 +46,11 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
 
   return (
     <>
-      {/* <StyledImg
+      <StyledImg
         src={openProject.thumb}
         alt={openProject.thumbAlt}
         isVideoLoaded={isVideoLoaded}
-      /> */}
+      />
       <StyledVideo
         key={openProject.title}
         onLoadedData={onLoadedData}
