@@ -46,14 +46,9 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
 
   return (
     <>
-      <StyledImg
-        src={openProject.thumb}
-        alt={openProject.thumbAlt}
-        isVideoLoaded={isVideoLoaded}
-      />
       <StyledVideo
         key={openProject.title}
-        onLoad={onLoadedData}
+        onLoadedData={onLoadedData}
         isVideoLoaded={isVideoLoaded}
         autoPlay
         loop
@@ -63,6 +58,11 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
         <source src={openProject.webm} type="video/webm" />
         <source src={openProject.mp4} type="video/mp4" />
       </StyledVideo>
+      <StyledImg
+        src={openProject.thumb}
+        alt={openProject.thumbAlt}
+        isVideoLoaded={isVideoLoaded}
+      />
     </>
   );
 };
