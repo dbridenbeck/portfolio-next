@@ -12,6 +12,7 @@ const AboutContainer = styled.div`
 const Headline = styled.h2`
   font-size: 1.75em;
   font-weight: 600;
+  margin: 0.5em 0;
   @media ${devices.mobileLandscape} {
     margin: 0.125em 0;
     font-size: 2.25em;
@@ -20,7 +21,7 @@ const Headline = styled.h2`
 
 const Info = styled.p`
   font-size: 0.825em;
-    margin: 0.5em 0;
+  margin: 0.325em 0;
   @media ${devices.mobileLandscape} {
     margin: 0.75em 0;
     font-size: 0.85em;
