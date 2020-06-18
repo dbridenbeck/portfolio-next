@@ -9,6 +9,8 @@ const StyledImg = styled.img`
   height: 100%;
   margin: 0 auto;
   opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
+  transition: opacity 400ms ease-out 0ms;
+  filter: blur(0.25px);
   @media ${devices.mobileLandscape} {
     position: absolute;
     height: auto;
