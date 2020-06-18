@@ -46,6 +46,11 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
 
   return (
     <>
+      <StyledImg
+        src={openProject.thumb}
+        alt={openProject.thumbAlt}
+        isVideoLoaded={isVideoLoaded}
+      />
       <StyledVideo
         key={openProject.title}
         onLoadedData={onLoadedData}
@@ -58,11 +63,6 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
         <source src={openProject.webm} type="video/webm" />
         <source src={openProject.mp4} type="video/mp4" />
       </StyledVideo>
-      <StyledImg
-        src={openProject.thumb}
-        alt={openProject.thumbAlt}
-        isVideoLoaded={isVideoLoaded}
-      />
     </>
   );
 };
