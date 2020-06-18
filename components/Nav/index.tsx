@@ -8,7 +8,7 @@ const NavContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin: 1% auto;
+  margin: 0.5% auto;
   z-index: 99;
   @media ${devices.tabletLandscape} {
     position: fixed;
