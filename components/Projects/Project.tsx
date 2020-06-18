@@ -37,6 +37,9 @@ const ProjectContainer = styled(motion.div)`
   @media ${devices.mobileLandscape} {
     font-size: 0.875rem;
   }
+  @media ${devices.largeScreen} {
+    font-size: 1rem;
+  }
 `;
 
 const ProjectOverview = styled.div`
