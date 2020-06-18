@@ -8,6 +8,7 @@ const StyledImg = styled.img`
   display: block;
   height: 100%;
   margin: 0 auto;
+  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
   transition: opacity 400ms ease-out 0ms;
   z-index: 1;
   @media ${devices.mobileLandscape} {
