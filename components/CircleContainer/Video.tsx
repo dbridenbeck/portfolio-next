@@ -53,7 +53,7 @@ const Video: React.FC<VideoProps> = ({ openProject }) => {
       />
       <StyledVideo
         key={openProject.title}
-        onLoadedData={onLoadedData}
+        onLoad={onLoadedData}
         isVideoLoaded={isVideoLoaded}
         autoPlay
         loop
