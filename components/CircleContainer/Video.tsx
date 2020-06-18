@@ -8,9 +8,8 @@ const StyledImg = styled.img`
   display: block;
   height: 100%;
   margin: 0 auto;
-  opacity: ${({ isVideoLoaded }) => (isVideoLoaded ? 0 : 1)};
   transition: opacity 400ms ease-out 0ms;
-  filter: blur(0.25px);
+  z-index: 1;
   @media ${devices.mobileLandscape} {
     position: absolute;
     height: auto;
@@ -23,6 +22,7 @@ const StyledVideo = styled.video`
   display: block;
   height: 100%;
   margin: 0 auto;
+  z-index: 5;
   @media ${devices.mobileLandscape} {
     position: absolute;
     height: auto;
