@@ -2,13 +2,13 @@ import AppStateModel from "../models/appState";
 
 const whidbeyHerbalWebm = "../images/whidbeyHerbalWebm.webm";
 const whidbeyHerbalMp4 = "../images/whidbeyHerbalMp4.mp4";
-const whidbeyHerbalThumb = "../images/whidbeyHerbalThumb.webp";
+const whidbeyHerbalThumb = "../images/whidbeyHerbalThumb.jpg";
 const chatAppWebm = "../images/chatAppWebm.webm";
 const chatAppMp4 = "../images/chatAppMp4.mp4";
-const chatAppThumb = "../images/chatAppThumb.webp";
+const chatAppThumb = "../images/chatAppThumb.jpg";
 const taskManagerWebm = "../images/taskManagerWebm.webm";
 const taskManagerMp4 = "../images/taskManagerMp4.mp4";
-const taskManagerThumb = "../images/taskManagerThumb.webp";
+const taskManagerThumb = "../images/taskManagerThumb.jpg";
 
 const initState: AppStateModel = {
   currentPage: "portfolio",
