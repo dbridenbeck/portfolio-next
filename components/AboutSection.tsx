@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Pill from "./SharedComponents/Pill";
 import { devices } from "../utils/cssBreakpoints";
 
 const AboutContainer = styled.div`
@@ -17,6 +16,9 @@ const Headline = styled.h2`
     margin: 0.125em 0;
     font-size: 2.25em;
   }
+  @media ${devices.largeScreen} {
+    margin: 0.5em 0;
+  }
 `;
 
 const Info = styled.p`
@@ -25,6 +27,10 @@ const Info = styled.p`
   @media ${devices.mobileLandscape} {
     margin: 0.75em 0;
     font-size: 0.85em;
+  }
+  @media ${devices.largeScreen} {
+    font-size: 1em;
+    margin: 1em 0;
   }
 `;
 
