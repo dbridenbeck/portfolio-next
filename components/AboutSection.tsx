@@ -20,6 +20,7 @@ const Headline = styled.h2`
 
 const Info = styled.p`
   font-size: 0.825em;
+    margin: 0.5em 0;
   @media ${devices.mobileLandscape} {
     margin: 0.75em 0;
     font-size: 0.85em;
