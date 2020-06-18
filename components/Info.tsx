@@ -8,7 +8,7 @@ import { devices } from "../utils/cssBreakpoints";
 const InfoContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 52%;
+  height: 50%;
   margin: 0 auto;
   font-family: "Muli", sans-serif;
   font-weight: 400;
