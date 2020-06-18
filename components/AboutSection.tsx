@@ -6,19 +6,18 @@ const AboutContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  @media ${devices.mobileLandscape} {
+    font-size: 1.125em;
+  }
+  @media ${devices.largeScreen} {
+    font-size: 1.25em;
+  }
 `;
 
 const Headline = styled.h2`
   font-size: 1.75em;
   font-weight: 600;
   margin: 0.5em 0;
-  @media ${devices.mobileLandscape} {
-    margin: 0.125em 0;
-    font-size: 2.25em;
-  }
-  @media ${devices.largeScreen} {
-    margin: 0.5em 0;
-  }
 `;
 
 const Info = styled.p`
@@ -27,10 +26,6 @@ const Info = styled.p`
   @media ${devices.mobileLandscape} {
     margin: 0.75em 0;
     font-size: 0.85em;
-  }
-  @media ${devices.largeScreen} {
-    font-size: 1em;
-    margin: 1em 0;
   }
 `;
 
