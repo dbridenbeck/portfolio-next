@@ -3,6 +3,7 @@ const size = {
   tabletPortrait: "768px",
   tabletLandscape: "1024px",
   laptop: "1280px",
+  largeScreen: "1400px"
 };
 
 export const devices = {
@@ -10,4 +11,5 @@ export const devices = {
   tabletPortrait: `(min-width: ${size.tabletPortrait})`,
   tabletLandscape: `(min-width: ${size.tabletLandscape})`,
   laptop: `(min-width: ${size.laptop})`,
+  largeScreen: `(min-width: ${size.largeScreen})`,
 };

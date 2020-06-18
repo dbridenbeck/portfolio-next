@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Pill from "./SharedComponents/Pill";
 import { devices } from "../utils/cssBreakpoints";
 
 const AboutContainer = styled.div`
@@ -7,16 +6,18 @@ const AboutContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  @media ${devices.mobileLandscape} {
+    font-size: 1.125em;
+  }
+  @media ${devices.largeScreen} {
+    font-size: 1.25em;
+  }
 `;
 
 const Headline = styled.h2`
   font-size: 1.75em;
   font-weight: 600;
   margin: 0.5em 0;
-  @media ${devices.mobileLandscape} {
-    margin: 0.125em 0;
-    font-size: 2.25em;
-  }
 `;
 
 const Info = styled.p`

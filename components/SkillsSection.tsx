@@ -7,6 +7,12 @@ const SkillsContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  @media ${devices.mobileLandscape} {
+    font-size: 1.125em;
+  }
+  @media ${devices.largeScreen} {
+    font-size: 1.25em;
+  }
 `;
 
 const Headline = styled.h2`
@@ -14,18 +20,13 @@ const Headline = styled.h2`
   font-weight: 600;
   margin: 0;
   padding: 0;
-  @media ${devices.mobileLandscape} {
-    font-size: 2.25em;
-  }
 `;
 
 const Info = styled.p`
-  font-size: 0.825em;
+  font-size: 0.875em;
+  line-height: 1.5em;
   margin: 0;
   padding: 0;
-  @media ${devices.mobileLandscape} {
-    font-size: 0.85em;
-  }
 `;
 
 const TechContainer = styled.div`

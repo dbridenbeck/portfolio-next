@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ReactElement } from "react";
 
 const PillContainer = styled.div`
   height: 1.75em;
