@@ -59,9 +59,6 @@ const ProjectInfo: React.FC<ProjectProps> = ({
     transition={infoContainerTransition}
   >
     <InfoP>
-      {project.goals}
-    </InfoP>
-    <InfoP>
       {project.projectDetail}
       <ProjectLink href={project.url} target="_blank">
         Visit the website <FontAwesomeIcon icon={faArrowRight} />
