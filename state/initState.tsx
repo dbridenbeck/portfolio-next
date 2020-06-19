@@ -31,10 +31,8 @@ const initState: AppStateModel = {
       title: "Whidbey Herbal",
       type: "eCommerce Website",
       tech: ["React", "Redux", "Styled-Components", "Shopify API"],
-      goals:
-        "Remove reliance on Shopify theme by building a custom site, tell “the story” of the brand through images and photos",
       projectDetail:
-        "Implemented designer’s files into pixel-perfect responsive site, seamlessly manage state for checkout",
+        "The goal was to limit the client's reliance on Shopify by building a custom site and incorporate images to better tell their story. I'm most proud of how I implemented a designer’s files into a pixel-perfect responsive site and seamlessly managed state for checkout.",
       url: "http://whidbeyherbal.com",
       color: "#9686ef",
       webm: `${whidbeyHerbalWebm}`,
@@ -47,10 +45,8 @@ const initState: AppStateModel = {
       title: "Chat App",
       type: "Realtime Chat Application",
       tech: ["NodeJS", "Express", "Socket.io", "Handlebars"],
-      goals:
-        "Build a chat app that supports multiple rooms, location sharing, and ensuring usernames are unique within a given room",
       projectDetail:
-        "Used Socket.io for realtime communication, Handlebars for UI templating",
+        "I built a chat app that supports multiple rooms, location sharing, and ensuring usernames are unique within a given room. Using Socket.io for realtime communication was my favorite part of this project. Eventually I would like to switch the frontend to React.",
       url: "https://secret-hollows-65310.herokuapp.com/",
       color: "#6f9bec",
       webm: `${chatAppWebm}`,
@@ -63,10 +59,8 @@ const initState: AppStateModel = {
       title: "Task Manager",
       type: "Auth Enabled CRUD API",
       tech: ["NodeJS", "Express", "MongoDB", "Multer", "JWT"],
-      goals:
-        "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks",
       projectDetail:
-        "I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
+        "Create an API that handles CRUD operations on users, tasks and avatar images, using auth to limit users to only see their own tasks I handled the DB config, building the API, JWT for auth, and using Multer for form-data",
       url: "https://github.com/dbridenbeck/task-manager-api",
       color: "#d13b40",
       webm: `${taskManagerWebm}`,

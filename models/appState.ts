@@ -2,7 +2,6 @@ export interface ProjectModel {
   title: string;
   type: string;
   tech: string[];
-  goals: string;
   projectDetail: string;
   url: string;
   color: string;
