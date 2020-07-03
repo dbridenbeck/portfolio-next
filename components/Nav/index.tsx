@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PageLink from "./PageLink";
+import { NavProps } from "../../models/navModel";
 import { devices } from "../../utils/cssBreakpoints";
 
 const NavContainer = styled.div`
@@ -19,16 +20,6 @@ const NavContainer = styled.div`
     min-width: 256px;
   }
 `;
-
-interface NavProps {
-  currentPage: string;
-  pages: [
-    {pageName: string, color: string}, 
-    {pageName: string, color: string}, 
-    {pageName: string, color: string} 
-  ];
-  changePage: (text: string) => void;
-}
 
 const Nav: React.FC<NavProps> = ({
   currentPage,

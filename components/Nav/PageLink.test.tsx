@@ -1,12 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import PageLink from './PageLink';
-
-interface PageLinkProps {
-  page: {pageName: string, color: string};
-  currentPage: string;
-  handleChangePage: (text: string) => void;
-}
+import { PageLinkProps } from "../../models/pageLinkModel";
 
 describe("PageLink", () => {
   const requiredProps: PageLinkProps = {
@@ -21,5 +16,5 @@ describe("PageLink", () => {
   it("should render without errors", () => {
     const { container } = render(<PageLink {...requiredProps} />);
     expect(container).toMatchSnapshot();
-  });
+  }); 
 });

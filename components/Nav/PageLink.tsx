@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PageLinkProps } from "../../models/pageLinkModel";
 
 const PageLinkSpan = styled.span`
   display: block;
@@ -9,12 +10,6 @@ const PageLinkSpan = styled.span`
   color: ${({ color }) => color};
   }
 `;
-
-interface PageLinkProps {
-  page: {pageName: string, color: string};
-  currentPage: string;
-  handleChangePage: (text: string) => void;
-}
 
 const PageLink: React.FC<PageLinkProps> = ({page, handleChangePage, currentPage}) => {
   const linkSelected = currentPage === page.pageName;
