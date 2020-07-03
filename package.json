@@ -5,12 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.10",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@types/jest": "^26.0.3",
     "framer-motion": "^1.10.3",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-optipng": "^7.1.0",
@@ -20,9 +23,11 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.1.1",
+    "ts-jest": "^26.1.1",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^10.4.3",
     "@types/react": "^16.9.35",
     "@zeit/next-css": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.7",

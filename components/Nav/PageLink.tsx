@@ -16,7 +16,7 @@ interface PageLinkProps {
   handleChangePage: (text: string) => void;
 }
 
-const PageLink = ({page, handleChangePage, currentPage}) => {
+const PageLink: React.FC<PageLinkProps> = ({page, handleChangePage, currentPage}) => {
   const linkSelected = currentPage === page.pageName;
   const updatePage = () => handleChangePage(page.pageName);
   return (
