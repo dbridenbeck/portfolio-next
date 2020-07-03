@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pill should render without errors 1`] = `
+<div>
+  <div
+    class="Pill__PillContainer-c9peiv-0 bvqjVl"
+  >
+    React
+  </div>
+</div>
+`;

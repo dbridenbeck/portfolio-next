@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillsSection should render without errors 1`] = `
+<div>
+  <div
+    class="SkillsSection__SkillsContainer-su0qe3-0 fgNfwp"
+  >
+    <h2
+      class="SkillsSection__Headline-su0qe3-1 bZAzkz"
+    >
+      I use code to bring people together and have fun.
+    </h2>
+    <p
+      class="SkillsSection__Info-su0qe3-2 hsNCjH"
+    >
+      I am a detail oriented and intrinsically motivated software engineer with five years’ experience creating custom websites using HTML/CSS/JavaScript, and eight years’ experience working directly with clients to solve complex technical challenges.
+    </p>
+    <div>
+      <h3
+        class="SkillsSection__Styledh3-su0qe3-4 dKEcvO"
+      >
+        Languages and Tools:
+      </h3>
+      <div
+        class="SkillsSection__TechContainer-su0qe3-3 esTUjr"
+      >
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          JavaScript ES6
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          TypeScript
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          NodeJS
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Python
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          React
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Redux
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Gatsby.js
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Next.js
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Styled-Components
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Webpack
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Express
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          RESTful API's
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          MongoDB
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Mongoose
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Socket.io
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Jest
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Github
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          TDD
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Figma
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Adobe Creative Suite
+        </div>
+        <div
+          class="Pill__PillContainer-c9peiv-0 dSkIQ"
+        >
+          Shopify
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutSection should render without errors 1`] = `
+<div>
+  <div
+    class="AboutSection__AboutContainer-sc-1rrnv9m-0 dAjSqw"
+  >
+    <h2
+      class="AboutSection__Headline-sc-1rrnv9m-1 epRgFa"
+    >
+      My background is in life coaching, solutions engineering, vendor management, and sales.
+    </h2>
+    <p
+      class="AboutSection__Info-sc-1rrnv9m-2 fbwaey"
+    >
+      When I’m not working, I’m hanging out with my wife and daughter, playing pinball, or rollerskating.
+    </p>
+    <p
+      class="AboutSection__Info-sc-1rrnv9m-2 fbwaey"
+    >
+      You can also find me volunteering for the
+       
+      <a
+        href="https://github.com/codeforpdx/dwellingly-app"
+        target="_blank"
+      >
+        Dwelling.ly
+      </a>
+       
+      project at Code for PDX and participating in coding meetups like Portland ReactJS and Mentorship Saturdays.
+    </p>
+  </div>
+</div>
+`;

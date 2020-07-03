@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PillProps } from "../../models/pillModel";
 
 const PillContainer = styled.div`
   height: 1.75em;
@@ -9,11 +10,6 @@ const PillContainer = styled.div`
   border-radius: 1000px;
   font-size: 0.825em;
 `;
-
-interface PillProps {
-  children: string;
-  setMargin: string;
-}
 
 const Pill: React.FC<PillProps> = ({ children, setMargin }) => (
   <PillContainer setMargin={setMargin}>

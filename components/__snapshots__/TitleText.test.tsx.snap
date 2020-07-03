@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleText should render without errors 1`] = `
+<div>
+  <div
+    class="TitleText__TitleContainer-qiiz6j-0 RsITt"
+  >
+    <h1
+      class="TitleText__Title-qiiz6j-1 GdaQb"
+    >
+      I'm Darren Bridenbeck,
+    </h1>
+    <h2
+      class="TitleText__SubTitle-qiiz6j-2 cJlTbs"
+    >
+      a software engineer.
+    </h2>
+  </div>
+</div>
+`;

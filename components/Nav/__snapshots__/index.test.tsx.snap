@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should render without errors 1`] = `
+<div>
+  <div
+    class="Nav__NavContainer-sc-1ayp5y4-0 limDtW"
+  >
+    <span
+      class="PageLink__PageLinkSpan-x2cztj-0 fLJgUU"
+      color="#427ce6"
+    >
+      portfolio
+    </span>
+    <span
+      class="PageLink__PageLinkSpan-x2cztj-0 kGmCBl"
+      color="#6f59e9"
+    >
+      skills
+    </span>
+    <span
+      class="PageLink__PageLinkSpan-x2cztj-0 xWTRx"
+      color="#b0292e"
+    >
+      about
+    </span>
+  </div>
+</div>
+`;

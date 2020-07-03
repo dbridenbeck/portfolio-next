@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLink should render without errors 1`] = `
+<div>
+  <span
+    class="PageLink__PageLinkSpan-x2cztj-0 kGmCBl"
+    color="#6f59e9"
+  >
+    skills
+  </span>
+</div>
+`;

@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import { ProjectModel } from "../../models/appState";
+import { ProjectInfoProps } from "../../models/ProjectInfoModel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight	 } from "@fortawesome/free-solid-svg-icons";
 
@@ -44,13 +44,7 @@ const ProjectLink = styled.a`
   padding-left: 0.333em;
 `;
 
-interface ProjectProps {
-  project: ProjectModel;
-}
-
-const ProjectInfo: React.FC<ProjectProps> = ({
-  project
-}) =>
+const ProjectInfo: React.FC<ProjectInfoProps> = ({ project }) => (
   <ProjectInfoContainer
     initial="initial"
     exit="exit"
@@ -65,5 +59,6 @@ const ProjectInfo: React.FC<ProjectProps> = ({
       </ProjectLink>
     </InfoP>
   </ProjectInfoContainer>
+);
 
 export default ProjectInfo;
